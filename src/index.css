@@ -1,13 +1,88 @@
-body {
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: "Mulish", sans-serif;
+}
+#root {
+  position: relative;
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  grid-template-areas: "header" "main" "footer";
+  height: 100vh;
+  max-width: 100vw;
+}
+header {
+  grid-area: header;
+  z-index: 10;
+}
+main {
+  grid-area: main;
+}
+footer {
+  grid-area: footer;
+}
+.brand {
+  font-family: "Great Vibes", cursive;
+  font-size: 2.2rem;
+  cursor: pointer;
+}
+h1,
+h2,
+h3,
+h4,
+h5 {
+  font-family: "Jost", sans-serif;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.active {
+  @apply pointer-events-none border-b-2 border-b-primary;
+}
+#spacer {
+  margin: 100px auto;
+}
+
+@layer base {
+  h1 {
+    @apply text-5xl font-semibold mb-4;
+  }
+  h2 {
+    @apply text-3xl font-bold;
+  }
+  h3 {
+    @apply text-2xl font-bold;
+  }
+  h4 {
+    @apply text-xl font-bold;
+  }
+  p {
+    @apply text-lg;
+  }
+}
+@layer components {
+  .nav-li {
+    @apply inline-block mx-4  p-2 text-neutral hover:border-b-2 hover:border-b-primary transition-all ease-in-out hover:animate-pulse cursor-pointer;
+  }
+
+  .input-form {
+    @apply input input-bordered focus:border-none focus:outline-none;
+  }
+  .btn {
+    @apply text-neutral-content;
+  }
+  .para-progress {
+    @apply grid-cols-1 grid items-center shadow-xl p-6;
+  }
+  .active.logo {
+    @apply bg-none;
+  }
+  .social-icons {
+    @apply inline-block w-5 h-5 stroke-current;
+  }
 }
