@@ -10,12 +10,12 @@ function About() {
       <div className="grid lg:grid-cols-2 md:grid-col-2 sm:grid-cols-1 gap-8 p-4">
         <div className="p-8  flex flex-col items-center text-center">
           <figure>
-            <img src={profileImage} alt="ankit soni" className="h-60 w-60 mb-8 mask mask-parallelogram  " />
+            <img src={profileImage} alt="ankit soni" className="h-60 w-60 mb-8 mask mask-hexagon  " />
           </figure>
           <div>
             <h3>Skills and technologies</h3>
-            <p>I'm Front-end delveloper student.</p>
-            <p> I have serious passion for UI effects and creating dynamic user user experiences.</p>
+            <p>I'm Front-end delveloper second year student </p>
+            <p> I have serious passion for UI effects and creating dynamic user experiences.</p>
           </div>
         </div>
 
@@ -53,7 +53,7 @@ function About() {
         <div>
           <FaDesktop size={60} className=" mx-auto  mb-4 text-secondary" />
           <h3 className="text-xl font-bold">Dynamic</h3>
-          <p>Websites don't have to static. I love making pages come to life</p>
+          <p>Websites don't have to be static. I love making pages come to life</p>
         </div>
         <div>
           <FaLightbulb size={60} className=" mx-auto  mb-4  text-secondary" />
