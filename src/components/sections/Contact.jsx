@@ -16,13 +16,13 @@ function Contact() {
   };
 
   return (
-    <section className="flex flex-col items-center gap-4 bg-base-200 lg:h-screen p-8  justify-center" id="contact">
+    <section className="flex flex-col items-center gap-4 bg-base-200 lg:h-screen  justify-center p-2" id="contact">
       <h2>Contact me</h2>
       <form
-        className="form-control p-8 flex gap-5 items-start w-1/4 shadow-2xl max-w-screen-sm rounded-box bg-base-100"
+        className="form-control p-8 flex gap-5 items-start shadow-2xl w-full md:w-6/12 xl:w-3/12  rounded-box bg-base-100"
         onSubmit={handleSubmit((data) => {})}>
         <div className="form-control  w-full ">
-          <label htmlFor="name " className="mb-2">
+          <label htmlFor="name" className="mb-2">
             <span className="label-text ">Name {displayError(errors.name?.message)}</span>
           </label>
           <input

@@ -1,5 +1,5 @@
 function Spacer() {
-  return <div id="spacer"></div>;
+  return <section id="spacer"></section>;
 }
 
 export default Spacer;

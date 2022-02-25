@@ -1,7 +1,7 @@
 import About from "../sections/About";
 import Projects from "../sections/Projects";
 import Contact from "../sections/Contact";
-import Social from "../sections/Social";
+import Social from "./Social";
 import Hero from "../sections/Hero";
 import Spacer from "./Spacer";
 
@@ -10,9 +10,9 @@ function Main() {
     <main className="container max-w-full  relative">
       <Hero />
       <About />
-      <Spacer />;
+      <Spacer />
       <Projects />
-      <Spacer />;
+      <Spacer />
       <Contact />
       <Social />
     </main>

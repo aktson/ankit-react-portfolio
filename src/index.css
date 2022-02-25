@@ -40,6 +40,61 @@ h4,
 h5 {
   font-family: "Jost", sans-serif;
 }
+.nav {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  width: 300px;
+}
+.hamburger {
+  outline: none;
+  border: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  cursor: pointer;
+  position: fixed;
+  top: 16px;
+  left: 32px;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  z-index: 250;
+}
+.nav-mobile-background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  width: 300px;
+  background-color: #570df8;
+  z-index: 250;
+}
+
+.mob-ul,
+.mob-li {
+  margin: 0;
+  padding: 0;
+  z-index: 250;
+  color: white;
+}
+
+.mob-ul {
+  padding: 25px;
+  position: fixed;
+  top: 100px;
+  width: 230px;
+}
+
+.mob-li {
+  list-style: none;
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
 
 .active {
   @apply pointer-events-none border-b-2 border-b-primary;
@@ -47,13 +102,45 @@ h5 {
 #spacer {
   margin: 100px auto;
 }
-
+h2 {
+  line-height: 0.1;
+  text-align: center;
+}
+h2 span {
+  display: inline-block;
+  position: relative;
+}
+h2:before,
+h2:after {
+  content: "";
+  position: absolute;
+  height: 6px;
+  border-bottom: 1px solid gray;
+  border-top: 1px solid gray;
+  top: 0;
+  width: 60px;
+}
+h2:before {
+  right: 100%;
+  margin-right: 10px;
+}
+h2:after {
+  left: 100%;
+  margin-left: 10px;
+}
+.line-after-icons {
+  height: 70px;
+  color: #6e7ff3;
+  width: 1px;
+  background-color: #5753c9;
+  margin: 5px auto;
+}
 @layer base {
   h1 {
-    @apply text-5xl font-semibold mb-4;
+    @apply text-6xl font-semibold mb-4;
   }
   h2 {
-    @apply text-3xl font-bold;
+    @apply text-4xl font-semibold mb-6 relative text-neutral;
   }
   h3 {
     @apply text-2xl font-bold;
@@ -79,10 +166,11 @@ h5 {
   .para-progress {
     @apply grid-cols-1 grid items-center shadow-xl p-6;
   }
-  .active.logo {
-    @apply bg-none;
-  }
+
   .social-icons {
     @apply inline-block w-5 h-5 stroke-current;
+  }
+  #to-top-btn {
+    @apply absolute bottom-24 sm:bottom-20 right-2  bg-slate-200 text-slate-500 p-3 text-sm hover:bg-slate-300 hover:text-slate-50 transition-all cursor-pointer;
   }
 }

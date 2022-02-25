@@ -1,30 +1,42 @@
+import { motion, AnimatePresence } from "framer-motion";
 import { useState } from "react";
 import ProjectsData from "../../data/ProjectsData";
 
 function Projects() {
   const [data, setData] = useState(ProjectsData);
 
+  function handleClick(id) {
+    const filteredData = data.filter((item) => item.id === id);
+    console.log(filteredData);
+  }
+
   const mappedData = data.map((item) => {
     return (
-      <div className="card shadow-xl card-bordered ">
-        <figure>
-          {/* <img src={item.img} alt="site image" /> */}
-          <img src="https://picsum.photos/id/1005/400/250" />
-        </figure>
-        <div className="justify-end card-body ">
-          <h2 className="card-title">{item.title}</h2>
-          <p>{item.content}</p>
-          <div className="card-actions">
-            <p className=" px-4 py-2 text-center sw-full h-20 font-semibold border-t ">{item.tech}</p>
+      <motion.div
+        whileHover={{ scale: 1.1 }}
+        whileTap={{ scale: 0.4 }}
+        className="hero shadow-xl"
+        style={{ backgroundImage: "url(https://api.lorem.space/image/fashion?w=1000&h=800)" }}
+        key={item.id}>
+        <div className="hero-overlay bg-opacity-70"></div>
+        <div className="text-center hero-content text-neutral-content">
+          <div className="max-w-md  ">
+            <h3 className=" mb-5  font-bold text-slate-100 ">{item.title}</h3>
+            <p className="mb-8  border p-2 border-slate-200 h-20 flex items-center justify-center">{item.tech}</p>
+            <button className="btn btn-secondary">View</button>
           </div>
         </div>
-      </div>
+      </motion.div>
     );
   });
-
   return (
-    <section className="grid  lg:grid-cols-3 md:grid-cols-2 mx-auto container gap-4 justify-items-center max-w-screen-lg my-8 p-2 " id="projects">
-      {mappedData}
+    <section id="projects">
+      <div className="container flex flex-col justify-center mx-auto items-center">
+        <h2 className="">Projects</h2>
+        <div className="grid  lg:grid-cols-3 md:grid-cols-2 mx-auto  gap-2 justify-items-center max-w-screen-lg h-screen  my-8 p-2 ">
+          {mappedData}
+        </div>
+      </div>
     </section>
   );
 }
