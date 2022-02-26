@@ -5,9 +5,9 @@ import Social from "./Social";
 import Hero from "../sections/Hero";
 import Spacer from "./Spacer";
 
-function Main() {
+function Main(e) {
   return (
-    <main className="container max-w-full  relative">
+    <main className="container max-w-full relative">
       <Hero />
       <About />
       <Spacer />

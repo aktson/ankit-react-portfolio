@@ -8,11 +8,11 @@ function App() {
 
   return (
     <>
-      <AnimateSharedLayout type="crossfade">
-        <Header />
-        <Main />
-        <Footer />
-      </AnimateSharedLayout>
+
+      <Header />
+      <Main />
+      <Footer />
+
     </>
   );
 }

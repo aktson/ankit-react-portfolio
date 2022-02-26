@@ -1,4 +1,4 @@
-import { FaGithub, FaFacebook, FaInstagram, FaEnvelope } from "react-icons/fa";
+import { FaGithub, FaFacebookF, FaInstagram, FaEnvelope } from "react-icons/fa";
 
 function Social() {
   return (
@@ -11,7 +11,7 @@ function Social() {
         </li>
         <li>
           <a>
-            <FaFacebook className="social-icons" />
+            <FaFacebookF className="social-icons" />
           </a>
         </li>
         <li>
