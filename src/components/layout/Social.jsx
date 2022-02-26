@@ -3,7 +3,7 @@ import { FaGithub, FaFacebook, FaInstagram, FaEnvelope } from "react-icons/fa";
 function Social() {
   return (
     <div className="hidden sm:block sm:fixed sm:bottom-20 sm:left-2 mb-5 ">
-      <ul className="menu w-16 rounded-box text-slate-600">
+      <ul className=" w-16 menu  ">
         <li>
           <a>
             <FaGithub className="social-icons " />

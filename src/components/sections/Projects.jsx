@@ -32,9 +32,9 @@ function Projects() {
         <div className="hero-overlay bg-opacity-70"></div>
         <div className="text-center hero-content text-neutral-content">
           <div className="max-w-md  ">
-            <h3 className=" mb-5  font-bold text-slate-100 ">{item.title}</h3>
+            <h3 className=" mb-5  font-bold text-slate-200 ">{item.title}</h3>
             <p className="mb-8  border p-2 border-slate-200 h-20 flex items-center justify-center">{item.tech}</p>
-            <button className="btn btn-secondary" onClick={(e) => handleClick(item.id, e)} data-id={item.id}>
+            <button className="btn btn-accent" onClick={(e) => handleClick(item.id, e)} data-id={item.id}>
               View
             </button>
           </div>

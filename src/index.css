@@ -68,7 +68,7 @@ h5 {
   left: 0;
   bottom: 0;
   width: 300px;
-  background-color: #570df8;
+  background-color: #4b6bfb;
   z-index: 250;
 }
 
@@ -134,14 +134,14 @@ h2:after {
 }
 .active {
   pointer-events: none;
-  border-bottom: 2px solid #5753c9;
+  border-bottom: 2px solid #7b92b2;
 }
 @layer base {
   h1 {
     @apply text-6xl font-semibold mb-4;
   }
   h2 {
-    @apply text-4xl font-semibold mb-10 relative text-neutral;
+    @apply text-4xl  mb-6 relative text-slate-500;
   }
   h3 {
     @apply text-2xl font-bold;
@@ -155,7 +155,7 @@ h2:after {
 }
 @layer components {
   .nav-li {
-    @apply inline-block mx-4  p-2 text-neutral hover:border-b-2 hover:border-b-primary transition-all ease-in-out hover:animate-pulse cursor-pointer;
+    @apply inline-block mx-4  p-2 text-neutral hover:border-b-2 hover:border-b-secondary transition-all ease-in-out hover:animate-pulse cursor-pointer;
   }
   .input-form {
     @apply input input-bordered focus:border-none focus:outline-none w-full;
@@ -163,12 +163,17 @@ h2:after {
   .btn {
     @apply text-neutral-content;
   }
-  .para-progress {
-    @apply grid-cols-1 grid items-center shadow-xl p-6;
+  .about-icons {
+    @apply mx-auto mb-4 text-zinc-400;
   }
-
+  .para-progress {
+    @apply grid-cols-1 grid items-center shadow-xl p-5;
+  }
+  .progress-bar {
+    @apply progress  progress-primary;
+  }
   .social-icons {
-    @apply inline-block w-5 h-5 stroke-current;
+    @apply inline-block w-5 h-5 stroke-current text-zinc-700;
   }
   #to-top-btn {
     @apply absolute bottom-24 sm:bottom-20 right-2 bg-slate-200 text-slate-400  p-3 text-sm hover:bg-slate-300 hover:text-primary transition-all cursor-pointer;

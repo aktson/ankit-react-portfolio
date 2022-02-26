@@ -22,7 +22,7 @@ function Hero() {
                   Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda excepturi exercitationem quasi. In deleniti eaque aut repudiandae
                   et a id nisi.
                 </p>
-                <Link className="btn btn-outline btn-primary btn-wide" to="about" smooth={true} duration={500}>
+                <Link className="btn btn-primary btn-outline btn-wide " to="about" smooth={true} duration={500}>
                   View my Work
                 </Link>
               </div>

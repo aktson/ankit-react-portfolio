@@ -13,6 +13,7 @@ function Contact() {
   const [messageAlert, setMessageAlert] = useState("");
   const emailRegex = /\S+@\S+\.\S+/;
 
+  //removes success message
   useEffect(() => {
     const timer = setTimeout(() => {
       setFeedbackMsg("");
