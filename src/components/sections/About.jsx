@@ -27,6 +27,15 @@ function About() {
             CSS3 <progress className="progress-bar" value="70" max="100"></progress>
           </p>
           <p className=" para-progress ">
+            Sass<progress className="progress-bar" value="60" max="100"></progress>
+          </p>
+          <p className=" para-progress ">
+            TailwindCSS<progress className="progress-bar" value="70" max="100"></progress>
+          </p>
+          <p className=" para-progress ">
+            Bootstrap<progress className="progress-bar" value="60" max="100"></progress>
+          </p>
+          <p className=" para-progress ">
             Javascript <progress className="progress-bar" value="60" max="100"></progress>
           </p>
           <p className=" para-progress ">
@@ -35,12 +44,7 @@ function About() {
           <p className=" para-progress ">
             ReactJs<progress className="progress-bar" value="20" max="100"></progress>
           </p>
-          <p className=" para-progress ">
-            TailwindCSS<progress className="progress-bar" value="70" max="100"></progress>
-          </p>
-          <p className=" para-progress ">
-            Bootstrap<progress className="progress-bar" value="60" max="100"></progress>
-          </p>
+
           <p className=" para-progress ">
             Rest-api <progress className="progress-bar" value="70" max="100"></progress>
           </p>
