@@ -8,7 +8,6 @@ function Projects() {
   const [modalRender, setModalRender] = useState([]);
 
   const handleClick = (id, e) => {
-    e.stopPropagation();
     setShowModal("visible");
     const filteredData = ProjectsData.filter((item) => item.id === id);
 
@@ -31,18 +30,25 @@ function Projects() {
 
   const mappedData = ProjectsData.map((item) => {
     return (
-      <div className="hero shadow-xl" style={{ backgroundImage: "url(https://api.lorem.space/image/fashion?w=1000&h=800)" }} key={item.id}>
-        <div className="hero-overlay bg-opacity-70"></div>
-        <div className="text-center hero-content text-neutral-content">
-          <div className="max-w-md  ">
-            <h3 className=" mb-5  font-bold text-slate-200 ">{item.title}</h3>
-            <p className="mb-8  border p-2 border-slate-200 h-20 flex items-center justify-center">{item.tech}</p>
-            <button className="btn btn-accent z-50" onClick={(e) => handleClick(item.id, e)} data-id={item.id}>
-              View
-            </button>
+      <AnimatePresence>
+        <div className="hero shadow-xl" style={{ backgroundImage: "url(https://api.lorem.space/image/fashion?w=1000&h=800)" }} key={item.id}>
+          <div className="hero-overlay bg-opacity-70"></div>
+          <div className="text-center hero-content text-neutral-content">
+            <div className="max-w-md  ">
+              <h3 className=" mb-5  font-bold text-slate-200 ">{item.title}</h3>
+              <p className="mb-8  border p-2 border-slate-200 h-20 flex items-center justify-center">{item.tech}</p>
+              <motion.button
+                className="btn btn-accent z-50"
+                onClick={(e) => handleClick(item.id, e)}
+                whileHover={{ scale: 1.1 }}
+                whileTap={{ scale: 0.9 }}
+                transition={{ duration: 0.2 }}>
+                View
+              </motion.button>
+            </div>
           </div>
         </div>
-      </div>
+      </AnimatePresence>
     );
   });
   return (

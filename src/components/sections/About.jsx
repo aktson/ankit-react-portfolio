@@ -1,6 +1,5 @@
 import profileImage from "../../assets/fb.jpg";
 import { FaDesktop, FaWhmcs, FaMeteor, FaLightbulb } from "react-icons/fa";
-import { FaHtml5 } from "react-icons/fa";
 
 function About() {
   return (
