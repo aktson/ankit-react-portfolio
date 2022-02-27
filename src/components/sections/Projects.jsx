@@ -29,11 +29,10 @@ function Projects() {
   };
 
   const mappedData = ProjectsData.map((item, i) => {
-    console.log(item.img.img);
     return (
       <AnimatePresence>
         <div className="hero shadow-xl" style={{ backgroundImage: `url(${item.img.img})` }} key={item.id}>
-          <div className="hero-overlay bg-opacity-70"></div>
+          <div className="hero-overlay bg-opacity-60"></div>
           <div className="text-center hero-content text-neutral-content">
             <div className="max-w-md  ">
               <h3 className=" mb-5  font-bold text-slate-200 ">{item.title}</h3>
