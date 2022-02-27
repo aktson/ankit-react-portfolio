@@ -28,10 +28,11 @@ function Projects() {
     setModalRender(modalToRender);
   };
 
-  const mappedData = ProjectsData.map((item) => {
+  const mappedData = ProjectsData.map((item, i) => {
+    console.log(item.img.img);
     return (
       <AnimatePresence>
-        <div className="hero shadow-xl" style={{ backgroundImage: "url(https://api.lorem.space/image/fashion?w=1000&h=800)" }} key={item.id}>
+        <div className="hero shadow-xl" style={{ backgroundImage: `url(${item.img.img})` }} key={item.id}>
           <div className="hero-overlay bg-opacity-70"></div>
           <div className="text-center hero-content text-neutral-content">
             <div className="max-w-md  ">
