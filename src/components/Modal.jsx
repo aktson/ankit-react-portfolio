@@ -16,7 +16,7 @@ function Modal({ id, title, tech, description, img, link, showModal }) {
           initial={{ y: -300 }}
           animate={{ y: 0 }}
           exit={{ y: 0 }}
-          transition={{ type: "spring", bounce: 0.4, duration: 0.5 }}>
+          transition={{ type: "spring", bounce: 0.4, duration: 0.6 }}>
           <div className=" bg-base-100 shadow-xl max-w-lg">
             <figure className="">
               <img src={img} className="w-100" alt={title} />
