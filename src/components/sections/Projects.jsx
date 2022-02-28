@@ -44,7 +44,7 @@ function Projects() {
                 whileTap={{ scale: 0.9 }}
                 transition={{ duration: 0.2 }}>
                 View
-              </motion.button>{" "}
+              </motion.button>
             </AnimatePresence>
           </div>
         </div>
