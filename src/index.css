@@ -190,7 +190,7 @@ h2:after {
     @apply progress  progress-primary;
   }
   .social-icons {
-    @apply inline-block w-4 h-4 stroke-current text-zinc-700;
+    @apply inline-block w-4 h-4 stroke-current text-zinc-700 mx-auto;
   }
   #to-top-btn {
     @apply absolute bottom-32 sm:bottom-20 right-2 bg-slate-200 text-slate-400  p-3 text-sm hover:bg-slate-300 hover:text-primary transition-all cursor-pointer;
