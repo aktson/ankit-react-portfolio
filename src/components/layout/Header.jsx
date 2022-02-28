@@ -5,7 +5,7 @@ function Header() {
   return (
     <header className=" shadow fixed top-0 left-0 right-0 bg-base-200 z-index-10">
       <div className="container flex justify-around mx-auto p-2 items-center">
-        <div className="brand text-primary mt-2" onClick={() => scroll.scrollToTop()}>
+        <div className="brand text-slate-500 font-bold mt-2" onClick={() => scroll.scrollToTop()}>
           Ankit Soni
         </div>
         <nav className=" navbar sticky top-0 hidden md:block">
