@@ -30,13 +30,13 @@ function Projects() {
 
   const mappedData = ProjectsData.map((item, i) => {
     return (
-      <AnimatePresence>
-        <div className="hero shadow-xl h-80 md:h-96" style={{ backgroundImage: `url(${item.img.img})` }} key={item.id}>
-          <div className="hero-overlay bg-opacity-60"></div>
-          <div className="text-center hero-content text-neutral-content">
-            <div className="max-w-md  ">
-              <h3 className=" mb-5  font-bold text-slate-200 ">{item.title}</h3>
-              <p className="mb-8  border p-2 border-slate-200 h-20 flex items-center justify-center">{item.tech}</p>
+      <div className="hero shadow-xl h-80 md:h-96" style={{ backgroundImage: `url(${item.img.img})` }} key={item.id}>
+        <div className="hero-overlay bg-opacity-60"></div>
+        <div className="text-center hero-content text-neutral-content">
+          <div className="max-w-md  ">
+            <h3 className=" mb-5  font-bold text-slate-200 ">{item.title}</h3>
+            <p className="mb-8  border p-2 border-slate-200 h-20 flex items-center justify-center">{item.tech}</p>
+            <AnimatePresence>
               <motion.button
                 className="btn btn-accent z-50"
                 onClick={(e) => handleClick(item.id, e)}
@@ -44,11 +44,11 @@ function Projects() {
                 whileTap={{ scale: 0.9 }}
                 transition={{ duration: 0.2 }}>
                 View
-              </motion.button>
-            </div>
+              </motion.button>{" "}
+            </AnimatePresence>
           </div>
         </div>
-      </AnimatePresence>
+      </div>
     );
   });
   return (
