@@ -192,7 +192,7 @@ h2:after {
     @apply inline-block w-5 h-5 stroke-current text-zinc-700;
   }
   #to-top-btn {
-    @apply absolute bottom-24 sm:bottom-20 right-2 bg-slate-200 text-slate-400  p-3 text-sm hover:bg-slate-300 hover:text-primary transition-all cursor-pointer;
+    @apply absolute bottom-32 sm:bottom-20 right-2 bg-slate-200 text-slate-400  p-3 text-sm hover:bg-slate-300 hover:text-primary transition-all cursor-pointer;
   }
   .form {
     @apply form-control p-8 flex gap-5 items-start shadow-2xl w-full md:w-6/12 xl:w-3/12  rounded-box bg-base-100;

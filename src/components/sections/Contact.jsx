@@ -84,7 +84,7 @@ function Contact() {
   };
 
   return (
-    <section className="flex flex-col items-center gap-4 bg-base-200 lg:h-screen  justify-center p-2" id="contact">
+    <section className="flex flex-col items-center gap-4 bg-base-200  py-32 px-2 lg:p-2 lg:h-screen  justify-center " id="contact">
       <h2>Let's Work together</h2>
       <form ref={formRef} className="form" onSubmit={handleSubmit}>
         {feedbackMsg && <div className="success">{feedbackMsg}</div>}

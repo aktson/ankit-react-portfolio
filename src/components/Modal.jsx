@@ -8,7 +8,7 @@ function Modal({ id, title, tech, description, img, link, showModal }) {
     setClosModal("invisible");
   }
   return (
-    <div className={`${showModal} p-2 ${closeModal}`} key={id} id="my-modal">
+    <div className={`${showModal} p-3 ${closeModal}`} key={id} id="my-modal">
       <AnimatePresence>
         <motion.div
           className="container mx-auto flex justify-center items-center"
