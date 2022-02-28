@@ -10,7 +10,6 @@ function Modal({ id, title, tech, description, img, link, showModal }) {
   return (
     <div className={`${showModal} p-2 ${closeModal}`} key={id} id="my-modal">
       <AnimatePresence>
-        {" "}
         <motion.div
           className="container mx-auto flex justify-center items-center"
           initial={{ y: -300 }}

@@ -31,7 +31,7 @@ function Projects() {
   const mappedData = ProjectsData.map((item, i) => {
     return (
       <AnimatePresence>
-        <div className="hero shadow-xl" style={{ backgroundImage: `url(${item.img.img})` }} key={item.id}>
+        <div className="hero shadow-xl h-80 md:h-96" style={{ backgroundImage: `url(${item.img.img})` }} key={item.id}>
           <div className="hero-overlay bg-opacity-60"></div>
           <div className="text-center hero-content text-neutral-content">
             <div className="max-w-md  ">
@@ -55,7 +55,7 @@ function Projects() {
     <section id="projects">
       <div className="container flex flex-col justify-center mx-auto items-center">
         <h2 className="">Projects</h2>
-        <div className="grid  lg:grid-cols-3 md:grid-cols-2 mx-auto  gap-2 justify-items-center max-w-screen-lg h-screen  my-8 p-2 ">
+        <div className="grid  lg:grid-cols-3 md:grid-cols-2 mx-auto  gap-2 justify-items-center max-w-screen-lg   my-8 p-2 ">
           {mappedData}
           {modalRender}
         </div>
