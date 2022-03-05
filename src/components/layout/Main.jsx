@@ -4,10 +4,12 @@ import Contact from "../sections/Contact";
 import Social from "./Social";
 import Hero from "../sections/Hero";
 import Spacer from "./Spacer";
+import ScrollIndicator from "../ScrollIndicator";
 
 function Main() {
   return (
     <main className="container max-w-full relative">
+      <ScrollIndicator />
       <Hero />
       <About />
       <Spacer />

@@ -38,7 +38,7 @@ function Projects() {
             <p className="mb-8  border p-2 border-slate-200 h-20 flex items-center justify-center">{item.tech}</p>
             <AnimatePresence>
               <motion.button
-                className="btn btn-accent z-50"
+                className="btn btn-secondary z-50"
                 onClick={(e) => handleClick(item.id, e)}
                 whileHover={{ scale: 1.1 }}
                 whileTap={{ scale: 0.9 }}

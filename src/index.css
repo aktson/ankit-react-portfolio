@@ -2,6 +2,13 @@
 @tailwind components;
 @tailwind utilities;
 
+:root {
+  --primary: #570df8;
+  --secondary: #f000b8;
+  --accent: #37cdbe;
+  --light: white;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -11,23 +18,16 @@ body {
   font-family: "Mulish", sans-serif;
 }
 #root {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
   position: relative;
-  display: grid;
-  grid-template-rows: auto 1fr auto;
-  grid-template-areas: "header" "main" "footer";
-  height: 100vh;
-  max-width: 100vw;
 }
-header {
-  grid-area: header;
-  z-index: 10;
-}
+
 main {
-  grid-area: main;
+  flex: 1 0 auto;
 }
-footer {
-  grid-area: footer;
-}
+
 .brand {
   font-family: "Great Vibes", cursive;
   font-size: 2.2rem;
@@ -68,7 +68,7 @@ h5 {
   left: 0;
   bottom: 0;
   width: 300px;
-  background-color: #4b6bfb;
+  background-color: var(--primary);
   z-index: 250;
 }
 
@@ -77,7 +77,7 @@ h5 {
   margin: 0;
   padding: 0;
   z-index: 250;
-  color: white;
+  color: var(--light);
 }
 
 .mob-ul {
@@ -112,8 +112,8 @@ h2:after {
   content: "";
   position: absolute;
   height: 6px;
-  border-bottom: 1px solid gray;
-  border-top: 1px solid gray;
+  border-bottom: 1px solid var(--accent);
+  border-top: 1px solid var(--accent);
   top: 0;
   width: 40px;
 }
@@ -127,14 +127,13 @@ h2:after {
 }
 .line-after-icons {
   height: 70px;
-  color: #6e7ff3;
   width: 1px;
-  background-color: #5753c9;
+  background-color: var(--accent);
   margin: 4px auto;
 }
 .active {
   pointer-events: none;
-  border-bottom: 2px solid #7b92b2;
+  border-bottom: 2px solid var(--accent);
 }
 #my-modal {
   display: flex;
@@ -171,7 +170,7 @@ h2:after {
 }
 @layer components {
   .nav-li {
-    @apply inline-block mx-4  p-2 text-neutral hover:border-b-2 hover:border-b-secondary transition-all ease-in-out hover:animate-pulse cursor-pointer;
+    @apply inline-block mx-4 p-2 text-base hover:border-b-2 hover:border-b-accent-focus transition-all ease-in-out hover:animate-pulse cursor-pointer;
   }
   .input-form {
     @apply input input-bordered focus:border-none focus:outline-none w-full;
@@ -180,7 +179,7 @@ h2:after {
     @apply text-neutral-content;
   }
   .about-icons {
-    @apply mx-auto mb-4 text-zinc-400;
+    @apply mx-auto mb-4 text-secondary;
   }
   .para-progress {
     @apply grid-cols-1 grid items-center shadow-xl p-5;
@@ -189,10 +188,10 @@ h2:after {
     @apply progress  progress-primary;
   }
   .social-icons {
-    @apply inline-block w-4 h-4 stroke-current text-zinc-700 mx-auto;
+    @apply inline-block w-4 h-4 stroke-current text-accent mx-auto hover:text-secondary;
   }
   #to-top-btn {
-    @apply absolute bottom-32 sm:bottom-20 right-2 bg-slate-200 text-slate-400  p-3 text-sm hover:bg-slate-300 hover:text-primary transition-all cursor-pointer;
+    @apply absolute bottom-32 sm:bottom-24 right-4 bg-slate-200 text-neutral  p-3 text-sm hover:bg-slate-300 hover:text-primary transition-all cursor-pointer;
   }
   .form {
     @apply form-control p-8 flex gap-5 items-start shadow-2xl w-full md:w-6/12 xl:w-3/12  rounded-box bg-base-100;
@@ -206,4 +205,28 @@ h2:after {
   .success {
     @apply alert shadow-lg alert-success w-full;
   }
+}
+#hero-bg {
+  background: url("./assets/wave-haikei.svg") no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+.active-indicator {
+  color: var(--light);
+  pointer-events: none;
+  border-left: 3px solid var(--accent);
+  animation: border 0.3s forwards ease-in-out;
+}
+.active-indicator > .indicator-icons {
+  color: var(--accent);
+  transform: scale(1.6);
+}
+
+@media (max-width: 640px) {
+  .active-indicator {
+    border-left: none;
+  }
+}
+#cards {
+  transform: translateY(-130px);
 }

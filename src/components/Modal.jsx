@@ -17,21 +17,21 @@ function Modal({ id, title, tech, description, img, link, showModal }) {
           exit={{ y: 0 }}
           transition={{ type: "spring", bounce: 0.4, duration: 0.6 }}>
           <div className=" bg-base-100 shadow-xl max-w-lg">
-            <figure className="">
+            <figure>
               <img src={img} className="w-100" alt={title} />
             </figure>
             <div className="card-body">
-              <h3 className="card-title flex flex-col gap-1">
-                <span className="flex justify-between">{title}</span>
-                <div className="badge badge-accent p-3 ">{tech}</div>
+              <h3 className="card-title flex flex-col">
+                <span className="flex justify-center sm:justify-start text-2xl mb-2">{title}</span>
+                <div className=" badge p-5 sm:p-4 bg-accent-focus border-0 text-center sm:text-left mx-auto sm:mx-0">{tech}</div>
               </h3>
               <p className="text-base mb-6">{description}</p>
               <div className="flex justify-between items-center">
-                <a href={link} target="_blank" className="cursor-pointer flex btn btn-xs btn-accent btn-outline gap-2" rel="noreferrer">
+                <a href={link} target="_blank" className="cursor-pointer flex btn btn-sm btn-accent btn-outline gap-2" rel="noreferrer">
                   <FaExternalLinkAlt />
                   visit
                 </a>
-                <div className="text-lg cursor-pointer text-slate-400" onClick={handleClick}>
+                <div className="text-lg cursor-pointer text-slate-500" onClick={handleClick}>
                   <FaTimes />
                 </div>
               </div>
