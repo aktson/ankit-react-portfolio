@@ -7,6 +7,8 @@
   --secondary: #f000b8;
   --accent: #37cdbe;
   --light: white;
+  --info: #3abff8;
+  --neutral: #3d4451;
 }
 
 * {
@@ -39,6 +41,15 @@ h3,
 h4,
 h5 {
   font-family: "Jost", sans-serif;
+}
+h2::after {
+  content: "";
+  position: absolute;
+  background-color: var(--neutral);
+  padding: 4px;
+  width: 50%;
+  left: 25%;
+  bottom: -15px;
 }
 .nav {
   position: absolute;
@@ -99,32 +110,7 @@ h5 {
 #spacer {
   margin: 100px auto;
 }
-h2 {
-  line-height: 0.1;
-  text-align: center;
-}
-h2 span {
-  display: inline-block;
-  position: relative;
-}
-h2:before,
-h2:after {
-  content: "";
-  position: absolute;
-  height: 6px;
-  border-bottom: 1px solid var(--accent);
-  border-top: 1px solid var(--accent);
-  top: 0;
-  width: 40px;
-}
-h2:before {
-  right: 100%;
-  margin-right: 10px;
-}
-h2:after {
-  left: 100%;
-  margin-left: 10px;
-}
+
 .line-after-icons {
   height: 70px;
   width: 1px;
@@ -156,7 +142,7 @@ h2:after {
     @apply text-6xl font-semibold mb-4;
   }
   h2 {
-    @apply text-4xl  mb-16 relative text-slate-500;
+    @apply text-4xl  mb-12 relative text-neutral font-extrabold;
   }
   h3 {
     @apply text-2xl font-bold;
@@ -179,13 +165,13 @@ h2:after {
     @apply text-neutral-content;
   }
   .about-icons {
-    @apply mx-auto mb-4 text-secondary;
+    @apply mx-auto mb-4 text-slate-400;
   }
   .para-progress {
     @apply grid-cols-1 grid items-center shadow-xl p-5;
   }
   .progress-bar {
-    @apply progress  progress-primary;
+    @apply progress  progress-info;
   }
   .social-icons {
     @apply inline-block w-4 h-4 stroke-current text-accent mx-auto hover:text-secondary;
@@ -228,5 +214,5 @@ h2:after {
   }
 }
 #cards {
-  transform: translateY(-130px);
+  transform: translateY(-120px);
 }
