@@ -6,7 +6,7 @@
   --primary: #570df8;
   --secondary: #f000b8;
   --accent: #37cdbe;
-  --light: white;
+  --light: #ffffff;
   --info: #3abff8;
   --neutral: #3d4451;
   --success: "#36D399";
@@ -82,7 +82,7 @@ h2::after {
   left: 0;
   bottom: 0;
   width: 300px;
-  background-color: var(--primary);
+  background-color: var(--light);
   z-index: 250;
 }
 
@@ -91,7 +91,6 @@ h2::after {
   margin: 0;
   padding: 0;
   z-index: 250;
-  color: var(--light);
 }
 
 .mob-ul {
@@ -208,7 +207,7 @@ h2::after {
 }
 .active-indicator > .indicator-icons {
   color: var(--accent);
-  transform: scale(1.6);
+  transform: scale(1.8);
 }
 
 @media (max-width: 640px) {
@@ -218,4 +217,7 @@ h2::after {
 }
 #cards {
   transform: translateY(-120px);
+}
+.indicator-icons {
+  @apply text-neutral text-sm;
 }

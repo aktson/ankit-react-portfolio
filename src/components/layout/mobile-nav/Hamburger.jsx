@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 
-const Path = (props) => <motion.path fill="transparent" strokeWidth="3" stroke="hsl(0, 100%, 100%)" strokeLinecap="round" {...props} />;
+const Path = (props) => <motion.path fill="transparent" strokeWidth="3" stroke="hsl(0, 0%, 0%)" strokeLinecap="round" {...props} />;
 
 export const Hamburger = ({ toggle }) => (
   <button onClick={toggle} className="hamburger">

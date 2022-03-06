@@ -52,7 +52,7 @@ function Projects() {
     );
   });
   return (
-    <section id="projects" className="bg-base-200 py-16 sm:py-32 px-4">
+    <section id="projects" className="bg-base-200 py-16 sm:py-32 px-6 md:px-4">
       <div className="container flex flex-col justify-center mx-auto items-center">
         <h2 className="">Projects</h2>
         <div className="grid  lg:grid-cols-3 md:grid-cols-2 mx-auto  gap-2 justify-items-center max-w-screen-lg   my-8 p-2 ">

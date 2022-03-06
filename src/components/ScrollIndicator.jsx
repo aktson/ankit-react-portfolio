@@ -3,7 +3,7 @@ import { FaHome, FaInfo, FaProjectDiagram, FaRegIdBadge, FaDotCircle } from "rea
 
 function ScrollIndicator() {
   return (
-    <div className="fixed right-1 sm:right-5 top-16 ">
+    <div className="fixed right-2 sm:right-5 top-16 ">
       {/* indicator with icons for small to larger screens */}
       <ul class=" bg-base-100 shadow menu rounded-lg hidden sm:flex ">
         <li>
