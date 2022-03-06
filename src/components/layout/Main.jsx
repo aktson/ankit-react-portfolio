@@ -12,9 +12,7 @@ function Main() {
       <ScrollIndicator />
       <Hero />
       <About />
-      <Spacer />
       <Projects />
-      <Spacer />
       <Contact />
       <Social />
     </main>
@@ -22,4 +20,3 @@ function Main() {
 }
 
 export default Main;
-<Spacer />;

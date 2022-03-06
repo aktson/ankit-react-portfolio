@@ -1,5 +1,5 @@
 function Spacer() {
-  return <section id="spacer"></section>;
+  return <section id="spacer" className="hidden lg:block"></section>;
 }
 
 export default Spacer;

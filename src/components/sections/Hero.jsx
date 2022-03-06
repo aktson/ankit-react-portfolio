@@ -7,11 +7,11 @@ import CardsAbout from "../CardsAbout";
 function Hero() {
   return (
     <>
-      <section className=" flex flex-col justify-center  bg-base-100 lg:h-screen " id="hero">
+      <section className=" flex flex-col justify-center  bg-base-100 lg:h-screen  " id="hero">
         <Header />
         <AnimatePresence>
           <motion.div
-            className="hero min-h-screen text-base-100"
+            className="hero min-h-screen text-base-100 py-16 sm:py-32 px-4"
             id="hero-bg"
             animate={{ opacity: 1, y: 0 }}
             initial={{ opacity: 0, y: 50 }}
@@ -32,7 +32,7 @@ function Hero() {
             </div>
           </motion.div>
         </AnimatePresence>
-        <CardsAbout className="translate-y-2" />
+        <CardsAbout />
       </section>
     </>
   );
