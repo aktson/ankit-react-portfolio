@@ -84,7 +84,7 @@ function Contact() {
   };
 
   return (
-    <section className="flex flex-col items-center gap-4  py-16 sm:py-32 px-4   justify-center truncate" id="contact">
+    <section className="flex flex-col items-center gap-4  py-16 sm:py-32 px-4 lg:h-screen  justify-center truncate" id="contact">
       <h2>Contact</h2>
       <form ref={formRef} className="form" onSubmit={handleSubmit}>
         {feedbackMsg && <div className="success">{feedbackMsg}</div>}

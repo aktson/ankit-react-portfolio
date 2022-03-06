@@ -9,6 +9,9 @@
   --light: white;
   --info: #3abff8;
   --neutral: #3d4451;
+  --success: "#36D399";
+  --warning: "#FBBD23";
+  --error: "#F87272";
 }
 
 * {

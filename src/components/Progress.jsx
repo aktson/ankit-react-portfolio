@@ -20,9 +20,7 @@ function Progress() {
       <p className=" para-progress ">
         Javascript <progress className="progress-bar" value="60" max="100"></progress>
       </p>
-      <p className=" para-progress ">
-        Typescript<progress className="progress-bar" value="40" max="100"></progress>
-      </p>
+
       <p className=" para-progress ">
         ReactJs<progress className="progress-bar" value="20" max="100"></progress>
       </p>
