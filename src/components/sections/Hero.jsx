@@ -11,7 +11,7 @@ function Hero() {
         <Header />
         <AnimatePresence>
           <motion.div
-            className="hero min-h-screen text-base-100 py-16 sm:py-32 px-4"
+            className="hero min-h-screen text-base-100 py-16 sm:py-32 px-1"
             id="hero-bg"
             animate={{ opacity: 1, y: 0 }}
             initial={{ opacity: 0, y: 50 }}
