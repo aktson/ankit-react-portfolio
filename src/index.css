@@ -203,7 +203,6 @@ h2::after {
 .active-indicator {
   color: var(--light);
   pointer-events: none;
-  animation: border 0.3s forwards ease-in-out;
 }
 .active-indicator > .indicator-icons {
   color: var(--accent);
