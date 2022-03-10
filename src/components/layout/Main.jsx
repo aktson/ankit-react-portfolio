@@ -5,7 +5,6 @@ import Social from "./Social";
 import Hero from "../sections/Hero";
 import Spacer from "./Spacer";
 import ScrollIndicator from "../ScrollIndicator";
-import Proejects2 from "../sections/Proejects2";
 
 function Main() {
   return (
@@ -13,8 +12,7 @@ function Main() {
       <ScrollIndicator />
       <Hero />
       <About />
-      {/* <Projects /> */}
-      <Proejects2 />
+      <Projects />
       <Contact />
       <Social />
     </main>

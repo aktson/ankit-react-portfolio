@@ -15,7 +15,7 @@ function ProjectsCard({ id, title, img, stack, summary, url }) {
         <div className="max-w-lg ">
           <h3 className=" mb-5  font-bold text-slate-200 ">{title}</h3>
           <p className="flex w-full items-center justify-center my-5 h-20 border p-2">{stack}</p>
-          <button className="btn btn-accent " onClick={handleClick} key={id}>
+          <button className="btn btn-accent btn-base " onClick={handleClick} key={id}>
             View
           </button>
           {isOpen && <Modal open={isOpen} title={title} summary={summary} img={img} url={url} stack={stack} onClose={() => setIsOpen(!isOpen)} />}

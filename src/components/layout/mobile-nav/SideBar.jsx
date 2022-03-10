@@ -32,7 +32,7 @@ export const SideBar = () => {
   return (
     <motion.nav initial={false} animate={isOpen ? "open" : "closed"} custom={height} ref={containerRef} className="nav md:hidden ">
       <motion.div className="nav-mobile-background " variants={sidebar} />
-      <Navigation />
+      <Navigation toggle={() => toggleOpen()} />
       <Hamburger toggle={() => toggleOpen()} />
     </motion.nav>
   );

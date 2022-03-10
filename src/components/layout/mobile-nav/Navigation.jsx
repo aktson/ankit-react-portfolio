@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import { Link } from "react-scroll";
 
-export function Navigation() {
+export function Navigation({ toggle }) {
   const variantsLi = {
     open: {
       y: 0,
@@ -30,22 +30,22 @@ export function Navigation() {
     <>
       <motion.ul variants={variants} className="mob-ul ">
         <motion.li whileTap={{ scale: 0.95 }} variants={variantsLi}>
-          <Link activeClass="active" to="hero" spy={true} smooth={true} duration={500} className="mob-li  nav-li">
+          <Link activeClass="active" to="hero" spy={true} smooth={true} duration={500} className="mob-li  nav-li" onClick={toggle}>
             Home
           </Link>
         </motion.li>
         <motion.li whileTap={{ scale: 0.95 }} variants={variantsLi}>
-          <Link activeClass="active" to="about" spy={true} smooth={true} duration={500} className="mob-li nav-li ">
+          <Link activeClass="active" to="about" spy={true} smooth={true} duration={500} className="mob-li nav-li " onClick={toggle}>
             About
           </Link>
         </motion.li>
         <motion.li whileTap={{ scale: 0.95 }} variants={variantsLi}>
-          <Link activeClass="active" to="projects" spy={true} smooth={true} duration={500} className="mob-li nav-li ">
+          <Link activeClass="active" to="projects" spy={true} smooth={true} duration={500} className="mob-li nav-li " onClick={toggle}>
             Projects
           </Link>
         </motion.li>
         <motion.li whileTap={{ scale: 0.95 }} variants={variantsLi}>
-          <Link activeClass="active" to="contact" spy={true} smooth={true} duration={500} className="mob-li nav-li ">
+          <Link activeClass="active" to="contact" spy={true} smooth={true} duration={500} className="mob-li nav-li " onClick={toggle}>
             Contact
           </Link>
         </motion.li>
