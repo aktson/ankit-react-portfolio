@@ -226,9 +226,6 @@ h2::after {
     top: 150px;
   }
 }
-.hidden {
-  visibility: hidden;
-}
 .line-break {
   white-space: pre-wrap;
 }

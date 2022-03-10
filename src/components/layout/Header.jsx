@@ -3,7 +3,7 @@ import { SideBar } from "./mobile-nav/SideBar";
 
 function Header() {
   return (
-    <header className=" absolute top-0 left-0 right-0  z-index-10">
+    <header className=" absolute top-0 left-0 right-0  ">
       <div className="container flex justify-around mx-auto p-2 items-center">
         <div className="brand text-slate-300 mt-2" onClick={() => scroll.scrollToTop()}>
           Ankit Soni
