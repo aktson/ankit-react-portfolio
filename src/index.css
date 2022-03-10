@@ -126,7 +126,7 @@ h2::after {
 }
 #my-modal {
   display: flex;
-  align-items: flex-center;
+  align-items: center;
   justify-content: center;
   position: fixed;
   top: 0;
@@ -139,6 +139,7 @@ h2::after {
   transition-property: background-color, border-color, color, fill, stroke, opacity, box-shadow, transform;
   transition-duration: 0.2s;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  visibility: visible;
 }
 @layer base {
   h1 {
@@ -154,7 +155,7 @@ h2::after {
     @apply text-xl font-bold;
   }
   p {
-    @apply text-lg;
+    @apply text-base;
   }
 }
 @layer components {
@@ -224,4 +225,7 @@ h2::after {
   #indicatior-container {
     top: 100px;
   }
+}
+.hidden {
+  visibility: hidden;
 }

@@ -4,7 +4,7 @@ import { FaDotCircle } from "react-icons/fa";
 function ScrollIndicator() {
   return (
     <div className="fixed right-2 sm:right-6 bottom-40 " id="indicatior-container">
-      <ul class=" flex flex-col gap-6 ">
+      <ul className=" flex flex-col gap-6 ">
         <li>
           <Link activeClass="active-indicator" to="hero" spy={true} smooth={true} duration={500}>
             <FaDotCircle className="indicator-icons " />
