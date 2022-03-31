@@ -11,7 +11,7 @@ function About() {
             <img src={profileImage} alt="ankit soni" className="h-60 w-60 mb-8 mask mask-hexagon  " />
           </figure>
           <div className="max-w-lg">
-            <h4>Ankit Soni</h4>
+            <h3>Ankit Soni</h3>
             <p>Bygge state-of-the-art, enkel å bruke, brukervennlige nettsider og applikasjoner er virkelig en lidenskap for meg,</p>
           </div>
         </div>

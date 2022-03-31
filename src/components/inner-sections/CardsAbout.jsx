@@ -6,25 +6,25 @@ function CardsAbout() {
       <div className="card card-compact bg-base-100 shadow-xl p-6">
         <FaDesktop size={60} className="about-icons" />
 
-        <h3 className="card-title">Responsive</h3>
+        <h3>Responsive</h3>
         <p>Layouter som fungerer på alle enheter</p>
       </div>
       <div className="card card-compact  bg-base-100 shadow-xl p-6">
         <FaWhmcs size={60} className="about-icons" />
 
-        <h3 className="card-title">Dynamisk</h3>
+        <h3>Dynamisk</h3>
         <p>Nettsteder trenger ikke å være statiske. Jeg elsker å få sider til å bli levende..</p>
       </div>
       <div className="card card-compact  bg-base-100 shadow-xl p-6">
         <FaLightbulb size={60} className="about-icons" />
 
-        <h3 className="card-title">Intuitivt</h3>
+        <h3>Intuitivt</h3>
         <p>Sterk preferanse for brukervennlig UX/UI</p>
       </div>
       <div className="card card-compact  bg-base-100 shadow-xl p-6">
         <FaMeteor size={60} className="about-icons" />
 
-        <h3 className="card-title">Raskt</h3>
+        <h3>Raskt</h3>
         <p>Raske lastetider og forsinkelsesfri interaksjon, min høyeste prioritet</p>
       </div>
     </div>

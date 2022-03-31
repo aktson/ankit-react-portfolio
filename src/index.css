@@ -13,10 +13,10 @@
   --warning: "#FBBD23";
   --error: "#F87272";
   --gradient-primary: linear-gradient(267deg, rgba(87, 13, 248, 1) 0%, rgba(55, 205, 190, 1) 100%);
-  --heading-fonts: "Jost", sans-serif;
-  --body-fonts: "Mulish", sans-serif;
+  --heading-fonts: "Josefin Sans", sans-serif;
+  --body-fonts: "Mada", sans-serif;
   --cursive-fonts: "Great Vibes", cursive;
-  --cursive2-fonts: "Satisfy", cursive;
+  --cursive2-fonts: "Metal", cursive;
 }
 
 * {
@@ -153,19 +153,19 @@ h2::after {
 }
 @layer base {
   h1 {
-    @apply text-5xl  mb-4 leading-normal;
+    @apply text-5xl  mb-4 leading-snug;
   }
   h2 {
     @apply text-4xl  mb-12 relative text-neutral font-extrabold;
   }
   h3 {
-    @apply text-2xl font-bold;
+    @apply text-2xl mb-2 font-bold;
   }
   h4 {
-    @apply text-xl font-bold;
+    @apply text-2xl font-extrabold;
   }
   p {
-    @apply text-base;
+    @apply text-lg;
   }
 }
 @layer components {

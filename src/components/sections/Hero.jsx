@@ -20,7 +20,7 @@ function Hero() {
             <div className="hero-content  grid lg:grid-cols-2" id="hero">
               <div className="max-w-md">
                 <h1>
-                  Hallo, <br /> Jeg er <span className="text-accent">Ankit Soni</span> Front-end utvikler.
+                  Hallo, <br /> Jeg er <span className="text-accent">Ankit Soni, </span> <br /> Front-end utvikler.
                 </h1>
 
                 <Link className="btn btn-accent btn-md sm:btn-wide " to="about" smooth={true} duration={500}>
