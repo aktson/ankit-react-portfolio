@@ -4,7 +4,7 @@
 
 :root {
   --primary: #570df8;
-  --secondary: #f000b8;
+  --secondary: hsl(314, 100%, 47%);
   --accent: #37cdbe;
   --light: #ffffff;
   --info: #3abff8;
@@ -12,6 +12,11 @@
   --success: "#36D399";
   --warning: "#FBBD23";
   --error: "#F87272";
+  --gradient-primary: linear-gradient(267deg, rgba(87, 13, 248, 1) 0%, rgba(55, 205, 190, 1) 100%);
+  --heading-fonts: "Jost", sans-serif;
+  --body-fonts: "Mulish", sans-serif;
+  --cursive-fonts: "Great Vibes", cursive;
+  --cursive2-fonts: "Satisfy", cursive;
 }
 
 * {
@@ -20,7 +25,7 @@
   box-sizing: border-box;
 }
 body {
-  font-family: "Mulish", sans-serif;
+  font-family: var(--body-fonts);
 }
 #root {
   display: flex;
@@ -34,7 +39,7 @@ main {
 }
 
 .brand {
-  font-family: "Great Vibes", cursive;
+  font-family: var(--cursive-fonts);
   font-size: 2.2rem;
   cursor: pointer;
 }
@@ -43,7 +48,11 @@ h2,
 h3,
 h4,
 h5 {
-  font-family: "Jost", sans-serif;
+  font-family: var(--heading-fonts);
+}
+h1 {
+  font-family: var(--cursive2-fonts);
+  margin-bottom: 1.2em;
 }
 h2::after {
   content: "";
@@ -83,7 +92,7 @@ h2::after {
   bottom: 0;
   width: 300px;
   height: 100vh;
-  background-color: var(--light);
+  background: var(--gradient-primary);
   z-index: 250;
 }
 
@@ -108,6 +117,7 @@ h2::after {
   align-items: center;
   justify-content: center;
   cursor: pointer;
+  color: var(--light);
 }
 
 #spacer {
@@ -134,7 +144,7 @@ h2::after {
   bottom: 0;
   left: 0;
   z-index: 999;
-  --tw-bg-opacity: 0.6;
+  --tw-bg-opacity: 0.7;
   background-color: hsla(var(--nf) / var(--tw-bg-opacity, 1));
   transition-property: background-color, border-color, color, fill, stroke, opacity, box-shadow, transform;
   transition-duration: 0.2s;
@@ -143,7 +153,7 @@ h2::after {
 }
 @layer base {
   h1 {
-    @apply text-6xl font-semibold mb-4;
+    @apply text-5xl  mb-4 leading-normal;
   }
   h2 {
     @apply text-4xl  mb-12 relative text-neutral font-extrabold;
@@ -162,9 +172,6 @@ h2::after {
   .nav-li {
     @apply inline-block mx-4 p-2 text-base hover:border-b-2 hover:border-b-accent-focus transition-all ease-in-out hover:animate-pulse cursor-pointer;
   }
-  .input-form {
-    @apply input input-bordered focus:border-none focus:outline-none w-full;
-  }
   .btn {
     @apply text-neutral-content rounded-none;
   }
@@ -172,22 +179,41 @@ h2::after {
     @apply mx-auto mb-4 text-slate-400;
   }
   .para-progress {
-    @apply grid-cols-1 grid items-center shadow-xl p-5;
+    @apply flex gap-6 items-center shadow-lg  p-4;
   }
   .progress-bar {
-    @apply progress  progress-info;
+    @apply progress  opacity-50;
   }
+  .tech-logos {
+    @apply w-8;
+  }
+
   .social-icons {
     @apply inline-block w-4 h-4 stroke-current text-accent mx-auto hover:text-secondary hover:animate-bounce;
   }
   #to-top-btn {
     @apply absolute bottom-32 sm:bottom-20 right-12 bg-accent text-base-100  p-3 text-sm hover:bg-slate-300 hover:text-primary transition-all cursor-pointer;
   }
+  /* Form */
+  .form-container {
+    @apply grid grid-cols-1 md:grid-cols-2 max-w-screen-lg rounded-box bg-base-100 shadow-xl  gap-8;
+  }
   .form {
-    @apply form-control p-8 flex gap-5 items-start shadow-2xl w-full md:w-6/12 xl:w-3/12  rounded-box bg-base-100;
+    @apply form-control flex gap-5  p-6 w-full;
   }
   .form-spans {
-    @apply label-text flex gap-4;
+    @apply label-text flex gap-4 px-4;
+  }
+  .form-aside {
+    background: var(--gradient-primary);
+    font-family: var(--cursive2-fonts);
+    @apply flex flex-col justify-center text-left text-base-100 p-8;
+  }
+  .input-form {
+    @apply border-b p-4 border-slate-400 focus:border-b focus:outline-none w-full mb-1;
+  }
+  .text-area {
+    @apply h-24 input-form border-0 border-b;
   }
   .error {
     @apply text-error;
@@ -228,4 +254,9 @@ h2::after {
 }
 .line-break {
   white-space: pre-wrap;
+}
+.progress-circular {
+  position: relative;
+  width: 100px;
+  height: 100px;
 }

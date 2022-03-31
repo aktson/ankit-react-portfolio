@@ -1,7 +1,7 @@
 import { baseUrl } from "../../settings/settings";
 import { useState, useEffect } from "react";
-import ProjectsCard from "../ProjectsCard";
-import Loader from "../Loader";
+import ProjectsCard from "../inner-sections/ProjectsCard";
+import Loader from "../inner-sections/Loader";
 
 function Projects() {
   const [data, setData] = useState([]);

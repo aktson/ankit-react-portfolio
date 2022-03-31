@@ -84,32 +84,38 @@ function Contact() {
   };
 
   return (
-    <section className="flex flex-col items-center gap-4  py-16 sm:py-32 px-1 lg:h-screen  justify-center truncate" id="contact">
-      <h2>Contact</h2>
-      <form ref={formRef} className="form" onSubmit={handleSubmit}>
-        {feedbackMsg && <div className="success">{feedbackMsg}</div>}
-        <div className="form-control  w-full ">
-          <label htmlFor="name" className="mb-2">
-            <span className="form-spans">Name {nameAlert && <div className="error">{nameAlert} </div>}</span>
-          </label>
-          <input type="text" name="user_name" className="input-form" placeholder="name" onChange={handleName} value={name} />
+    <section className="flex flex-col items-center gap-4  py-16 sm:py-32 px-1 lg:h-screen  justify-center " id="contact">
+      <h2>Kontakt</h2>
+      <div className="form-container">
+        <div className="form-aside">
+          <p className="text-2xl mb-2">Jeg vil gjerne høre fra deg!!!</p>
+          <p className="text-4xl  ">La oss bygge noe fantastisk sammen..... </p>
         </div>
-        <div className="form-control  w-full">
-          <label htmlFor="email" className="mb-2">
-            <span className="form-spans">Email {emailAlert && <div className="error">{emailAlert} </div>}</span>
-          </label>
-          <input type="text" name="user_email" className="input-form" placeholder="email" onChange={handleEmail} value={email} />
-        </div>
-        <div className="form-control h-full  w-full">
-          <label htmlFor="message" className="mb-2">
-            <span className="form-spans">Message {messageAlert && <div className="error">{messageAlert}</div>}</span>
-          </label>
-          <textarea name="message" className="textarea h-24 input-form" placeholder="your message" onChange={handleMessage} value={message} />
-        </div>
-        <button className="btn-primary btn-md btn w-full" type="submit">
-          Send
-        </button>
-      </form>
+        <form ref={formRef} className="form " onSubmit={handleSubmit}>
+          {feedbackMsg && <div className="success">{feedbackMsg}</div>}
+          <div className="form-control  w-full ">
+            <label htmlFor="name" className="mb-2">
+              <span className="form-spans">{nameAlert && <div className="error">{nameAlert} </div>}</span>
+            </label>
+            <input type="text" name="user_name" className="input-form" placeholder="navn" onChange={handleName} value={name} />
+          </div>
+          <div className="form-control  w-full">
+            <label htmlFor="email" className="mb-2">
+              <span className="form-spans">{emailAlert && <div className="error">{emailAlert} </div>}</span>
+            </label>
+            <input type="text" name="user_email" className="input-form" placeholder="epost" onChange={handleEmail} value={email} />
+          </div>
+          <div className="form-control h-full  w-full">
+            <label htmlFor="message" className="mb-8">
+              <span className="form-spans">{messageAlert && <div className="error">{messageAlert}</div>}</span>
+            </label>
+            <textarea name="message" className="text-area " placeholder="melding" onChange={handleMessage} value={message} />
+          </div>
+          <button className="btn-primary btn-md btn w-full mt-5" type="submit">
+            Send
+          </button>
+        </form>
+      </div>
     </section>
   );
 }

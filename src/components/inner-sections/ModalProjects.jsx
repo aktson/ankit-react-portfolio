@@ -7,7 +7,7 @@ function Modal({ title, stack, summary, img, url, open, onClose }) {
   if (!open) return null;
 
   return ReactDom.createPortal(
-    <div className="p-3" id="my-modal">
+    <div className="p-2" id="my-modal">
       <AnimatePresence>
         <motion.div
           className="container mx-auto flex justify-center items-center"
@@ -21,16 +21,16 @@ function Modal({ title, stack, summary, img, url, open, onClose }) {
             </figure>
             <div className="card-body bg-base-100">
               <h3 className="card-title flex flex-col text-neutral">
-                <span className="flex justify-center sm:justify-start text-2xl mb-2">{title}</span>
-                <div className=" badge badge-primary badge-outline p-5 sm:p-4  text-center sm:text-left mx-auto sm:mx-0">{stack}</div>
+                <span className="flex justify-start text-2xl mb-2">{title}</span>
+                <div className=" badge badge-primary badge-outline p-5 ">{stack}</div>
               </h3>
-              <p className="text-neutral text-base text-center md:text-left mb-5 line-break ">{summary}</p>
+              <p className="text-neutral text-base text-left mb-5 line-break">{summary}</p>
               <div className="flex justify-between items-center">
                 <a href={url} target="_blank" className="cursor-pointer flex btn btn-base btn-primary  gap-2" rel="noreferrer">
                   <FaExternalLinkAlt />
                   visit
                 </a>
-                <div className="text-lg cursor-pointer text-slate-500" onClick={onClose}>
+                <div className="text-xl cursor-pointer text-slate-500" onClick={onClose}>
                   <FaTimes />
                 </div>
               </div>

@@ -1,8 +1,8 @@
 import { Link } from "react-scroll";
 import { motion, AnimatePresence } from "framer-motion";
 import Header from "../layout/Header";
-import HeroImage from "../../assets/fb.jpg";
-import CardsAbout from "../CardsAbout";
+import HeroImage from "../../assets/fb-2.jpg";
+import CardsAbout from "../inner-sections/CardsAbout";
 
 function Hero() {
   return (
@@ -19,16 +19,14 @@ function Hero() {
             transition={{ duration: 1 }}>
             <div className="hero-content  grid lg:grid-cols-2" id="hero">
               <div className="max-w-md">
-                <h1 className="text-3xl sm:text-5xl font-bold">Hello there!</h1>
-                <p className="py-6">
-                  Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda excepturi exercitationem quasi. In deleniti eaque aut repudiandae
-                  et a id nisi.
-                </p>
+                <h1>
+                  Hallo, <br /> Jeg er <span className="text-accent">Ankit Soni</span> Front-end utvikler.
+                </h1>
+
                 <Link className="btn btn-accent btn-md sm:btn-wide " to="about" smooth={true} duration={500}>
-                  View my Work
+                  Se mitt arbeid
                 </Link>
               </div>
-              {/* <img src={HeroImage} className="max-w-sm rounded-lg shadow-2xl" /> */}
             </div>
           </motion.div>
         </AnimatePresence>

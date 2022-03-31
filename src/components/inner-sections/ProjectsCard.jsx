@@ -1,4 +1,4 @@
-import Modal from "./Modal";
+import ModalProjects from "./ModalProjects";
 import { useState } from "react";
 
 function ProjectsCard({ id, title, img, stack, summary, url }) {
@@ -18,7 +18,9 @@ function ProjectsCard({ id, title, img, stack, summary, url }) {
           <button className="btn btn-accent btn-base " onClick={handleClick} key={id}>
             View
           </button>
-          {isOpen && <Modal open={isOpen} title={title} summary={summary} img={img} url={url} stack={stack} onClose={() => setIsOpen(!isOpen)} />}
+          {isOpen && (
+            <ModalProjects open={isOpen} title={title} summary={summary} img={img} url={url} stack={stack} onClose={() => setIsOpen(!isOpen)} />
+          )}
         </div>
       </div>
     </div>

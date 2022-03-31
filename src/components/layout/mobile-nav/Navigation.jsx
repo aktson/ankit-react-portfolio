@@ -20,9 +20,13 @@ export function Navigation({ toggle }) {
   };
   const variants = {
     open: {
+      x: 0,
+      opacity: 1,
       transition: { staggerChildren: 0.07, delayChildren: 0.2 },
     },
     closed: {
+      x: -250,
+      opacity: 0,
       transition: { staggerChildren: 0.05, staggerDirection: -1 },
     },
   };

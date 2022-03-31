@@ -4,7 +4,7 @@ import Contact from "../sections/Contact";
 import Social from "./Social";
 import Hero from "../sections/Hero";
 import Spacer from "./Spacer";
-import ScrollIndicator from "../ScrollIndicator";
+import ScrollIndicator from "../inner-sections/ScrollIndicator";
 
 function Main() {
   return (
