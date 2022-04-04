@@ -26,12 +26,15 @@ function Projects() {
       <section id="projects" className="bg-base-200 py-16 sm:py-32 px-1">
         <div className="container flex flex-col justify-center mx-auto items-center">
           <h2 className="">Projekter</h2>
-          <div className="grid  lg:grid-cols-3 md:grid-cols-2 mx-auto  gap-2 justify-items-center max-w-screen-lg  my-8 p-2 ">
+          <div className="grid  md:grid-cols-2 grid-cols-1 mx-auto  gap-8  max-w-screen-5xl  my-8 p-2 ">
             {data.map((items) => {
               const item = items.attributes;
               const projectId = items.id;
               const image = item.image.data.attributes.url;
-              console.log(item);
+
+              const stackImages = item.stacks.data;
+
+              console.log(stackImages);
               return (
                 <ProjectsCard
                   id={projectId}
@@ -40,6 +43,8 @@ function Projects() {
                   stack={item.stack}
                   summary={item.summary}
                   url={item.url}
+                  github={item.github}
+                  stacks={stackImages}
                   key={projectId}
                 />
               );

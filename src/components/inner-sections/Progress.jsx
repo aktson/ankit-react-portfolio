@@ -15,52 +15,88 @@ function Progress() {
   return (
     <div className="grid grid-cols-2 gap-2 p-2 justify-center ">
       <div className=" para-progress tooltip" data-tip="javascript">
-        <img src={jsLogo} alt="javascript logo" className="tech-logos " />
+        <div className="flex justify-between">
+          <img src={jsLogo} alt="javascript logo" className="tech-logos " />
+          <p>60%</p>
+        </div>
         <progress className="progress-bar" value="60" max="100"></progress>
       </div>
       <div className=" para-progress tooltip" data-tip="ReactJs">
-        <img src={reactLogo} alt="react logo" className="tech-logos" />
+        <div className="flex justify-between">
+          <img src={reactLogo} alt="react logo" className="tech-logos" />
+          <p>50%</p>
+        </div>
         <progress className="progress-bar" value="50" max="100"></progress>
       </div>
       <div className=" para-progress tooltip" data-tip="HTML5">
-        <img src={htmlLogo} alt="html logo" className="tech-logos" />
-        <progress className="progress-bar" value="90" max="100"></progress>
+        <div className="flex justify-between">
+          <img src={htmlLogo} alt="html logo" className="tech-logos" />
+          <p>80%</p>
+        </div>
+        <progress className="progress-bar" value="80" max="100"></progress>
       </div>
       <div className=" para-progress tooltip" data-tip="CSS3">
-        <img src={cssLogo} alt="css3 logo" className="tech-logos" />
+        <div className="flex justify-between">
+          <img src={cssLogo} alt="css3 logo" className="tech-logos" />
+          <p>70%</p>
+        </div>
         <progress className="progress-bar" value="70" max="100"></progress>
       </div>
       <div className=" para-progress tooltip" data-tip="Sass">
-        <img src={sassLogo} alt="sass logo" className="tech-logos " />
+        <div className="flex justify-between">
+          <img src={sassLogo} alt="sass logo" className="tech-logos " />
+          <p>60%</p>
+        </div>
         <progress className="progress-bar" value="60" max="100"></progress>
       </div>
       <div className=" para-progress tooltip" data-tip="Taiwindcss">
-        <img src={tailwindLogo} alt="tailwind css logo" className="tech-logos " />
+        <div className="flex justify-between">
+          <img src={tailwindLogo} alt="tailwind css logo" className="tech-logos " />
+          <p>70%</p>
+        </div>
         <progress className="progress-bar" value="70" max="100"></progress>
       </div>
       <div className=" para-progress tooltip" data-tip="Bootstrap5">
-        <img src={bootstrapLogo} alt="bootstrap logo" className="tech-logos" />
+        <div className="flex justify-between">
+          <img src={bootstrapLogo} alt="bootstrap logo" className="tech-logos" />
+          <p>60%</p>
+        </div>
         <progress className="progress-bar" value="60" max="100"></progress>
       </div>
       <div className=" para-progress tooltip" data-tip="Adobe XD ">
-        <img src={xdLogo} alt="adobe xd logo" className="tech-logos" />
-        <progress className="progress-bar" value="60" max="100"></progress>
+        <div className="flex justify-between">
+          <img src={xdLogo} alt="adobe xd logo" className="tech-logos" />
+          <p>70%</p>
+        </div>
+        <progress className="progress-bar" value="70" max="100"></progress>
       </div>
       <div className=" para-progress tooltip" data-tip="Adobe Illustrator">
-        <img src={illustratorLogo} alt="adobe illustrator logo" className="tech-logos" />
-        <progress className="progress-bar" value="30" max="100"></progress>
+        <div className="flex justify-between">
+          <img src={illustratorLogo} alt="adobe illustrator logo" className="tech-logos" />
+          <p>20%</p>
+        </div>
+        <progress className="progress-bar" value="20" max="100"></progress>
       </div>
       <div className=" para-progress tooltip" data-tip="Adobe Photoshop">
-        <img src={psLogo} alt="photoshop logo" className="tech-logos" />
+        <div className="flex justify-between">
+          <img src={psLogo} alt="photoshop logo" className="tech-logos" />
+          <p>20%</p>
+        </div>
         <progress className="progress-bar" value="20" max="100"></progress>
       </div>
 
       <div className=" para-progress tooltip" data-tip="Github">
-        <img src={githubLogo} alt="github logo" className="tech-logos" />
+        <div className="flex justify-between">
+          <img src={githubLogo} alt="github logo" className="tech-logos" />
+          <p>50%</p>
+        </div>
         <progress className="progress-bar" value="50" max="100"></progress>
       </div>
       <div className=" para-progress tooltip" data-tip="Wordpress">
-        <img src={wpLogo} alt="wordpress logo" className="tech-logos" />
+        <div className="flex justify-between">
+          <img src={wpLogo} alt="wordpress logo" className="tech-logos" />
+          <p>40%</p>
+        </div>
         <progress className="progress-bar" value="40" max="100"></progress>
       </div>
     </div>

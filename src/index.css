@@ -159,10 +159,10 @@ h2::after {
     @apply text-4xl  mb-12 relative text-neutral font-extrabold;
   }
   h3 {
-    @apply text-2xl mb-2 font-bold;
+    @apply text-2xl mb-3 font-bold;
   }
   h4 {
-    @apply text-2xl font-extrabold;
+    @apply text-xl font-extrabold mb-2;
   }
   p {
     @apply text-lg;
@@ -173,13 +173,13 @@ h2::after {
     @apply inline-block mx-4 p-2 text-lg hover:border-b-2 hover:border-b-accent-focus transition-all ease-in-out hover:animate-pulse cursor-pointer;
   }
   .btn {
-    @apply text-neutral-content rounded-none;
+    @apply text-neutral-content rounded-none shadow-2xl;
   }
   .about-icons {
     @apply mx-auto mb-4 text-slate-500;
   }
   .para-progress {
-    @apply flex gap-6 items-center shadow-lg  p-4;
+    @apply flex flex-col gap-2   p-4;
   }
   .progress-bar {
     @apply progress  opacity-50;
@@ -259,4 +259,7 @@ h2::after {
   position: relative;
   width: 100px;
   height: 100px;
+}
+#project-tile {
+  width: 32rem;
 }

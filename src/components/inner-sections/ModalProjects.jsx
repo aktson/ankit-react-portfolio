@@ -1,9 +1,9 @@
-import { FaTimes, FaExternalLinkAlt } from "react-icons/fa";
+import { FaTimes, FaExternalLinkAlt, FaGithub } from "react-icons/fa";
 
 import { motion, AnimatePresence } from "framer-motion";
 import ReactDom from "react-dom";
 
-function Modal({ title, stack, summary, img, url, open, onClose }) {
+function Modal({ title, stack, summary, img, url, github, open, onClose }) {
   if (!open) return null;
 
   return ReactDom.createPortal(
@@ -26,10 +26,16 @@ function Modal({ title, stack, summary, img, url, open, onClose }) {
               </h3>
               <p className="text-neutral text-base text-left mb-5 line-break">{summary}</p>
               <div className="flex justify-between items-center">
-                <a href={url} target="_blank" className="cursor-pointer flex btn btn-base btn-primary  gap-2" rel="noreferrer">
-                  <FaExternalLinkAlt />
-                  visit
-                </a>
+                <div className="flex gap-2">
+                  <a href={url} target="_blank" className="cursor-pointer flex btn btn-sm btn-primary  rounded-2xl gap-2" rel="noreferrer">
+                    <FaExternalLinkAlt />
+                    visit
+                  </a>
+                  <a href={github} target="_blank" className="cursor-pointer flex btn btn-sm rounded-2xl btn-primary  gap-2" rel="noreferrer">
+                    <FaGithub />
+                    Github
+                  </a>
+                </div>
                 <div className="text-xl cursor-pointer text-slate-500" onClick={onClose}>
                   <FaTimes />
                 </div>
