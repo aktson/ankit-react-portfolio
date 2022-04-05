@@ -32,10 +32,7 @@ function Progress() {
 
           return (
             <div className=" para-progress tooltip" data-tip={title} key={id}>
-              <div className="flex justify-between">
-                <img src={image} alt={title} className="tech-logos " />
-                <p>{percentage}%</p>
-              </div>
+              <img src={image} alt={title} className="tech-logos " />
               <progress className="progress-bar" value={percentage} max="100"></progress>
             </div>
           );
