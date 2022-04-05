@@ -35,22 +35,22 @@ export function Navigation({ toggle }) {
       <motion.ul variants={variants} className="mob-ul ">
         <motion.li whileTap={{ scale: 0.95 }} variants={variantsLi}>
           <Link activeClass="active" to="hero" spy={true} smooth={true} duration={500} className="mob-li  nav-li" onClick={toggle}>
-            Home
+            Heim
           </Link>
         </motion.li>
         <motion.li whileTap={{ scale: 0.95 }} variants={variantsLi}>
           <Link activeClass="active" to="about" spy={true} smooth={true} duration={500} className="mob-li nav-li " onClick={toggle}>
-            About
+            Om meg
           </Link>
         </motion.li>
         <motion.li whileTap={{ scale: 0.95 }} variants={variantsLi}>
           <Link activeClass="active" to="projects" spy={true} smooth={true} duration={500} className="mob-li nav-li " onClick={toggle}>
-            Projects
+            Projekter
           </Link>
         </motion.li>
         <motion.li whileTap={{ scale: 0.95 }} variants={variantsLi}>
           <Link activeClass="active" to="contact" spy={true} smooth={true} duration={500} className="mob-li nav-li " onClick={toggle}>
-            Contact
+            Kontakt
           </Link>
         </motion.li>
       </motion.ul>

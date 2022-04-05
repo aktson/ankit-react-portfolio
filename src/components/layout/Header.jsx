@@ -12,22 +12,22 @@ function Header() {
           <ul className=" text-slate-100 ">
             <li>
               <Link activeClass="active" to="hero" spy={true} smooth={true} duration={500} className="nav-li">
-                Home
+                Heim
               </Link>
             </li>
             <li>
               <Link activeClass="active" to="about" spy={true} smooth={true} duration={500} className="nav-li">
-                About
+                Om meg
               </Link>
             </li>
             <li>
               <Link activeClass="active" to="projects" spy={true} smooth={true} duration={500} className="nav-li">
-                Projects
+                Projekter
               </Link>
             </li>
             <li>
               <Link activeClass="active" to="contact" spy={true} smooth={true} duration={500} className="nav-li">
-                Contact
+                Kontakt
               </Link>
             </li>
           </ul>
