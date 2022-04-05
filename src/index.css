@@ -179,7 +179,7 @@ h2::after {
     @apply mx-auto mb-4 text-slate-500;
   }
   .para-progress {
-    @apply flex flex-col gap-2   p-4;
+    @apply flex flex-col gap-2   p-3;
   }
   .progress-bar {
     @apply progress  opacity-50;
