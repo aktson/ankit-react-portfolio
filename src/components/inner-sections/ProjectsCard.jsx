@@ -10,7 +10,11 @@ function ProjectsCard({ id, title, img, stack, summary, url, github, stacks }) {
   };
 
   const mappedStackImg = stacks.map((stackImage) => {
-    return <img src={stackImage.attributes.url} className="w-5" />;
+    return (
+      <figure data-tip={stackImage.attributes.name} style={{ width: "1.25rem" }} className="tooltip">
+        <img src={stackImage.attributes.url} key={stackImage.id} />
+      </figure>
+    );
   });
 
   return (

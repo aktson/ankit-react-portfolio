@@ -14,7 +14,7 @@ function Progress() {
     const url = baseUrl + "api/progresses?populate=*";
     const response = await fetch(url);
     const results = await response.json();
-    console.log(results);
+
     setData(results.data);
     setLoading(false);
   }
@@ -28,10 +28,10 @@ function Progress() {
           const title = progressItem.attributes.title;
           const percentage = progressItem.attributes.total;
           const image = progressItem.attributes.img.data.attributes.url;
-          // const id = progressItem.data.id;
+          const id = progressItem.id;
 
           return (
-            <div className=" para-progress tooltip" data-tip={title}>
+            <div className=" para-progress tooltip" data-tip={title} key={id}>
               <div className="flex justify-between">
                 <img src={image} alt={title} className="tech-logos " />
                 <p>{percentage}%</p>
