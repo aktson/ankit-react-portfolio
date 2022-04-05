@@ -34,7 +34,6 @@ function Projects() {
 
               const stackImages = item.stacks.data;
 
-              console.log(stackImages);
               return (
                 <ProjectsCard
                   id={projectId}
