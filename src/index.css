@@ -182,7 +182,7 @@ h2::after {
     @apply flex items-center shadow-2xl gap-3 p-5 bg-base-100;
   }
   .progress-bar {
-    @apply progress  opacity-50;
+    @apply progress  opacity-50  animate-pulse;
   }
   .tech-logos {
     @apply w-8;

@@ -33,7 +33,7 @@ function Progress() {
           return (
             <div className=" para-progress tooltip" data-tip={title} key={id}>
               <img src={image} alt={title} className="tech-logos " />
-              <progress className="progress-bar" value={percentage} max="100"></progress>
+              <progress className="progress-bar animate-pulse" value={percentage} max="100"></progress>
             </div>
           );
         })}

@@ -7,6 +7,7 @@ function ProjectsCard({ id, title, img, stack, summary, url, github, stacks }) {
 
   const handleClick = () => {
     setIsOpen(true);
+    document.body.style.overflow = "hidden";
   };
 
   const mappedStackImg = stacks.map((stackImage) => {
@@ -34,7 +35,10 @@ function ProjectsCard({ id, title, img, stack, summary, url, github, stacks }) {
             url={url}
             stack={stack}
             github={github}
-            onClose={() => setIsOpen(!isOpen)}
+            onClose={() => {
+              setIsOpen(!isOpen);
+              document.body.style.overflow = "auto";
+            }}
           />
         )}
       </div>
