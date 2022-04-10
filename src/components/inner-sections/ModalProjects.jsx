@@ -1,5 +1,4 @@
 import { FaTimes, FaExternalLinkAlt, FaGithub } from "react-icons/fa";
-
 import { motion, AnimatePresence } from "framer-motion";
 import ReactDom from "react-dom";
 
