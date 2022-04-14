@@ -1,13 +1,11 @@
 import { Link } from "react-scroll";
 import { motion, AnimatePresence } from "framer-motion";
 import Header from "../layout/Header";
-import HeroImage from "../../assets/fb-2.jpg";
-import CardsAbout from "../inner-sections/CardsAbout";
 
 function Hero() {
   return (
     <>
-      <section className=" flex flex-col justify-center  bg-base-100 lg:h-screen  " id="hero">
+      <section className=" flex flex-col justify-center lg:h-screen " id="hero">
         <Header />
         <AnimatePresence>
           <motion.div
@@ -17,20 +15,18 @@ function Hero() {
             initial={{ opacity: 0, y: 50 }}
             exit={{ opacity: 0, y: 0 }}
             transition={{ duration: 1 }}>
-            <div className="hero-content  grid lg:grid-cols-2" id="hero">
+            <div className="hero-content  grid lg:grid-cols-2 " id="hero">
               <div className="max-w-md">
                 <h1>
                   Hallo, <br /> Jeg er <span className="text-accent">Ankit Soni, </span> <br /> Front-end utvikler.
                 </h1>
-
-                <Link className="btn btn-accent btn-md sm:btn-wide " to="about" smooth={true} duration={500}>
+                <Link className="btn btn-primary btn-md sm:btn-wide " to="about" smooth={true} duration={500}>
                   Se mitt arbeid
                 </Link>
               </div>
             </div>
           </motion.div>
         </AnimatePresence>
-        <CardsAbout />
       </section>
     </>
   );

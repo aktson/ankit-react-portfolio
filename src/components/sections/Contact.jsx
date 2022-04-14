@@ -22,7 +22,7 @@ function Contact() {
   });
 
   function handleName(e) {
-    if (!name) {
+    if (name === "") {
       setNameAlert(null);
     } else if (name !== "" && name.trim().length <= 4) {
       setNameAlert("must be atleast 4 characters");

@@ -16,6 +16,11 @@ function ScrollIndicator() {
           </Link>
         </li>
         <li>
+          <Link activeClass="active-indicator" to="skills" spy={true} smooth={true} duration={500}>
+            <FaDotCircle className="indicator-icons" />
+          </Link>
+        </li>
+        <li>
           <Link activeClass="active-indicator" to="projects" spy={true} smooth={true} duration={500}>
             <FaDotCircle className="indicator-icons" />
           </Link>

@@ -2,7 +2,7 @@ import { FaDesktop, FaWhmcs, FaMeteor, FaLightbulb } from "react-icons/fa";
 
 function CardsAbout() {
   return (
-    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4  text-center  justify-center gap-2 p-8 container mx-auto" id="cards">
+    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4  text-center container justify-center gap-2 p-8  mx-auto" id="cards">
       <div className="card card-compact bg-base-100 shadow-xl p-6">
         <FaDesktop size={60} className="about-icons" />
 

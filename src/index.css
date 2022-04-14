@@ -5,6 +5,7 @@
 :root {
   --primary: #570df8;
   --secondary: hsl(314, 100%, 47%);
+  /* --secondary:F000B8; */
   --accent: #37cdbe;
   --light: #ffffff;
   --info: #3abff8;
@@ -13,6 +14,7 @@
   --warning: "#FBBD23";
   --error: "#F87272";
   --gradient-primary: linear-gradient(267deg, rgba(87, 13, 248, 1) 0%, rgba(55, 205, 190, 1) 100%);
+  --gradient-secondary: linear-gradient(162deg, rgba(87, 13, 248, 1) 0%, rgba(55, 205, 190, 1) 100%);
   --heading-fonts: "Josefin Sans", sans-serif;
   --body-fonts: "Mada", sans-serif;
   --cursive-fonts: "Great Vibes", cursive;
@@ -38,10 +40,14 @@ main {
   flex: 1 0 auto;
 }
 
-.brand {
-  font-family: var(--cursive-fonts);
-  font-size: 2.2rem;
+.logo {
   cursor: pointer;
+  width: 100px;
+  filter: drop-shadow(2px 2px 12px rgba(255, 255, 255, 0.2));
+}
+
+#hero-bg {
+  background: var(--gradient-secondary);
 }
 h1,
 h2,
@@ -170,7 +176,7 @@ h2::after {
 }
 @layer components {
   .nav-li {
-    @apply inline-block mx-4 p-2 text-lg hover:border-b-2 hover:border-b-accent-focus transition-all ease-in-out hover:animate-pulse cursor-pointer;
+    @apply text-base-100 inline-block mx-4 p-2 text-lg hover:border-b-2 hover:border-b-accent-focus transition-all ease-in-out hover:animate-pulse cursor-pointer;
   }
   .btn {
     @apply text-neutral-content rounded-none shadow-2xl;
@@ -221,25 +227,37 @@ h2::after {
   .success {
     @apply alert shadow-lg alert-success w-full;
   }
+  /* tabs skills section */
+  .tabs-container {
+    @apply flex justify-evenly my-8 mx-auto;
+  }
+  .tab-header {
+    @apply text-lg py-2 px-10 cursor-pointer transition-all duration-500;
+  }
+  .active-tab {
+    @apply bg-primary text-base-100 py-2 px-10 pointer-events-none;
+  }
+  .tabs-content {
+    @apply flex justify-center items-center;
+  }
+  .tab-content {
+    @apply grid-cols-4 hidden justify-items-center p-4 gap-8;
+  }
+  .active-tab-content {
+    @apply grid;
+  }
 }
-#hero-bg {
-  background: url("./assets/wave-haikei.svg") no-repeat;
-  background-position: center;
-  background-size: cover;
-}
+
 .active-indicator {
   color: var(--light);
   pointer-events: none;
 }
 .active-indicator > .indicator-icons {
-  color: var(--accent);
+  color: var(--primary);
   transform: scale(1.8);
   transition: 0.3s all ease-in-out;
 }
 
-#cards {
-  transform: translateY(-120px);
-}
 .indicator-icons {
   @apply text-slate-500 text-sm cursor-pointer;
 }
@@ -255,11 +273,7 @@ h2::after {
 .line-break {
   white-space: pre-wrap;
 }
-.progress-circular {
-  position: relative;
-  width: 100px;
-  height: 100px;
-}
+
 #project-tile {
   width: 32rem;
 }

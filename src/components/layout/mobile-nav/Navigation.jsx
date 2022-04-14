@@ -44,6 +44,11 @@ export function Navigation({ toggle }) {
           </Link>
         </motion.li>
         <motion.li whileTap={{ scale: 0.95 }} variants={variantsLi}>
+          <Link activeClass="active" to="skills" spy={true} smooth={true} duration={500} className="mob-li nav-li " onClick={toggle}>
+            Ferdigheter
+          </Link>
+        </motion.li>
+        <motion.li whileTap={{ scale: 0.95 }} variants={variantsLi}>
           <Link activeClass="active" to="projects" spy={true} smooth={true} duration={500} className="mob-li nav-li " onClick={toggle}>
             Projekter
           </Link>

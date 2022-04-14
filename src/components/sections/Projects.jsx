@@ -23,7 +23,7 @@ function Projects() {
     return <Loader />;
   } else {
     return (
-      <section id="projects" className="bg-base-200 py-16 sm:py-32 px-1">
+      <section className="bg-base-200 py-16 sm:py-32 px-1" id="projects">
         <div className="container flex flex-col justify-center mx-auto items-center">
           <h2 className="">Projekter</h2>
           <div className="grid  md:grid-cols-2 grid-cols-1 mx-auto  gap-8  max-w-screen-5xl  my-8 p-2 ">
