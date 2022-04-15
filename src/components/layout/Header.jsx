@@ -10,8 +10,8 @@ function Header() {
       <div className="container flex justify-around mx-auto p-2 items-center">
         <div className="logo flex gap-4 " onClick={() => scroll.scrollToTop()}>
           <img src={logo} alt="" />
-          {/* <img src={logo2} alt="" />
-          <img src={logo3} alt="" /> */}
+          {/* <img src={logo2} alt="" /> */}
+          {/* <img src={logo3} alt="" /> */}
         </div>
         <nav className=" navbar  top-0 hidden md:block">
           <ul>

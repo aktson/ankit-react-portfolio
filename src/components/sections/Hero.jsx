@@ -5,20 +5,20 @@ import Header from "../layout/Header";
 function Hero() {
   return (
     <>
-      <section className=" flex flex-col justify-center lg:h-screen " id="hero">
+      <section className=" flex flex-col justify-center h-screen " id="hero">
         <Header />
         <AnimatePresence>
           <motion.div
-            className="hero min-h-screen text-base-100 py-16 sm:py-32 px-1"
+            className="hero  text-base-100  px-1 "
             id="hero-bg"
             animate={{ opacity: 1, y: 0 }}
             initial={{ opacity: 0, y: 50 }}
             exit={{ opacity: 0, y: 0 }}
             transition={{ duration: 1 }}>
-            <div className="hero-content  grid lg:grid-cols-2 " id="hero">
-              <div className="max-w-md">
+            <div className=" grid lg:grid-cols-2 text-primary  ">
+              <div className="max-w-lg  p-2">
                 <h1>
-                  Hallo, <br /> Jeg er <span className="text-accent">Ankit Soni, </span> <br /> Front-end utvikler.
+                  Hei, <br /> Jeg er <span className="text-primary">Ankit Soni, </span> <br /> Front-end utvikler.
                 </h1>
                 <Link className="btn btn-primary btn-md sm:btn-wide " to="about" smooth={true} duration={500}>
                   Se mitt arbeid

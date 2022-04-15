@@ -4,7 +4,7 @@ import ToTopButton from "./ToTopButton";
 function Footer() {
   const year = new Date().getFullYear();
   return (
-    <footer className=" p-10 bg-primary text-neutral-content relative flex justify-center flex-col text-center gap-4" id="footer">
+    <footer className=" footer" id="footer">
       <div className="flex  justify-center gap-4 text-center sm:hidden">
         <FaFacebookF size={20} />
         <FaGithub size={20} />

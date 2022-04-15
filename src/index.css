@@ -46,20 +46,13 @@ main {
   filter: drop-shadow(2px 2px 12px rgba(255, 255, 255, 0.2));
 }
 
-#hero-bg {
-  background: var(--gradient-secondary);
-}
-h1,
 h2,
 h3,
 h4,
 h5 {
   font-family: var(--heading-fonts);
 }
-h1 {
-  font-family: var(--cursive2-fonts);
-  margin-bottom: 1.2em;
-}
+
 h2::after {
   content: "";
   position: absolute;
@@ -126,10 +119,6 @@ h2::after {
   color: var(--light);
 }
 
-#spacer {
-  margin: 100px auto;
-}
-
 .line-after-icons {
   height: 70px;
   width: 1px;
@@ -157,9 +146,13 @@ h2::after {
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   visibility: visible;
 }
+h1 {
+  line-height: 1.4em;
+  font-family: var(--heading-fonts);
+}
 @layer base {
   h1 {
-    @apply text-5xl  mb-4 leading-snug;
+    @apply text-5xl  mb-8 leading-loose lg:text-5xl;
   }
   h2 {
     @apply text-4xl  mb-12 relative text-neutral font-extrabold;
@@ -192,11 +185,9 @@ h2::after {
   }
 
   .social-icons {
-    @apply inline-block w-4 h-4 stroke-current text-accent mx-auto hover:text-secondary hover:animate-bounce;
+    @apply inline-block w-4 h-4 stroke-current text-neutral mx-auto hover:text-secondary hover:animate-bounce;
   }
-  #to-top-btn {
-    @apply absolute bottom-32 sm:bottom-20 right-12 bg-accent text-base-100  p-3 text-sm hover:bg-slate-300 hover:text-primary transition-all cursor-pointer;
-  }
+
   /* Form */
   .form-container {
     @apply grid grid-cols-1 md:grid-cols-2 max-w-screen-lg rounded-box bg-base-100 shadow-xl  gap-8;
@@ -249,6 +240,14 @@ h2::after {
   .tech-logos {
     @apply w-8;
   }
+  /* footer */
+  .footer {
+    background: var(--gradient-secondary);
+    @apply text-base-100 p-10 relative flex flex-col justify-center items-center  text-center gap-4;
+  }
+  #to-top-btn {
+    @apply absolute bottom-32 sm:bottom-20 right-12 bg-primary rounded-full text-base-100  p-3 text-sm hover:bg-slate-300 hover:text-primary transition-all cursor-pointer;
+  }
 }
 
 .active-indicator {
@@ -256,13 +255,13 @@ h2::after {
   pointer-events: none;
 }
 .active-indicator > .indicator-icons {
-  color: var(--primary);
+  color: var(--accent);
   transform: scale(1.8);
   transition: 0.3s all ease-in-out;
 }
 
 .indicator-icons {
-  @apply text-slate-500 text-sm cursor-pointer;
+  @apply text-neutral text-sm cursor-pointer;
 }
 @media (max-width: 490px) {
   .indicator-icons {
@@ -279,4 +278,9 @@ h2::after {
 
 #project-tile {
   width: 32rem;
+}
+
+#hero {
+  background: url("./assets/Wave3.svg") no-repeat;
+  background-size: cover;
 }
