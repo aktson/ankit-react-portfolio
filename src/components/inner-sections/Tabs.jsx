@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { baseUrl } from "../../settings/settings";
 import Loader from "./Loader";
+import { motion, AnimatePresence } from "framer-motion";
 
 function Tabs() {
   const [toggleState, setToggleState] = useState("all");
@@ -33,10 +34,18 @@ function Tabs() {
       const image = data.attributes.img.data.attributes.url;
       const id = data.id;
       return (
-        <div className="skills" data-tip={title} key={id}>
-          <img src={image} alt={title} className="tech-logos " />
-          <p>{title}</p>
-        </div>
+        <AnimatePresence exitBeforeEnter key={id}>
+          <motion.div
+            className="skills"
+            data-tip={title}
+            animate={{ opacity: 1, y: 0 }}
+            initial={{ opacity: 0, y: 30 }}
+            exit={{ opacity: 0, y: -30 }}
+            transition={{ duration: 0.2 }}>
+            <img src={image} alt={title} className="tech-logos " />
+            <p>{title}</p>
+          </motion.div>
+        </AnimatePresence>
       );
     });
 
@@ -49,19 +58,28 @@ function Tabs() {
     const id = stack.id;
 
     return (
-      <div className="skills" data-tip={title} key={id}>
-        <img src={image} alt={title} className="tech-logos " />
-        <p>{title}</p>
-      </div>
+      <AnimatePresence exitBeforeEnter key={id}>
+        <motion.div
+          className="skills"
+          data-tip={title}
+          animate={{ opacity: 1, y: 0 }}
+          initial={{ opacity: 0, y: 20 }}
+          exit={{ opacity: 0, y: -20 }}
+          transition={{ duration: 0.15 }}>
+          <img src={image} alt={title} className="tech-logos " />
+          <p>{title}</p>
+        </motion.div>
+      </AnimatePresence>
     );
   });
+
   if (loading) {
     return <Loader />;
   } else {
     return (
       <>
         <div className="tabs-container ">
-          <div className={toggleState === "all" ? " tab-header active-tab" : "tab-header  "} onClick={() => handleClick("all")}>
+          <div className={toggleState === "all" ? "tab-header active-tab" : "tab-header  "} onClick={() => handleClick("all")}>
             Alle
           </div>
           <div className={toggleState === 1 ? " tab-header active-tab" : "tab-header"} onClick={() => handleClick(1)}>
@@ -74,8 +92,9 @@ function Tabs() {
             Andre
           </div>
         </div>
+
         <div className="tabs-content">
-          <div className={toggleState === "all" ? " active-tab-content tab-content " : "tab-content"}>{allContent}</div>
+          <div className={toggleState === "all" ? " active-tab-content tab-content" : "tab-content"}>{allContent}</div>
           <div className={toggleState === 1 ? " active-tab-content tab-content " : "tab-content"}>{filteredData}</div>
           <div className={toggleState === 2 ? " active-tab-content tab-content " : "tab-content"}>{filteredData} </div>
           <div className={toggleState === 3 ? " active-tab-content tab-content " : "tab-content"}>{filteredData}</div>
