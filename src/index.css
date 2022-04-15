@@ -4,8 +4,7 @@
 
 :root {
   --primary: #570df8;
-  --secondary: hsl(314, 100%, 47%);
-  /* --secondary:F000B8; */
+  --secondary: #f000b8;
   --accent: #37cdbe;
   --light: #ffffff;
   --info: #3abff8;
@@ -28,6 +27,8 @@
 }
 body {
   font-family: var(--body-fonts);
+  /* background: url("./assets/scattered-forcefields.svg") repeat bottom; */
+  background-size: contain;
 }
 #root {
   display: flex;
