@@ -149,11 +149,11 @@ h2::after {
 }
 h1 {
   line-height: 1.4em;
-  font-family: var(--heading-fonts);
+  font-family: var(--cursive2-fonts);
 }
 @layer base {
   h1 {
-    @apply text-5xl  mb-8 leading-loose lg:text-5xl;
+    @apply text-neutral text-4xl  mb-8 leading-loose lg:text-5xl;
   }
   h2 {
     @apply text-4xl  mb-12 relative text-neutral font-extrabold;
@@ -170,7 +170,7 @@ h1 {
 }
 @layer components {
   .nav-li {
-    @apply text-base-100 inline-block mx-4 p-2 text-lg hover:border-b-2 hover:border-b-accent-focus transition-all ease-in-out hover:animate-pulse cursor-pointer;
+    @apply inline-block mx-4 p-2 text-lg hover:border-b-2 hover:border-b-accent-focus transition-all ease-in-out hover:animate-pulse cursor-pointer;
   }
   .btn {
     @apply text-neutral-content rounded-none shadow-2xl;
@@ -282,6 +282,6 @@ h1 {
 }
 
 #hero {
-  background: url("./assets/Wave3.svg") no-repeat;
+  background: url("./assets/bg-5.jpg") no-repeat center;
   background-size: cover;
 }

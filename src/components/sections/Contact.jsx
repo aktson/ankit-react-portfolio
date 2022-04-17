@@ -84,7 +84,7 @@ function Contact() {
   };
 
   return (
-    <section className="flex flex-col items-center gap-4  py-16 sm:py-32 px-1 lg:h-screen  justify-center " id="contact">
+    <section className="flex flex-col items-center gap-4  py-16 sm:py-32 px-1 lg:h-screen  justify-center bg-base-200" id="contact">
       <h2>Kontakt</h2>
       <div className="form-container">
         <div className="form-aside">

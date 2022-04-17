@@ -9,14 +9,14 @@ function Hero() {
         <Header />
         <AnimatePresence>
           <motion.div
-            className="hero  text-base-100  px-1 "
+            className="container text-base-100  mx-auto px-1 "
             id="hero-bg"
             animate={{ opacity: 1, y: 0 }}
             initial={{ opacity: 0, y: 50 }}
             exit={{ opacity: 0, y: 0 }}
             transition={{ duration: 1 }}>
-            <div className=" grid lg:grid-cols-2 text-primary  ">
-              <div className="max-w-lg  p-2">
+            <div className=" grid lg:grid-cols-2 text-primary justify-items-center ">
+              <div className="p-2">
                 <h1>
                   Hei, <br /> Jeg er <span className="text-primary">Ankit Soni, </span> <br /> Front-end utvikler.
                 </h1>
