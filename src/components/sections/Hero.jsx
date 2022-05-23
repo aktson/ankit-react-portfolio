@@ -1,7 +1,6 @@
 import { Link } from "react-scroll";
 import { motion, AnimatePresence } from "framer-motion";
 import Header from "../layout/Header";
-import Pattern from "../inner-sections/Pattern";
 
 function Hero() {
 	return (
