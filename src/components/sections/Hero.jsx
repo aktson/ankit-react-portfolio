@@ -19,7 +19,8 @@ function Hero() {
 						<div className=" grid lg:grid-cols-1 text-primary lg:justify-items-center text-center ">
 							<div className="p-2">
 								<h1>
-									Hei, <br /> Jeg er <span className="text-primary">Ankit Soni, </span> <br /> Front-end utvikler.
+									HELLO <br /> <span className="text-secondary">I'M ANKIT SONI,</span>
+									<br /> Front-end utvikler
 								</h1>
 								<Link className="btn btn-primary btn-md sm:btn-wide " to="about" smooth={true} duration={500}>
 									Se mitt arbeid
