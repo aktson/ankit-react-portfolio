@@ -15,10 +15,9 @@ function Modal({ title, stack, summary, img, url, github, open, onClose }) {
 					exit={{ y: 0 }}
 					transition={{ type: "spring", bounce: 0.4, duration: 0.6 }}>
 					<div className=" shadow-xl max-w-2xl bg-base-100 rounded-lg">
-						{/* <figure className=" shadow-lg">
-              <img src={img} className="w-100 shadow-2xl" alt={title} />
-            </figure> */}
-						<div style={{ background: `url(${img}) no-repeat center`, backgroundSize: "cover", height: "300px" }}></div>
+						<figure>
+							<img src={img} className="w-100 " alt={title} />
+						</figure>
 						<div className="card-body bg-base-100">
 							<h3 className="card-title flex flex-col text-neutral">
 								<span className="flex justify-start text-2xl mb-2">{title}</span>
