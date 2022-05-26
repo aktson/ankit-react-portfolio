@@ -91,7 +91,7 @@ function Contact() {
 					<p className="text-xl mb-2 text-center">
 						Legg igjen melding, <br></br>jeg kommer tilbake så snart som mulig
 					</p>
-					<p className="text-5xl text-center">La oss bygge noe fantastisk sammen..... </p>
+					<p className="text-4xl text-center">La oss bygge noe fantastisk sammen..... </p>
 				</div>
 				<form ref={formRef} className="form " onSubmit={handleSubmit}>
 					{feedbackMsg && <div className="success">{feedbackMsg}</div>}
