@@ -88,9 +88,7 @@ function Contact() {
 			<h2>Kontakt</h2>
 			<div className="form-container">
 				<div className="form-aside">
-					<p className="text-xl mb-2 text-center">
-						Legg igjen melding, <br></br>jeg kommer tilbake så snart som mulig
-					</p>
+					<p className="text-xl mb-2 text-center">Legg igjen melding,</p>
 					<p className="text-4xl text-center">La oss bygge noe fantastisk sammen..... </p>
 				</div>
 				<form ref={formRef} className="form " onSubmit={handleSubmit}>
