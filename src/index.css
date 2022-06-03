@@ -35,7 +35,10 @@ body {
 	flex-direction: column;
 	position: relative;
 }
-
+.line-break {
+	white-space: pre-wrap;
+	line-height: normal;
+}
 main {
 	flex: 1 0 auto;
 }
@@ -149,6 +152,10 @@ h2::after {
 	transition-duration: 0.2s;
 	transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 	visibility: visible;
+}
+#hero {
+	background: url("./assets/hero.svg") no-repeat center;
+	background-size: cover;
 }
 
 @layer base {
@@ -273,17 +280,7 @@ h2::after {
 		}
 	}
 }
-
-.line-break {
-	white-space: pre-wrap;
-	line-height: normal;
-}
-
+/* section projects */
 #project-tile {
 	width: 32rem;
-}
-
-#hero {
-	background: url("./assets/hero.svg") no-repeat center;
-	background-size: cover;
 }

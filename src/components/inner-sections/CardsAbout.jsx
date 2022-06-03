@@ -9,7 +9,7 @@ function CardsAbout() {
 				<h3>Responsive</h3>
 				<p>Layouter som fungerer på alle enheter</p>
 			</div>
-			<div className="card card-compact  bg-base-100 shadow-xl p-6">
+			<div className="card card-compact bg-base-100 shadow-xl p-6">
 				<FaWhmcs size={60} className="about-icons" />
 
 				<h3>Dynamisk</h3>
