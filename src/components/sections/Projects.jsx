@@ -31,7 +31,7 @@ function Projects() {
 						<a href="https://github.com/aktson?tab=repositories" target="_blank" className="text-primary ml-1">
 							github
 						</a>
-						, her er noen av dem utvilklet med forskjellige verktøy og teknologi
+						, her er noen av dem utviklet med forskjellige verktøy og teknologi
 					</p>
 					<div className="grid  md:grid-cols-2 grid-cols-1 mx-auto  gap-8  max-w-screen-5xl  my-8 p-2 ">
 						{data.map((items) => {
