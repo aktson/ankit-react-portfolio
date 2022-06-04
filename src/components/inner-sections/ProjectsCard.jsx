@@ -19,7 +19,9 @@ function ProjectsCard({ id, title, img, stack, summary, url, github, stacks }) {
 	});
 
 	return (
-		<div className="hero shadow-xl max-w-lg sm:h-96 sm:w-96 h-96 w-80 items-end card " style={{ backgroundImage: `url(${img})` }}>
+		<div
+			className="hero shadow-xl shadow-slate-300 max-w-lg sm:h-96 sm:w-96 h-96 w-80 items-end card "
+			style={{ backgroundImage: `url(${img})` }}>
 			<div className=" w-full bg-base-100 p-5 relative">
 				<h3>{title}</h3>
 				<div className="flex gap-4 mt-5">{mappedStackImg}</div>
