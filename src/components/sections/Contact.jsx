@@ -151,6 +151,8 @@ function Contact() {
 
 export default Contact;
 
+// contact function with useState
+
 // function Contact() {
 // 	const [state, dispatch] = useReducer(reducer, initialState);
 
