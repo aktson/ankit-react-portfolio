@@ -1,70 +1,98 @@
 import emailjs from "@emailjs/browser";
-import { useRef, useState, useEffect } from "react";
+import { useRef, useEffect, useReducer } from "react";
 import { FaCheck } from "react-icons/fa";
 
+const initialState = {
+	name: "",
+	email: "",
+	message: "",
+	nameAlert: "",
+	emailAlert: "",
+	messageAlert: "",
+	feedbackMsg: "",
+};
+
+function reducer(state, action) {
+	switch (action.type) {
+		case "update_name":
+			return { ...state, name: action.payload };
+		case "update_email":
+			return { ...state, email: action.payload };
+		case "update_message":
+			return { ...state, message: action.payload };
+		case "name_alert":
+			return { ...state, nameAlert: action.payload };
+		case "email_alert":
+			return { ...state, emailAlert: action.payload };
+		case "message_alert":
+			return { ...state, messageAlert: action.payload };
+		case "feedback_message":
+			return { ...state, feedbackMsg: action.payload };
+		default:
+			return state;
+	}
+}
+
 function Contact() {
+	const [state, dispatch] = useReducer(reducer, initialState);
+
 	const formRef = useRef();
-	const [name, setName] = useState("");
-	const [email, setEmail] = useState("");
-	const [message, setMessage] = useState("");
-	const [feedbackMsg, setFeedbackMsg] = useState("");
-	const [nameAlert, setNameAlert] = useState("");
-	const [emailAlert, setEmailAlert] = useState("");
-	const [messageAlert, setMessageAlert] = useState("");
+
 	const emailRegex = /\S+@\S+\.\S+/;
 
 	//removes success message
 	useEffect(() => {
 		const timer = setTimeout(() => {
-			setFeedbackMsg("");
+			dispatch({ type: "feedback_message", payload: "" });
 		}, 5000);
 		return () => clearTimeout(timer);
 	});
 
 	function handleName(e) {
-		if (name === "") {
-			setNameAlert(null);
-		} else if (name !== "" && name.trim().length <= 4) {
-			setNameAlert("must be atleast 4 characters");
+		if (state.name === "") {
+			dispatch({ type: "name_alert", payload: null });
+		} else if (state.name !== "" && state.name.trim().length <= 4) {
+			dispatch({ type: "name_alert", payload: "must be atleast 4 characters" });
 		} else {
-			setNameAlert(<FaCheck className="text-success" />);
+			dispatch({ type: "name_alert", payload: <FaCheck className="text-success" /> });
 		}
 
-		setName(e.target.value);
+		dispatch({ type: "update_name", payload: e.target.value });
 	}
 	function handleEmail(e) {
-		if (!email) {
-			setEmailAlert(null);
-		} else if (emailRegex.test(email)) {
-			setEmailAlert(<FaCheck className="text-success" />);
+		if (!state.email) {
+			dispatch({ type: "email_alert", payload: null });
+		} else if (emailRegex.test(state.email)) {
+			dispatch({ type: "email_alert", payload: <FaCheck className="text-success" /> });
 		} else {
-			setEmailAlert("please enter valid email");
+			dispatch({ type: "email_alert", payload: "please enter valid email" });
 		}
-		setEmail(e.target.value);
+
+		dispatch({ type: "update_email", payload: e.target.value });
 	}
 	function handleMessage(e) {
-		if (!message) {
-			setMessage(null);
-		} else if (message !== "" && message.trim().length <= 10) {
-			setMessageAlert("must be atleast 10 characters");
+		if (!state.message) {
+			dispatch({ type: "message_alert", payload: null });
+		} else if (state.message !== "" && state.message.trim().length <= 10) {
+			dispatch({ type: "message_alert", payload: "must be atleast 10 characters" });
 		} else {
-			setMessageAlert(<FaCheck className="text-success" />);
+			dispatch({ type: "message_alert", payload: <FaCheck className="text-success" /> });
 		}
-		setMessage(e.target.value);
+		dispatch({ type: "update_message", payload: e.target.value });
 	}
 
 	const handleSubmit = (e) => {
 		e.preventDefault();
-		if (!name && name.trim().length <= 4) {
-			setNameAlert("must be atleast 4 characters");
+		if (!state.name && state.name.trim().length <= 4) {
+			dispatch({ type: "name_alert", payload: "must be atleast 4 characters" });
 		}
-		if (!emailRegex.test(email)) {
-			setEmailAlert("please enter valid email");
+		if (!emailRegex.test(state.email)) {
+			dispatch({ type: "email_alert", payload: "please enter valid email" });
 		}
-		if (!message && message.trim().length <= 10) {
-			setMessageAlert("must be atleast 10 characters");
+		if (!state.message && state.message.trim().length <= 10) {
+			dispatch({ type: "message_alert", payload: "must be atleast 10 characters" });
 		}
-		if (name.trim().length >= 4 && emailRegex.test(email) && email && message.trim().length >= 10) {
+		if (state.name.trim().length >= 4 && emailRegex.test(state.email) && state.email && state.message.trim().length >= 10) {
 			emailjs.sendForm("service_razjftm", "template_ajxy6dn", formRef.current, "user_LG7vK3Lix7E0XaCiTXL0L").then(
 				(result) => {
 					console.log(result.text);
@@ -73,13 +101,14 @@ function Contact() {
 					console.log(error.text);
 				}
 			);
-			setFeedbackMsg("Thank you for your messge!!!");
-			setName("");
-			setNameAlert("");
-			setEmail("");
-			setEmailAlert("");
-			setMessage("");
-			setMessageAlert("");
+
+			dispatch({ type: "feedback_message", payload: "Thnak you for your message" });
+			state.name = "";
+			state.email = "";
+			state.message = "";
+			state.nameAlert = "";
+			state.emailAlert = "";
+			state.messageAlert = "";
 		}
 	};
 
@@ -92,24 +121,24 @@ function Contact() {
 					<p className="text-4xl text-center">La oss bygge noe fantastisk sammen..... </p>
 				</div>
 				<form ref={formRef} className="form " onSubmit={handleSubmit}>
-					{feedbackMsg && <div className="success">{feedbackMsg}</div>}
+					{state.feedbackMsg && <div className="success">{state.feedbackMsg}</div>}
 					<div className="form-control  w-full ">
 						<label htmlFor="name" className="mb-2">
-							<span className="form-spans">{nameAlert && <div className="error">{nameAlert} </div>}</span>
+							<span className="form-spans">{state.nameAlert && <div className="error">{state.nameAlert} </div>}</span>
 						</label>
-						<input type="text" name="user_name" className="input-form" placeholder="navn" onChange={handleName} value={name} />
+						<input type="text" name="user_name" className="input-form" placeholder="navn" onChange={handleName} value={state.name} />
 					</div>
 					<div className="form-control  w-full">
 						<label htmlFor="email" className="mb-2">
-							<span className="form-spans">{emailAlert && <div className="error">{emailAlert} </div>}</span>
+							<span className="form-spans">{state.emailAlert && <div className="error">{state.emailAlert} </div>}</span>
 						</label>
-						<input type="text" name="user_email" className="input-form" placeholder="epost" onChange={handleEmail} value={email} />
+						<input type="text" name="user_email" className="input-form" placeholder="epost" onChange={handleEmail} value={state.email} />
 					</div>
 					<div className="form-control h-full  w-full">
 						<label htmlFor="message" className="mb-8">
-							<span className="form-spans">{messageAlert && <div className="error">{messageAlert}</div>}</span>
+							<span className="form-spans">{state.messageAlert && <div className="error">{state.messageAlert}</div>}</span>
 						</label>
-						<textarea name="message" className="text-area " placeholder="melding" onChange={handleMessage} value={message} />
+						<textarea name="message" className="text-area " placeholder="melding" onChange={handleMessage} value={state.message} />
 					</div>
 					<button className="btn-primary btn-md btn w-full mt-5" type="submit">
 						Send
@@ -121,3 +150,125 @@ function Contact() {
 }
 
 export default Contact;
+
+// function Contact() {
+// 	const [state, dispatch] = useReducer(reducer, initialState);
+
+// 	const formRef = useRef();
+// 	const [name, setName] = useState("");
+// 	const [email, setEmail] = useState("");
+// 	const [message, setMessage] = useState("");
+// 	const [feedbackMsg, setFeedbackMsg] = useState("");
+// 	const [nameAlert, setNameAlert] = useState("");
+// 	const [emailAlert, setEmailAlert] = useState("");
+// 	const [messageAlert, setMessageAlert] = useState("");
+// 	const emailRegex = /\S+@\S+\.\S+/;
+
+// 	//removes success message
+// 	useEffect(() => {
+// 		const timer = setTimeout(() => {
+// 			setFeedbackMsg("");
+// 		}, 5000);
+// 		return () => clearTimeout(timer);
+// 	});
+
+// 	function handleName(e) {
+// 		if (name === "") {
+// 			setNameAlert(null);
+// 		} else if (name !== "" && name.trim().length <= 4) {
+// 			setNameAlert("must be atleast 4 characters");
+// 		} else {
+// 			setNameAlert(<FaCheck className="text-success" />);
+// 		}
+
+// 		setName(e.target.value);
+// 	}
+// 	function handleEmail(e) {
+// 		if (!email) {
+// 			setEmailAlert(null);
+// 		} else if (emailRegex.test(email)) {
+// 			setEmailAlert(<FaCheck className="text-success" />);
+// 		} else {
+// 			setEmailAlert("please enter valid email");
+// 		}
+// 		setEmail(e.target.value);
+// 	}
+// 	function handleMessage(e) {
+// 		if (!message) {
+// 			setMessage(null);
+// 		} else if (message !== "" && message.trim().length <= 10) {
+// 			setMessageAlert("must be atleast 10 characters");
+// 		} else {
+// 			setMessageAlert(<FaCheck className="text-success" />);
+// 		}
+// 		setMessage(e.target.value);
+// 	}
+
+// 	const handleSubmit = (e) => {
+// 		e.preventDefault();
+// 		if (!name && name.trim().length <= 4) {
+// 			setNameAlert("must be atleast 4 characters");
+// 		}
+// 		if (!emailRegex.test(email)) {
+// 			setEmailAlert("please enter valid email");
+// 		}
+// 		if (!message && message.trim().length <= 10) {
+// 			setMessageAlert("must be atleast 10 characters");
+// 		}
+// 		if (name.trim().length >= 4 && emailRegex.test(email) && email && message.trim().length >= 10) {
+// 			emailjs.sendForm("service_razjftm", "template_ajxy6dn", formRef.current, "user_LG7vK3Lix7E0XaCiTXL0L").then(
+// 				(result) => {
+// 					console.log(result.text);
+// 				},
+// 				(error) => {
+// 					console.log(error.text);
+// 				}
+// 			);
+// 			setFeedbackMsg("Thank you for your messge!!!");
+// 			setName("");
+// 			setNameAlert("");
+// 			setEmail("");
+// 			setEmailAlert("");
+// 			setMessage("");
+// 			setMessageAlert("");
+// 		}
+// 	};
+
+// 	return (
+// 		<section className="flex flex-col items-center gap-4  py-16 sm:py-32 px-1 lg:h-screen  justify-center bg-base-200" id="contact">
+// 			<h2>Kontakt</h2>
+// 			<div className="form-container">
+// 				<div className="form-aside">
+// 					<p className="text-xl mb-2 text-center">Legg igjen melding,</p>
+// 					<p className="text-4xl text-center">La oss bygge noe fantastisk sammen..... </p>
+// 				</div>
+// 				<form ref={formRef} className="form " onSubmit={handleSubmit}>
+// 					{feedbackMsg && <div className="success">{feedbackMsg}</div>}
+// 					<div className="form-control  w-full ">
+// 						<label htmlFor="name" className="mb-2">
+// 							<span className="form-spans">{nameAlert && <div className="error">{nameAlert} </div>}</span>
+// 						</label>
+// 						<input type="text" name="user_name" className="input-form" placeholder="navn" onChange={handleName} value={name} />
+// 					</div>
+// 					<div className="form-control  w-full">
+// 						<label htmlFor="email" className="mb-2">
+// 							<span className="form-spans">{emailAlert && <div className="error">{emailAlert} </div>}</span>
+// 						</label>
+// 						<input type="text" name="user_email" className="input-form" placeholder="epost" onChange={handleEmail} value={email} />
+// 					</div>
+// 					<div className="form-control h-full  w-full">
+// 						<label htmlFor="message" className="mb-8">
+// 							<span className="form-spans">{messageAlert && <div className="error">{messageAlert}</div>}</span>
+// 						</label>
+// 						<textarea name="message" className="text-area " placeholder="melding" onChange={handleMessage} value={message} />
+// 					</div>
+// 					<button className="btn-primary btn-md btn w-full mt-5" type="submit">
+// 						Send
+// 					</button>
+// 				</form>
+// 			</div>
+// 		</section>
+// 	);
+// }
+
+// export default Contact;
