@@ -2,63 +2,63 @@ import { motion } from "framer-motion";
 import { Link } from "react-scroll";
 
 export function Navigation({ toggle }) {
-  const variantsLi = {
-    open: {
-      y: 0,
-      opacity: 1,
-      transition: {
-        y: { stiffness: 1000, velocity: -100 },
-      },
-    },
-    closed: {
-      y: 50,
-      opacity: 0,
-      transition: {
-        y: { stiffness: 1000 },
-      },
-    },
-  };
-  const variants = {
-    open: {
-      x: 0,
-      opacity: 1,
-      transition: { staggerChildren: 0.07, delayChildren: 0.2 },
-    },
-    closed: {
-      x: -250,
-      opacity: 0,
-      transition: { staggerChildren: 0.05, staggerDirection: -1 },
-    },
-  };
-  return (
-    <>
-      <motion.ul variants={variants} className="mob-ul ">
-        <motion.li whileTap={{ scale: 0.95 }} variants={variantsLi}>
-          <Link activeClass="active" to="hero" spy={true} smooth={true} duration={500} className="mob-li  nav-li" onClick={toggle}>
-            Heim
-          </Link>
-        </motion.li>
-        <motion.li whileTap={{ scale: 0.95 }} variants={variantsLi}>
-          <Link activeClass="active" to="about" spy={true} smooth={true} duration={500} className="mob-li nav-li " onClick={toggle}>
-            Om meg
-          </Link>
-        </motion.li>
-        <motion.li whileTap={{ scale: 0.95 }} variants={variantsLi}>
-          <Link activeClass="active" to="skills" spy={true} smooth={true} duration={500} className="mob-li nav-li " onClick={toggle}>
-            Ferdigheter
-          </Link>
-        </motion.li>
-        <motion.li whileTap={{ scale: 0.95 }} variants={variantsLi}>
-          <Link activeClass="active" to="projects" spy={true} smooth={true} duration={500} className="mob-li nav-li " onClick={toggle}>
-            Projekter
-          </Link>
-        </motion.li>
-        <motion.li whileTap={{ scale: 0.95 }} variants={variantsLi}>
-          <Link activeClass="active" to="contact" spy={true} smooth={true} duration={500} className="mob-li nav-li " onClick={toggle}>
-            Kontakt
-          </Link>
-        </motion.li>
-      </motion.ul>
-    </>
-  );
+	const variantsLi = {
+		open: {
+			y: 0,
+			opacity: 1,
+			transition: {
+				y: { stiffness: 1000, velocity: -100 },
+			},
+		},
+		closed: {
+			y: 50,
+			opacity: 0,
+			transition: {
+				y: { stiffness: 1000 },
+			},
+		},
+	};
+	const variants = {
+		open: {
+			x: 0,
+			opacity: 1,
+			transition: { staggerChildren: 0.07, delayChildren: 0.2 },
+		},
+		closed: {
+			x: -250,
+			opacity: 0,
+			transition: { staggerChildren: 0.05, staggerDirection: -1 },
+		},
+	};
+	return (
+		<>
+			<motion.ul variants={variants} className="mob-ul ">
+				<motion.li whileTap={{ scale: 0.95 }} variants={variantsLi}>
+					<Link activeClass="active" to="hero" spy={true} smooth={true} duration={500} className="mob-li  nav-li" onClick={toggle}>
+						Heim
+					</Link>
+				</motion.li>
+				<motion.li whileTap={{ scale: 0.95 }} variants={variantsLi}>
+					<Link activeClass="active" to="about" spy={true} smooth={true} duration={500} className="mob-li nav-li " onClick={toggle}>
+						Om meg
+					</Link>
+				</motion.li>
+				<motion.li whileTap={{ scale: 0.95 }} variants={variantsLi}>
+					<Link activeClass="active" to="skills" spy={true} smooth={true} duration={500} className="mob-li nav-li " onClick={toggle}>
+						Ferdigheter
+					</Link>
+				</motion.li>
+				<motion.li whileTap={{ scale: 0.95 }} variants={variantsLi}>
+					<Link activeClass="active" to="projects" spy={true} smooth={true} duration={500} className="mob-li nav-li " onClick={toggle}>
+						Prosjekter
+					</Link>
+				</motion.li>
+				<motion.li whileTap={{ scale: 0.95 }} variants={variantsLi}>
+					<Link activeClass="active" to="contact" spy={true} smooth={true} duration={500} className="mob-li nav-li " onClick={toggle}>
+						Kontakt
+					</Link>
+				</motion.li>
+			</motion.ul>
+		</>
+	);
 }
