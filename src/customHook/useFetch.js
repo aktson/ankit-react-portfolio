@@ -6,11 +6,9 @@ function useFetch(url) {
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
 
-
     async function fetchData() {
 
         try {
-            // const url = baseUrl + "api/projects?populate=*";
             const response = await fetch(url);
             const results = await response.json();
             setData(results.data);
@@ -22,11 +20,11 @@ function useFetch(url) {
             setLoading(false);
         }
     }
-
     useEffect(() => {
         fetchData();
         //eslint-disable-next-line react-hooks/exhaustive-deps
     }, [])
+
     return {
         data, loading, error
     }
