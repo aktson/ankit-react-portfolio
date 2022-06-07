@@ -1,9 +1,8 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { baseUrl } from "../../settings/settings";
 import Loader from "./Loader";
 import { motion, AnimatePresence } from "framer-motion";
 import useFetch from "../../customHook/useFetch";
-import { Fragment } from "react/cjs/react.production.min";
 
 function Tabs() {
 	const [toggleState, setToggleState] = useState("all");
