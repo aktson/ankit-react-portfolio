@@ -1,7 +1,7 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-@import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,300;1,300&family=Mada:wght@300;400&family=Metal&family=Tenor+Sans&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Mada:wght@300;400&family=Metal&family=Tenor+Sans&display=swap");
 
 :root {
 	--primary: #570df8;
@@ -15,10 +15,9 @@
 	--error: "#F87272";
 	--gradient-primary: linear-gradient(267deg, rgba(87, 13, 248, 1) 0%, rgba(55, 205, 190, 1) 100%);
 	--gradient-secondary: linear-gradient(162deg, rgba(87, 13, 248, 1) 0%, rgba(55, 205, 190, 1) 100%);
-	--heading-fonts: "Josefin Sans", sans-serif;
 	--body-fonts: "Mada", sans-serif;
 	--cursive-fonts: "Metal", cursive;
-	--h1-fonts: "Tenor Sans", sans-serif;
+	--heading-fonts: "Tenor Sans", sans-serif;
 }
 
 * {
@@ -50,9 +49,9 @@ main {
 }
 h1 {
 	line-height: 1.4em;
-	font-family: var(--h1-fonts);
 }
 
+h1,
 h2,
 h3,
 h4,
@@ -161,10 +160,10 @@ h2::after {
 		@apply text-neutral text-4xl  mb-8 leading-loose lg:text-5xl;
 	}
 	h2 {
-		@apply text-4xl  mb-12 relative text-neutral font-extrabold;
+		@apply text-4xl  mb-12 relative text-neutral;
 	}
 	h3 {
-		@apply text-2xl mb-3 font-bold;
+		@apply text-2xl mb-3;
 	}
 	h4 {
 		@apply text-xl font-extrabold mb-2;
