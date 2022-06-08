@@ -23,7 +23,7 @@ function Modal({ title, stack, summary, img, url, github, open, onClose }) {
 								<span className="flex justify-start text-2xl mb-2">{title}</span>
 								<div className=" badge badge-primary badge-outline p-5 ">{stack}</div>
 							</h3>
-							<p className="text-neutral text-base text-left mb-5 line-break overflow-y-scroll">{summary}</p>
+							<p className="text-neutral text-base text-left mb-5 line-break overflow-y-auto">{summary}</p>
 							<div className="flex justify-between items-center">
 								<div className="flex gap-2">
 									<a
