@@ -6,7 +6,7 @@ function Modal({ title, stack, summary, img, url, github, open, onClose }) {
 	if (!open) return null;
 
 	return ReactDom.createPortal(
-		<div className="p-2 py-4" id="my-modal">
+		<div className="p-2 " id="my-modal">
 			<AnimatePresence>
 				<motion.div
 					className="container mx-auto flex justify-center items-center"
@@ -18,7 +18,7 @@ function Modal({ title, stack, summary, img, url, github, open, onClose }) {
 						{/* <figure>
 							<img src={img} className=" w-100 h-100" alt={title} />
 						</figure> */}
-						<div style={{ background: `url(${img}) no-repeat center`, backgroundSize: "cover" }} className=""></div>
+						<div style={{ background: `url(${img}) no-repeat center`, backgroundSize: "cover" }}></div>
 						<div className="card-body bg-base-100">
 							<h3 className="card-title flex flex-col text-neutral">
 								<span className="flex justify-start text-2xl mb-2">{title}</span>
