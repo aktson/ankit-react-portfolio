@@ -1,7 +1,7 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-@import url("https://fonts.googleapis.com/css2?family=Mada:wght@300;400&family=Metal&family=Tenor+Sans&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Mada:wght@300;400&IBM+Plex+Sans:wght@300&family=Metal&family=Tenor+Sans&display=swap");
 
 :root {
 	--primary: #570df8;
@@ -27,6 +27,7 @@
 }
 body {
 	font-family: var(--body-fonts);
+	font-family: "IBM Plex Sans", sans-serif;
 }
 #root {
 	display: flex;
