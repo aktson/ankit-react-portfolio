@@ -102,7 +102,7 @@ function Contact() {
 				}
 			);
 
-			dispatch({ type: "feedback_message", payload: "Thnak you for your message" });
+			dispatch({ type: "feedback_message", payload: "Takk for din melding, jeg tar kontakt!!" });
 			state.name = "";
 			state.email = "";
 			state.message = "";
