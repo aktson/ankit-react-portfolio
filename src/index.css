@@ -1,7 +1,8 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-@import url("https://fonts.googleapis.com/css2?family=Mada:wght@300;400&IBM+Plex+Sans:wght@300&family=Metal&family=Tenor+Sans&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Metal&family=Philosopher&family=Martel+Sans&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=DM+Serif+Text&family=Martel+Sans&display=swap");
 
 :root {
 	--primary: #570df8;
@@ -15,9 +16,9 @@
 	--error: #f87272;
 	--gradient-primary: linear-gradient(267deg, rgba(87, 13, 248, 1) 0%, rgba(55, 205, 190, 1) 100%);
 	--gradient-secondary: linear-gradient(162deg, rgba(87, 13, 248, 1) 0%, rgba(55, 205, 190, 1) 100%);
-	--body-fonts: "Mada", sans-serif;
+	--body-fonts: "Martel Sans", sans-serif;
 	--cursive-fonts: "Metal", cursive;
-	--heading-fonts: "Tenor Sans", sans-serif;
+	--heading-fonts: "Philosopher", sans-serif;
 }
 
 * {
@@ -27,7 +28,6 @@
 }
 body {
 	font-family: var(--body-fonts);
-	font-family: "IBM Plex Sans", sans-serif;
 }
 #root {
 	display: flex;
@@ -42,7 +42,16 @@ body {
 main {
 	flex: 1 0 auto;
 }
-
+footer {
+	font-family: var(--cursive-fonts);
+}
+h1,
+h2,
+h3,
+h4,
+h5 {
+	font-family: var(--heading-fonts);
+}
 .logo {
 	cursor: pointer;
 	width: 100px;
@@ -50,14 +59,6 @@ main {
 }
 h1 {
 	line-height: 1.4em;
-}
-
-h1,
-h2,
-h3,
-h4,
-h5 {
-	font-family: var(--heading-fonts);
 }
 
 h2::after {
@@ -161,16 +162,13 @@ h2::after {
 		@apply text-neutral text-4xl  mb-8 leading-loose lg:text-5xl;
 	}
 	h2 {
-		@apply text-4xl  mb-12 relative text-neutral;
+		@apply text-4xl  mb-14 relative text-neutral;
 	}
 	h3 {
 		@apply text-2xl mb-3;
 	}
 	h4 {
-		@apply text-xl font-extrabold mb-2;
-	}
-	p {
-		@apply text-lg;
+		@apply text-xl font-bold mb-2;
 	}
 }
 @layer components {
@@ -249,7 +247,7 @@ h2::after {
 	/* footer */
 	.footer {
 		background: var(--gradient-secondary);
-		@apply text-base-100 p-10 relative flex flex-col justify-center items-center  text-center gap-4;
+		@apply text-base-100 p-10 relative flex flex-col justify-center items-center  text-center gap-4 text-base;
 	}
 	#to-top-btn {
 		@apply absolute bottom-32 sm:bottom-20 right-12 bg-primary rounded-full text-base-100  p-3 text-sm hover:bg-slate-300 hover:text-primary transition-all cursor-pointer;

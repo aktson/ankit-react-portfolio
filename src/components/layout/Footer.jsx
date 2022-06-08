@@ -17,7 +17,7 @@ function Footer() {
 				</a>
 			</div>
 			<div>
-				<p className="text-sm">Copyright &copy; {year}- Designed & Developed by AnkSon</p>
+				<p>Copyright &copy; {year}- Designed & Developed by AnkSon</p>
 			</div>
 			<ToTopButton />
 		</footer>

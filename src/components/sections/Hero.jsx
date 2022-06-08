@@ -19,7 +19,8 @@ function Hero() {
 						<div className=" grid lg:grid-cols-1 text-primary lg:justify-items-center text-center ">
 							<div className="p-2">
 								<h1>
-									HELLO <br /> <span className="text-primary">I'M ANKIT SONI,</span>
+									HELLO <br />
+									I'M <span className="text-primary">ANKIT SONI,</span>
 									<br /> Front-end utvikler
 								</h1>
 								<Link className="btn btn-primary btn-md sm:btn-wide " to="about" smooth={true} duration={500}>
@@ -35,28 +36,3 @@ function Hero() {
 }
 
 export default Hero;
-
-// hero without image
-{
-	/* <div className="hero min-h-screen ">
-  <div className="text-center hero-content">
-    <div className="max-w-md">
-      <h1 className="text-5xl font-bold">
-        Hello, I'm <span className="text-primary">Ankit Soni</span>
-      </h1>
-      <p className="py-6">
-        Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda excepturi exercitationem quasi. In deleniti eaque aut repudiandae et a id
-        nisi.
-      </p>
-
-      <Link className="btn btn-primary btn-outline btn-wide " to="about" smooth={true} duration={500}>
-        View my Work
-      </Link>
-    </div>
-  </div>
-</div>; */
-}
-// hero with background image
-{
-	/*  */
-}
