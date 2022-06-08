@@ -137,9 +137,6 @@ h2::after {
 	border-bottom: 2px solid var(--accent);
 }
 #my-modal {
-	display: flex;
-	align-items: center;
-	justify-content: center;
 	position: fixed;
 	top: 0;
 	right: 0;
