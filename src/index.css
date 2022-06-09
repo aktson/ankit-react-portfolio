@@ -250,7 +250,7 @@ h2::after {
 		@apply text-base-100 p-10 relative flex flex-col justify-center items-center  text-center gap-4 text-base;
 	}
 	#to-top-btn {
-		@apply absolute bottom-32 sm:bottom-20 right-12 bg-primary rounded-full text-base-100  p-3 text-sm hover:bg-slate-300 hover:text-primary transition-all cursor-pointer;
+		@apply absolute bottom-36 sm:bottom-20 right-12 bg-primary rounded-full text-base-100  p-3 text-sm hover:bg-slate-300 hover:text-primary transition-all cursor-pointer;
 	}
 	/* sections indiacators */
 	.active-indicator {
