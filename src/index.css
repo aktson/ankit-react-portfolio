@@ -278,18 +278,18 @@ h2::after {
 }
 
 /* styled scrollbar */
-.scrollbar::-webkit-scrollbar {
+.styledScrollbar::-webkit-scrollbar {
 	width: 8px;
 }
-.scrollbar::-webkit-scrollbar-thumb {
+.styledScrollbar::-webkit-scrollbar-thumb {
 	/* Foreground */
 	background: var(--gradient-secondary);
 	border-radius: 32px;
 }
-.scrollbar::-webkit-scrollbar-track {
+.styledScrollbar::-webkit-scrollbar-track {
 	/* Background */
 	background: var(--light);
 }
-.scrollbar {
+.styledScrollbar {
 	cursor: pointer;
 }
