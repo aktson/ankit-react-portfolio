@@ -49,7 +49,7 @@ function Contact() {
 	});
 
 	function handleName(e) {
-		if (state.name === "") {
+		if (!state.name) {
 			dispatch({ type: "name_alert", payload: null });
 		} else if (state.name !== "" && state.name.trim().length <= 4) {
 			dispatch({ type: "name_alert", payload: "must be atleast 4 characters" });

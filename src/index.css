@@ -173,7 +173,7 @@ h2::after {
 }
 @layer components {
 	.nav-li {
-		@apply inline-block mx-4 p-2 text-lg hover:border-b-2 hover:border-b-accent-focus transition-all ease-in-out hover:animate-pulse cursor-pointer;
+		@apply inline-block mx-4 p-2 text-base hover:border-b-2 hover:border-b-accent-focus transition-all ease-in-out hover:animate-pulse cursor-pointer;
 	}
 	.btn {
 		@apply text-neutral-content rounded-none shadow-2xl;
