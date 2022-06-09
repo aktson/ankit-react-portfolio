@@ -276,7 +276,20 @@ h2::after {
 		}
 	}
 }
-/* section projects */
-#project-tile {
-	width: 32rem;
+
+/* styled scrollbar */
+.scrollbar::-webkit-scrollbar {
+	width: 8px;
+}
+.scrollbar::-webkit-scrollbar-thumb {
+	/* Foreground */
+	background: var(--gradient-secondary);
+	border-radius: 32px;
+}
+.scrollbar::-webkit-scrollbar-track {
+	/* Background */
+	background: var(--light);
+}
+.scrollbar {
+	cursor: pointer;
 }
