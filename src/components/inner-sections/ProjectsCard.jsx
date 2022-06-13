@@ -2,7 +2,7 @@ import ModalProjects from "./ModalProjects";
 import { useState } from "react";
 import { FaAngleRight } from "react-icons/fa";
 
-function ProjectsCard({ id, title, img, stack, summary, url, github, stacks }) {
+function ProjectsCard({ id, title, img, stack, summary, url, github, stacks, sliderImages, length }) {
 	const [isOpen, setIsOpen] = useState(false);
 
 	const handleClick = () => {
@@ -31,12 +31,15 @@ function ProjectsCard({ id, title, img, stack, summary, url, github, stacks }) {
 				{isOpen && (
 					<ModalProjects
 						open={isOpen}
+						id={id}
 						title={title}
 						summary={summary}
 						img={img}
 						url={url}
 						stack={stack}
 						github={github}
+						sliderImages={sliderImages}
+						length={length}
 						onClose={() => {
 							setIsOpen(!isOpen);
 							document.body.style.overflow = "auto";

@@ -1,8 +1,9 @@
 import { FaTimes, FaExternalLinkAlt, FaGithub } from "react-icons/fa";
 import { motion, AnimatePresence } from "framer-motion";
 import ReactDom from "react-dom";
+import Slider from "./Slider";
 
-function Modal({ title, stack, summary, img, url, github, open, onClose }) {
+function Modal({ title, stack, summary, img, url, github, open, onClose, sliderImages, length }) {
 	if (!open) return null;
 
 	return ReactDom.createPortal(
@@ -15,7 +16,7 @@ function Modal({ title, stack, summary, img, url, github, open, onClose }) {
 					exit={{ y: 0 }}
 					transition={{ type: "spring", bounce: 0.4, duration: 0.6 }}>
 					<div className="max-w-2xl  bg-base-100 rounded-lg grid  grid-rows-auto md:grid-rows-2 " style={{ maxHeight: "850px" }}>
-						<div className=" h-80 md:min-h-full" style={{ background: `url(${img}) no-repeat center`, backgroundSize: "cover" }}></div>
+						<Slider sliderImages={sliderImages} length={length} />
 						<div className="card-body bg-base-100">
 							<h3 className="card-title flex flex-col text-neutral">
 								<span className="flex justify-start text-2xl mb-2">{title}</span>

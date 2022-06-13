@@ -293,3 +293,37 @@ h2::after {
 .styledScrollbar {
 	cursor: pointer;
 }
+
+/* custom slider for modal */
+.slider {
+	transition: 1s ease;
+	position: relative;
+	width: 100%;
+	height: 100%;
+	display: none;
+	animation: 0.7s scale forwards;
+}
+
+@keyframes scale {
+	0% {
+		opacity: 0;
+	}
+	100% {
+		opacity: 1;
+		transform: scale(1.01);
+	}
+}
+.slider.active-slide {
+	display: block;
+}
+
+.slide-indicator {
+	color: var(--accent);
+	opacity: 0.5;
+	transition: 0.3s ease-in;
+}
+.active-slide-indicator {
+	color: var(--accent);
+	opacity: 1;
+	transform: scale(1.3);
+}

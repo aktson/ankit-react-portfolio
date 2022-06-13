@@ -13,6 +13,9 @@ function Projects() {
 		const projectId = items.id;
 		const image = item.image.data.attributes.url;
 		const stackImages = item.stacks.data;
+		const sliderImages = items.attributes.sliderImages.data;
+		const length = sliderImages.length;
+		console.log();
 
 		return (
 			<ProjectsCard
@@ -25,6 +28,8 @@ function Projects() {
 				github={item.github}
 				stacks={stackImages}
 				key={projectId}
+				sliderImages={sliderImages}
+				length={length}
 			/>
 		);
 	});
@@ -32,13 +37,13 @@ function Projects() {
 	return (
 		<section className=" py-16 sm:py-32 px-1" id="projects">
 			<div className="container flex flex-col justify-center mx-auto items-center">
-				<h2 className="">PROSJEKTER</h2>
+				<h2>PROSJEKTER</h2>
 				<p className="max-w-3xl text-center mb-8">
 					I løpet av studiene har jeg jobbet med mange skole- og praksis prosjekter som kan finnes på
 					<a href="https://github.com/aktson?tab=repositories" target="_blank" rel="noreferrer" className="text-primary ml-1">
 						github
 					</a>
-					, her er noen av dem utviklet med forskjellige verktøy og teknologi
+					, her er noen av dem utviklet med ulike verktøy og teknologi
 				</p>
 				{loading ? (
 					<Loader />
