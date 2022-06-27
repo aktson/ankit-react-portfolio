@@ -15,7 +15,6 @@ function Projects() {
 		const stackImages = item.stacks.data;
 		const sliderImages = items.attributes.sliderImages.data;
 		const length = sliderImages.length;
-		console.log();
 
 		return (
 			<ProjectsCard

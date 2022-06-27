@@ -1,4 +1,6 @@
-import { FaGithub, FaFacebookF, FaInstagram } from "react-icons/fa";
+import Facebook from "./socialIcons/Facebook";
+import Github from "./socialIcons/Github";
+import Instagram from "./socialIcons/Instagram";
 import ToTopButton from "./ToTopButton";
 
 function Footer() {
@@ -6,15 +8,9 @@ function Footer() {
 	return (
 		<footer className="footer" id="footer">
 			<div className="flex  justify-center gap-4 text-center sm:hidden">
-				<a href="https://www.facebook.com/ankitsoni86" target="_blank">
-					<FaFacebookF size={20} />
-				</a>
-				<a href="https://github.com/aktson?tab=repositories" target="_blank">
-					<FaGithub size={20} />
-				</a>
-				<a href="https://www.instagram.com/ankt8soni" target="_blank">
-					<FaInstagram size={20} />
-				</a>
+				<Facebook />
+				<Github />
+				<Instagram />
 			</div>
 			<div>
 				<p>Copyright &copy; {year}- Designed & Developed by AnkSon</p>

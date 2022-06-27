@@ -5,9 +5,14 @@ import { FaAngleRight } from "react-icons/fa";
 function ProjectsCard({ id, title, img, stack, summary, url, github, stacks, sliderImages, length }) {
 	const [isOpen, setIsOpen] = useState(false);
 
-	const handleClick = () => {
+	const openModal = () => {
 		setIsOpen(true);
 		document.body.style.overflow = "hidden";
+	};
+
+	const closeModal = () => {
+		setIsOpen(false);
+		document.body.style.overflow = "auto";
 	};
 
 	const mappedStackImg = stacks.map((stackImage) => {
@@ -30,7 +35,7 @@ function ProjectsCard({ id, title, img, stack, summary, url, github, stacks, sli
 			<div className=" w-full p-8 relative">
 				<h3>{title}</h3>
 				<div className="flex gap-4 mt-5">{mappedStackImg}</div>
-				<button className="btn btn-primary absolute rounded-full -top-6 right-2 shadow-xl" onClick={handleClick} key={id}>
+				<button className="btn btn-primary absolute rounded-full -top-6 right-2 shadow-xl" onClick={openModal} key={id}>
 					<FaAngleRight />
 				</button>
 				{isOpen && (
@@ -45,10 +50,7 @@ function ProjectsCard({ id, title, img, stack, summary, url, github, stacks, sli
 						github={github}
 						sliderImages={sliderImages}
 						length={length}
-						onClose={() => {
-							setIsOpen(!isOpen);
-							document.body.style.overflow = "auto";
-						}}
+						onClose={closeModal}
 					/>
 				)}
 			</div>

@@ -33,7 +33,7 @@ function Slider({ sliderImages, length }) {
 	return (
 		<>
 			{
-				<div className=" flex  justify-center items-center mx-auto overflow-clip  relative w-full">
+				<div className=" flex  justify-center items-center mx-auto overflow-clip  relative w-full z-50">
 					<button className="btn btn-accent  absolute rounded-full left-2 shadow-xl z-10" onClick={slideLeft}>
 						<FaAngleLeft />
 					</button>
