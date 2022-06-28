@@ -1,4 +1,5 @@
 import { FaTimes, FaExternalLinkAlt, FaGithub } from "react-icons/fa";
+import { motion, AnimatePresence } from "framer-motion";
 import ReactDom from "react-dom";
 import Slider from "./Slider";
 import ModalOverlay from "./ModalOverlay";
@@ -8,8 +9,15 @@ function ModalProjects({ title, stack, summary, url, github, open, onClose, slid
 
 	return ReactDom.createPortal(
 		<div className="p-2 md:flex justify-center items-center" id="my-modal">
-			<ModalOverlay>
-				<div className="max-w-2xl  bg-base-100 rounded-lg grid  grid-rows-auto md:grid-rows-2 z-50 " style={{ maxHeight: "850px" }}>
+			<ModalOverlay onClose={onClose} />
+			<AnimatePresence>
+				<motion.div
+					className="max-w-2xl  bg-base-100 rounded-lg grid  grid-rows-auto md:grid-rows-2 mx-auto z-50"
+					style={{ maxHeight: "850px" }}
+					initial={{ y: -300 }}
+					animate={{ y: 0 }}
+					exit={{ y: 0 }}
+					transition={{ type: "spring", bounce: 0.4, duration: 0.6 }}>
 					<Slider sliderImages={sliderImages} length={length} />
 					<div className="card-body bg-base-100">
 						<h3 className="card-title flex flex-col text-neutral">
@@ -41,8 +49,8 @@ function ModalProjects({ title, stack, summary, url, github, open, onClose, slid
 							</div>
 						</div>
 					</div>
-				</div>
-			</ModalOverlay>
+				</motion.div>
+			</AnimatePresence>
 		</div>,
 		document.getElementById("portal")
 	);
