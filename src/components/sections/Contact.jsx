@@ -1,6 +1,7 @@
 import emailjs from "@emailjs/browser";
 import { useRef, useEffect, useReducer } from "react";
 import { FaCheck } from "react-icons/fa";
+import Bounce from "react-reveal/Bounce";
 
 const initialState = {
 	name: "",
@@ -114,37 +115,49 @@ function Contact() {
 
 	return (
 		<section className="flex flex-col items-center gap-4  py-16 sm:py-32 px-1 lg:h-screen  justify-center bg-base-200" id="contact">
-			<h2>KONTAKT</h2>
-			<div className="form-container">
-				<div className="form-aside">
-					<p className="text-xl mb-2 text-center">Legg igjen melding,</p>
-					<p className="text-4xl text-center">La oss bygge noe fantastisk sammen..... </p>
+			<Bounce top cascade>
+				<h2>KONTAKT</h2>
+			</Bounce>
+			<Bounce bottom>
+				{" "}
+				<div className="form-container">
+					<div className="form-aside">
+						<p className="text-xl mb-2 text-center">Legg igjen melding,</p>
+						<p className="text-4xl text-center">La oss bygge noe fantastisk sammen..... </p>
+					</div>
+					<form ref={formRef} className="form " onSubmit={handleSubmit}>
+						{state.feedbackMsg && <div className="success">{state.feedbackMsg}</div>}
+						<div className="form-control  w-full ">
+							<label htmlFor="name" className="mb-2">
+								<span className="form-spans">{state.nameAlert && <div className="error">{state.nameAlert} </div>}</span>
+							</label>
+							<input type="text" name="user_name" className="input-form" placeholder="navn" onChange={handleName} value={state.name} />
+						</div>
+						<div className="form-control  w-full">
+							<label htmlFor="email" className="mb-2">
+								<span className="form-spans">{state.emailAlert && <div className="error">{state.emailAlert} </div>}</span>
+							</label>
+							<input
+								type="text"
+								name="user_email"
+								className="input-form"
+								placeholder="epost"
+								onChange={handleEmail}
+								value={state.email}
+							/>
+						</div>
+						<div className="form-control h-full  w-full">
+							<label htmlFor="message" className="mb-8">
+								<span className="form-spans">{state.messageAlert && <div className="error">{state.messageAlert}</div>}</span>
+							</label>
+							<textarea name="message" className="text-area " placeholder="melding" onChange={handleMessage} value={state.message} />
+						</div>
+						<button className="btn-primary btn-md btn w-full mt-5" type="submit">
+							Send
+						</button>
+					</form>
 				</div>
-				<form ref={formRef} className="form " onSubmit={handleSubmit}>
-					{state.feedbackMsg && <div className="success">{state.feedbackMsg}</div>}
-					<div className="form-control  w-full ">
-						<label htmlFor="name" className="mb-2">
-							<span className="form-spans">{state.nameAlert && <div className="error">{state.nameAlert} </div>}</span>
-						</label>
-						<input type="text" name="user_name" className="input-form" placeholder="navn" onChange={handleName} value={state.name} />
-					</div>
-					<div className="form-control  w-full">
-						<label htmlFor="email" className="mb-2">
-							<span className="form-spans">{state.emailAlert && <div className="error">{state.emailAlert} </div>}</span>
-						</label>
-						<input type="text" name="user_email" className="input-form" placeholder="epost" onChange={handleEmail} value={state.email} />
-					</div>
-					<div className="form-control h-full  w-full">
-						<label htmlFor="message" className="mb-8">
-							<span className="form-spans">{state.messageAlert && <div className="error">{state.messageAlert}</div>}</span>
-						</label>
-						<textarea name="message" className="text-area " placeholder="melding" onChange={handleMessage} value={state.message} />
-					</div>
-					<button className="btn-primary btn-md btn w-full mt-5" type="submit">
-						Send
-					</button>
-				</form>
-			</div>
+			</Bounce>
 		</section>
 	);
 }

@@ -1,35 +1,36 @@
 import { Link } from "react-scroll";
-import { motion, AnimatePresence } from "framer-motion";
 import Header from "../layout/Header";
+import Bounce from "react-reveal/Bounce";
+import Zoom from "react-reveal/Zoom";
 
 function Hero() {
 	return (
 		<>
 			<section className=" flex flex-col justify-center h-screen " id="hero">
 				<Header />
-
-				<AnimatePresence>
-					<motion.div
-						className="container text-base-100  mx-auto px-1 relative "
-						id="hero-bg"
-						animate={{ opacity: 1, y: 0 }}
-						initial={{ opacity: 0, y: 50 }}
-						exit={{ opacity: 0, y: 0 }}
-						transition={{ duration: 1 }}>
-						<div className=" grid lg:grid-cols-1 text-primary lg:justify-items-center text-center ">
-							<div className="p-2">
-								<h1>
-									HELLO <br />
-									I'M <span className="text-primary">ANKIT SONI,</span>
-									<br /> Front-end utvikler
-								</h1>
+				<div className="container text-base-100  mx-auto px-1 relative " id="hero-bg">
+					<div className=" grid lg:grid-cols-1 text-primary lg:justify-items-center text-center ">
+						<div className="p-2">
+							<h1>
+								<Bounce top cascade>
+									HELLO I'M
+								</Bounce>
+								<Bounce right cascade>
+									<span className="text-primary"> ANKIT SONI,</span>
+								</Bounce>
+								<br />
+								<Bounce left cascade>
+									Front-end utvikler
+								</Bounce>
+							</h1>
+							<Zoom>
 								<Link className="btn btn-primary btn-md sm:btn-wide " to="about" smooth={true} duration={500}>
 									Se mitt arbeid
 								</Link>
-							</div>
+							</Zoom>
 						</div>
-					</motion.div>
-				</AnimatePresence>
+					</div>
+				</div>
 			</section>
 		</>
 	);

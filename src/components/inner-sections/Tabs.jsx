@@ -1,8 +1,10 @@
 import { useState } from "react";
 import { baseUrl } from "../../settings/settings";
 import Loader from "./Loader";
-import { motion, AnimatePresence } from "framer-motion";
 import useFetch from "../../customHook/useFetch";
+import Fade from "react-reveal/Fade";
+import Flip from "react-reveal/Flip";
+import Zoom from "react-reveal/Zoom";
 
 function Tabs() {
 	const [toggleState, setToggleState] = useState("all");
@@ -24,18 +26,12 @@ function Tabs() {
 			const image = data.attributes.img.data.attributes.url;
 			const id = data.id;
 			return (
-				<AnimatePresence exitBeforeEnter key={id}>
-					<motion.div
-						className="skills"
-						data-tip={title}
-						animate={{ opacity: 1, y: 0 }}
-						initial={{ opacity: 0, y: 30 }}
-						exit={{ opacity: 0, y: -30 }}
-						transition={{ duration: 0.2 }}>
+				<Flip right cascade>
+					<div className="skills" data-tip={title}>
 						<img src={image} alt={title} className="tech-logos " />
 						<p>{title}</p>
-					</motion.div>
-				</AnimatePresence>
+					</div>
+				</Flip>
 			);
 		});
 
@@ -48,36 +44,32 @@ function Tabs() {
 		const id = stack.id;
 
 		return (
-			<AnimatePresence exitBeforeEnter key={id}>
-				<motion.div
-					className="skills"
-					data-tip={title}
-					animate={{ opacity: 1, y: 0 }}
-					initial={{ opacity: 0, y: 20 }}
-					exit={{ opacity: 0, y: -20 }}
-					transition={{ duration: 0.15 }}>
+			<Zoom top>
+				<div className="skills" data-tip={title}>
 					<img src={image} alt={title} className="tech-logos " />
 					<p>{title}</p>
-				</motion.div>
-			</AnimatePresence>
+				</div>
+			</Zoom>
 		);
 	});
 
 	return (
 		<>
 			<div className="tabs-container ">
-				<div className={toggleState === "all" ? "tab-header active-tab" : "tab-header  "} onClick={() => handleClick("all")}>
-					Alle
-				</div>
-				<div className={toggleState === 1 ? " tab-header active-tab" : "tab-header"} onClick={() => handleClick(1)}>
-					Front-end
-				</div>
-				<div className={toggleState === 2 ? " tab-header  active-tab" : "tab-header "} onClick={() => handleClick(2)}>
-					Design
-				</div>
-				<div className={toggleState === 3 ? " tab-header active-tab" : "tab-header "} onClick={() => handleClick(3)}>
-					Andre
-				</div>
+				<Fade>
+					<div className={toggleState === "all" ? "tab-header active-tab" : "tab-header  "} onClick={() => handleClick("all")}>
+						Alle
+					</div>
+					<div className={toggleState === 1 ? " tab-header active-tab" : "tab-header"} onClick={() => handleClick(1)}>
+						Front-end
+					</div>
+					<div className={toggleState === 2 ? " tab-header  active-tab" : "tab-header "} onClick={() => handleClick(2)}>
+						Design
+					</div>
+					<div className={toggleState === 3 ? " tab-header active-tab" : "tab-header "} onClick={() => handleClick(3)}>
+						Andre
+					</div>
+				</Fade>
 			</div>
 			{loading ? (
 				<Loader />

@@ -2,6 +2,9 @@ import { baseUrl } from "../../settings/settings";
 import ProjectsCard from "../inner-sections/ProjectsCard";
 import Loader from "../inner-sections/Loader";
 import useFetch from "../../customHook/useFetch";
+import Flip from "react-reveal/Flip";
+import Slide from "react-reveal/Slide";
+import Jello from "react-reveal/Jello";
 
 function Projects() {
 	const url = baseUrl + "api/projects?populate=*";
@@ -36,18 +39,22 @@ function Projects() {
 	return (
 		<section className=" py-16 sm:py-32 px-1" id="projects">
 			<div className="container flex flex-col justify-center mx-auto items-center">
-				<h2>PROSJEKTER</h2>
-				<p className="max-w-3xl text-center mb-8">
-					I løpet av studiene har jeg jobbet med mange skole- og praksis prosjekter som kan finnes på
-					<a href="https://github.com/aktson?tab=repositories" target="_blank" rel="noreferrer" className="text-primary ml-1">
-						github
-					</a>
-					, her er noen av dem utviklet med ulike verktøy og teknologi
-				</p>
+				<Flip top cascade>
+					<h2>PROSJEKTER</h2>
+				</Flip>
+				<Slide top>
+					<p className="max-w-3xl text-center mb-8">
+						I løpet av studiene har jeg jobbet med mange skole- og praksis prosjekter som kan finnes på
+						<a href="https://github.com/aktson?tab=repositories" target="_blank" rel="noreferrer" className="text-primary ml-1">
+							github
+						</a>
+						, her er noen av dem utviklet med ulike verktøy og teknologi
+					</p>
+				</Slide>
 				{loading ? (
 					<Loader />
 				) : (
-					<div className="grid  md:grid-cols-2 grid-cols-1 mx-auto  gap-8  max-w-screen-5xl  my-8 p-2 ">{mappedData}</div>
+					<div className="grid  md:grid-cols-3 grid-cols-1 mx-auto  gap-8  max-w-screen-5xl  my-8 p-2 ">{mappedData}</div>
 				)}
 			</div>
 		</section>
