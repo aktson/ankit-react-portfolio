@@ -2,6 +2,7 @@ import emailjs from "@emailjs/browser";
 import { useRef, useEffect, useReducer } from "react";
 import { FaCheck } from "react-icons/fa";
 import Bounce from "react-reveal/Bounce";
+import HeadShake from "react-reveal/HeadShake";
 
 const initialState = {
 	name: "",
@@ -118,7 +119,7 @@ function Contact() {
 			<Bounce top cascade>
 				<h2>KONTAKT</h2>
 			</Bounce>
-			<Bounce bottom>
+			<Bounce bottom cascade>
 				{" "}
 				<div className="form-container">
 					<div className="form-aside">
@@ -129,13 +130,26 @@ function Contact() {
 						{state.feedbackMsg && <div className="success">{state.feedbackMsg}</div>}
 						<div className="form-control  w-full ">
 							<label htmlFor="name" className="mb-2">
-								<span className="form-spans">{state.nameAlert && <div className="error">{state.nameAlert} </div>}</span>
+								<span className="form-spans">
+									{state.nameAlert && (
+										<HeadShake>
+											<div className="error">{state.nameAlert} </div>
+										</HeadShake>
+									)}
+								</span>
 							</label>
+
 							<input type="text" name="user_name" className="input-form" placeholder="navn" onChange={handleName} value={state.name} />
 						</div>
 						<div className="form-control  w-full">
 							<label htmlFor="email" className="mb-2">
-								<span className="form-spans">{state.emailAlert && <div className="error">{state.emailAlert} </div>}</span>
+								<span className="form-spans">
+									{state.emailAlert && (
+										<HeadShake>
+											<div className="error">{state.emailAlert} </div>
+										</HeadShake>
+									)}
+								</span>
 							</label>
 							<input
 								type="text"
@@ -148,7 +162,13 @@ function Contact() {
 						</div>
 						<div className="form-control h-full  w-full">
 							<label htmlFor="message" className="mb-8">
-								<span className="form-spans">{state.messageAlert && <div className="error">{state.messageAlert}</div>}</span>
+								<span className="form-spans">
+									{state.messageAlert && (
+										<HeadShake>
+											<div className="error">{state.messageAlert}</div>
+										</HeadShake>
+									)}
+								</span>
 							</label>
 							<textarea name="message" className="text-area " placeholder="melding" onChange={handleMessage} value={state.message} />
 						</div>

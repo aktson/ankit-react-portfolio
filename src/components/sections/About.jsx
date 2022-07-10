@@ -1,6 +1,6 @@
 import profileImage from "../../assets/fb.jpg";
 import CardsAbout from "../inner-sections/CardsAbout";
-import Zoom from "react-reveal/Zoom";
+import Fade from "react-reveal/Fade";
 import Flip from "react-reveal/Flip";
 
 function About() {
@@ -11,11 +11,11 @@ function About() {
 			</Flip>
 			<div className="grid lg:grid-cols-1 md:grid-col-2 sm:grid-cols-1 gap-8 p-4">
 				<div className="p-2  flex flex-col items-center text-center" id="about-img">
-					<Zoom>
+					<Fade>
 						<figure>
 							<img src={profileImage} alt="ankit soni" className="h-60 w-60 mb-8 mask mask-hexagon  " />
 						</figure>
-					</Zoom>
+					</Fade>
 					<div className="max-w-xl">
 						<Flip left cascade>
 							<p>
