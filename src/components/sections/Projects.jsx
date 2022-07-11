@@ -4,7 +4,6 @@ import Loader from "../inner-sections/Loader";
 import useFetch from "../../customHook/useFetch";
 import Flip from "react-reveal/Flip";
 import Slide from "react-reveal/Slide";
-import Jello from "react-reveal/Jello";
 
 function Projects() {
 	const url = baseUrl + "api/projects?populate=*";

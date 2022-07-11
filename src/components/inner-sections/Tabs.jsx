@@ -26,7 +26,7 @@ function Tabs() {
 			const image = data.attributes.img.data.attributes.url;
 			const id = data.id;
 			return (
-				<Flip right cascade>
+				<Flip right cascade key={id}>
 					<div className="skills" data-tip={title}>
 						<img src={image} alt={title} className="tech-logos " />
 						<p>{title}</p>
@@ -44,7 +44,7 @@ function Tabs() {
 		const id = stack.id;
 
 		return (
-			<Zoom top>
+			<Zoom top key={id}>
 				<div className="skills" data-tip={title}>
 					<img src={image} alt={title} className="tech-logos " />
 					<p>{title}</p>

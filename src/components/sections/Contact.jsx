@@ -3,6 +3,7 @@ import { useRef, useEffect, useReducer } from "react";
 import { FaCheck } from "react-icons/fa";
 import Bounce from "react-reveal/Bounce";
 import HeadShake from "react-reveal/HeadShake";
+import Tada from "react-reveal/Tada";
 
 const initialState = {
 	name: "",
@@ -120,14 +121,17 @@ function Contact() {
 				<h2>KONTAKT</h2>
 			</Bounce>
 			<Bounce bottom cascade>
-				{" "}
 				<div className="form-container">
 					<div className="form-aside">
 						<p className="text-xl mb-2 text-center">Legg igjen melding,</p>
 						<p className="text-4xl text-center">La oss bygge noe fantastisk sammen..... </p>
 					</div>
 					<form ref={formRef} className="form " onSubmit={handleSubmit}>
-						{state.feedbackMsg && <div className="success">{state.feedbackMsg}</div>}
+						{state.feedbackMsg && (
+							<Tada>
+								<div className="success">{state.feedbackMsg}</div>
+							</Tada>
+						)}
 						<div className="form-control  w-full ">
 							<label htmlFor="name" className="mb-2">
 								<span className="form-spans">
@@ -138,7 +142,6 @@ function Contact() {
 									)}
 								</span>
 							</label>
-
 							<input type="text" name="user_name" className="input-form" placeholder="navn" onChange={handleName} value={state.name} />
 						</div>
 						<div className="form-control  w-full">

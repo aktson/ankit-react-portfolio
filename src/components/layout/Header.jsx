@@ -1,8 +1,6 @@
 import { Link, animateScroll as scroll } from "react-scroll";
 import { SideBar } from "./mobile-nav/SideBar";
 import logo from "../../assets/logos/logo.svg";
-import logo2 from "../../assets/logos/ankit-light_1.svg";
-import logo3 from "../../assets/logos/color_1.svg";
 
 function Header() {
 	return (

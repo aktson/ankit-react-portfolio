@@ -23,7 +23,7 @@ function Hero() {
 									Front-end utvikler
 								</Bounce>
 							</h1>
-							<Zoom>
+							<Zoom cascade>
 								<Link className="btn btn-primary btn-md sm:btn-wide " to="about" smooth={true} duration={500}>
 									Se mitt arbeid
 								</Link>
