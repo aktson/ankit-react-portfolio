@@ -1,5 +1,6 @@
 import { FaAngleLeft, FaAngleRight, FaDotCircle } from "react-icons/fa";
 import { useState } from "react";
+import Fade from "react-reveal/Fade";
 
 function Slider({ sliderImages, length }) {
 	const [current, setCurrent] = useState(0);
@@ -24,7 +25,11 @@ function Slider({ sliderImages, length }) {
 		return (
 			<div className={index === current ? "slider active-slide" : "slider"} key={index}>
 				{index === current && (
-					<div className="h-96 min-h-full" style={{ background: `url(${sliderImage}) no-repeat center`, backgroundSize: "cover" }}></div>
+					<Fade>
+						<div
+							className="h-96 min-h-full"
+							style={{ background: `url(${sliderImage}) no-repeat center`, backgroundSize: "cover" }}></div>
+					</Fade>
 				)}
 			</div>
 		);
