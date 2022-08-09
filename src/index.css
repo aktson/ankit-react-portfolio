@@ -167,10 +167,10 @@ h2::after {
 
 @layer base {
 	h1 {
-		@apply text-neutral text-4xl  mb-8 leading-loose lg:text-5xl;
+		@apply text-4xl  mb-8 leading-loose lg:text-5xl;
 	}
 	h2 {
-		@apply text-4xl  mb-14 relative text-neutral;
+		@apply text-4xl  mb-14 relative;
 	}
 	h3 {
 		@apply text-2xl mb-3;
@@ -255,14 +255,13 @@ h2::after {
 	/* footer */
 	.footer {
 		background: var(--gradient-secondary);
-		@apply text-base-100 p-10 relative flex flex-col justify-center items-center  text-center gap-4 text-base;
+		@apply p-10 relative flex flex-col justify-center items-center  text-center gap-4 text-base-100;
 	}
 	#to-top-btn {
 		@apply absolute bottom-36 sm:bottom-20 right-12 bg-primary rounded-full text-base-100  p-3 text-sm hover:bg-slate-300 hover:text-primary transition-all cursor-pointer;
 	}
 	/* sections indiacators */
 	.active-indicator {
-		color: var(--light);
 		pointer-events: none;
 	}
 	.active-indicator > .indicator-icons {
@@ -272,7 +271,7 @@ h2::after {
 	}
 
 	.indicator-icons {
-		@apply text-neutral text-sm cursor-pointer;
+		@apply text-sm cursor-pointer;
 	}
 	@media (max-width: 490px) {
 		.indicator-icons {

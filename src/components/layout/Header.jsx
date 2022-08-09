@@ -1,6 +1,7 @@
 import { Link, animateScroll as scroll } from "react-scroll";
 import { SideBar } from "./mobile-nav/SideBar";
 import logo from "../../assets/logos/logo.svg";
+import Themes from "../inner-sections/Themes";
 
 function Header() {
 	return (
@@ -36,6 +37,7 @@ function Header() {
 								Kontakt
 							</Link>
 						</li>
+						{/* <Themes /> */}
 					</ul>
 				</nav>
 				<SideBar />

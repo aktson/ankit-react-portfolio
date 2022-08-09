@@ -20,11 +20,11 @@ function ModalProjects({ title, stack, summary, url, github, open, onClose, slid
 					transition={{ type: "spring", bounce: 0.4, duration: 0.6 }}>
 					<Slider sliderImages={sliderImages} length={length} />
 					<div className="card-body bg-base-100">
-						<h3 className="card-title flex flex-col text-neutral">
+						<h3 className="card-title flex flex-col">
 							<span className="flex justify-start text-2xl mb-2">{title}</span>
 							<div className=" badge badge-primary badge-outline p-5 ">{stack}</div>
 						</h3>
-						<p className="text-neutral  mb-5 line-break overflow-y-auto styledScrollbar">{summary}</p>
+						<p className=" mb-5 line-break overflow-y-auto styledScrollbar">{summary}</p>
 						<div className="flex justify-between items-center">
 							<div className="flex gap-2">
 								<a
@@ -44,7 +44,7 @@ function ModalProjects({ title, stack, summary, url, github, open, onClose, slid
 									Github
 								</a>
 							</div>
-							<div className="text-xl cursor-pointer text-slate-500" onClick={onClose}>
+							<div className="text-xl cursor-pointer " onClick={onClose}>
 								<FaTimes />
 							</div>
 						</div>
