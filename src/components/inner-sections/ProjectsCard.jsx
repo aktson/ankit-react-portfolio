@@ -8,7 +8,12 @@ function ProjectsCard({ id, title, img, stack, summary, url, github, stacks, sli
 
 	const openModal = () => {
 		setIsOpen(true);
-		document.body.style.overflow = "hidden";
+
+		let viewportWidth = window.innerWidth;
+
+		if (viewportWidth >= "769") {
+			document.body.style.overflow = "hidden";
+		}
 	};
 
 	const closeModal = () => {
