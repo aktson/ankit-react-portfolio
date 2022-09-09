@@ -2,7 +2,7 @@ import { FaAngleLeft, FaAngleRight, FaDotCircle } from "react-icons/fa";
 import { useState } from "react";
 import Fade from "react-reveal/Fade";
 
-function Slider({ sliderImages, length }) {
+function Slider({ data, length }) {
 	const [current, setCurrent] = useState(0);
 
 	const slideLeft = () => {
@@ -13,14 +13,14 @@ function Slider({ sliderImages, length }) {
 		setCurrent(current === length - 1 ? 0 : current + 1);
 	};
 
-	const dots = sliderImages.map((dot, index) => {
+	const dots = data.attributes.sliderImages.data.map((dot, index) => {
 		return (
 			<span className={index === current ? " active-slide-indicator slide-indicator" : "slide-indicator"} key={index}>
 				<FaDotCircle />
 			</span>
 		);
 	});
-	const mappedImages = sliderImages.map((image, index) => {
+	const mappedImages = data.attributes.sliderImages.data.map((image, index) => {
 		const sliderImage = image.attributes.url;
 		return (
 			<div className={index === current ? "slider active-slide" : "slider"} key={index}>

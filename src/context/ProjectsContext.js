@@ -1,4 +1,4 @@
-import { createContext, useState } from "react";
+import { createContext, useEffect, useState } from "react";
 import { baseUrl } from "../settings/settings";
 
 const ProjectsContext = createContext();
@@ -15,8 +15,12 @@ export function ProjectsProvider({ children }) {
     setLoading(false);
   }
 
+  useEffect(() => {
+    fetchData();
+  }, [])
+
   return <ProjectsContext.Provider value={{
-    data,
+    data, setData,
     loading,
     fetchData,
   }}>

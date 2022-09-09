@@ -1,5 +1,6 @@
 import Footer from "./components//layout/Footer";
 import Main from "./components/layout/Main";
+import { ProjectsProvider } from "./context/ProjectsContext";
 
 
 
@@ -7,10 +8,10 @@ import Main from "./components/layout/Main";
 function App() {
 
   return (
-    <>
+    <ProjectsProvider>
       <Main />
       <Footer />
-    </>
+    </ProjectsProvider>
 
   );
 }

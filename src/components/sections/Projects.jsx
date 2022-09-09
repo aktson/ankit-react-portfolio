@@ -1,38 +1,18 @@
-import { baseUrl } from "../../settings/settings";
 import ProjectsCard from "../inner-sections/ProjectsCard";
 import Loader from "../inner-sections/Loader";
-import useFetch from "../../customHook/useFetch";
 import Flip from "react-reveal/Flip";
 import Slide from "react-reveal/Slide";
+import { useContext } from "react";
+import ProjectsContext from "../../context/ProjectsContext";
 
 function Projects() {
-	const url = baseUrl + "api/projects?populate=*";
-
-	const { data, loading } = useFetch(url);
+	const { data, loading } = useContext(ProjectsContext);
 
 	const mappedData = data.map((items) => {
-		const item = items.attributes;
-		const projectId = items.id;
-		const image = item.image.data.attributes.url;
-		const stackImages = item.stacks.data;
 		const sliderImages = items.attributes.sliderImages.data;
 		const length = sliderImages.length;
 
-		return (
-			<ProjectsCard
-				id={projectId}
-				title={item.title}
-				img={image}
-				stack={item.stack}
-				summary={item.summary}
-				url={item.url}
-				github={item.github}
-				stacks={stackImages}
-				key={projectId}
-				sliderImages={sliderImages}
-				length={length}
-			/>
-		);
+		return <ProjectsCard data={items} length={length} key={items.id} />;
 	});
 
 	return (
