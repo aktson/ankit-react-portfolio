@@ -12,6 +12,7 @@ export function ProjectsProvider({ children }) {
     const url = baseUrl + "api/projects?populate=*";
 
     const response = await fetch(url);
+    console.log(response)
 
     try {
 
