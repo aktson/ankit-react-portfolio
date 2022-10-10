@@ -6,13 +6,26 @@ const ProjectsContext = createContext();
 export function ProjectsProvider({ children }) {
   const [data, setData] = useState([]);
   const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null)
 
   async function fetchData() {
     const url = baseUrl + "api/projects?populate=*";
+
     const response = await fetch(url);
-    const results = await response.json();
-    setData(results.data);
-    setLoading(false);
+
+    try {
+
+      const results = await response.json();
+      setData(results.data);
+
+    } catch (error) {
+      console.log(error)
+      setError(error)
+
+    } finally {
+      setLoading(false)
+    }
+
   }
 
   useEffect(() => {
@@ -20,7 +33,7 @@ export function ProjectsProvider({ children }) {
   }, [])
 
   return <ProjectsContext.Provider value={{
-    data, setData,
+    data, setData, error,
     loading,
     fetchData,
   }}>

@@ -16,13 +16,16 @@ function useFetch(url) {
                 throw new error("Something went wrong")
             }
             setData(results.data);
-            setLoading(false);
+
 
         }
         catch (error) {
-            setError(`Something Went wrong ${error}`);
-            setLoading(false);
+            setError(`Something Went wrong`);
+
+        } finally {
+            setLoading(false)
         }
+
     }, [])
 
     useEffect(() => {

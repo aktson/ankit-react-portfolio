@@ -12,7 +12,7 @@ function Tabs() {
 	const [filteredData, setFilteredData] = useState([]);
 
 	const url = baseUrl + "api/progresses?populate=*";
-	const { data, loading } = useFetch(url);
+	const { data, loading, error } = useFetch(url);
 
 	function handleClick(index) {
 		setToggleState(index);
@@ -53,6 +53,10 @@ function Tabs() {
 		);
 	});
 
+	if (error) {
+		return <div className="text-center bg-red-600 text-base-200 p-2 w-max mx-auto">{error}</div>;
+	}
+
 	return (
 		<>
 			<div className="tabs-container ">
@@ -71,6 +75,7 @@ function Tabs() {
 					</div>
 				</Fade>
 			</div>
+
 			{loading ? (
 				<Loader />
 			) : (

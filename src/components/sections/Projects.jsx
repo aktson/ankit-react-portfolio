@@ -6,14 +6,17 @@ import { useContext } from "react";
 import ProjectsContext from "../../context/ProjectsContext";
 
 function Projects() {
-	const { data, loading } = useContext(ProjectsContext);
+	const { data, loading, error } = useContext(ProjectsContext);
 
-	const mappedData = data.map((items) => {
-		const sliderImages = items.attributes.sliderImages.data;
-		const length = sliderImages.length;
+	// const mappedData = data.map((items) => {
+	// 	const sliderImages = items.attributes.sliderImages.data;
+	// 	const length = sliderImages.length;
 
-		return <ProjectsCard data={items} length={length} key={items.id} />;
-	});
+	// 	return <ProjectsCard data={items} length={length} key={items.id} />;
+	// });
+	if (error) {
+		return <div>{error}</div>;
+	}
 
 	return (
 		<section className=" py-16 sm:py-32 px-1" id="projects">
@@ -30,11 +33,12 @@ function Projects() {
 						, her er noen av dem utviklet med ulike verktøy og teknologi
 					</p>
 				</Slide>
-				{loading ? (
+
+				{/* {loading ? (
 					<Loader />
 				) : (
 					<div className="grid  md:grid-cols-3 grid-cols-1 mx-auto  gap-8  max-w-screen-5xl  my-8 p-2 ">{mappedData}</div>
-				)}
+				)} */}
 			</div>
 		</section>
 	);
