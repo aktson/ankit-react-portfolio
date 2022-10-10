@@ -16,7 +16,7 @@ function About() {
 							<img src={ankit} alt="ankit soni" className="h-60 w-60 mb-8 mask mask-hexagon-2 "></img>
 						</figure>
 					</Zoom>
-					<p className="badge badge-secondary animate-bounce mb-4">Now: At Workflow-2 Typescripting....</p>
+					<p className="badge badge-secondary animate-bounce mb-4">Now: At JS Frameworks working with NEXT JS...</p>
 					<div className="max-w-xl">
 						<Flip left cascade>
 							<p>

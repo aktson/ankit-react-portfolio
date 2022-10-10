@@ -33,6 +33,7 @@ function Projects() {
 						, her er noen av dem utviklet med ulike verktøy og teknologi
 					</p>
 				</Slide>
+				<div className="text-center bg-red-600 text-base-200 p-2 w-max mx-auto">Failed to fetch, please try again later</div>
 
 				{/* {loading ? (
 					<Loader />
