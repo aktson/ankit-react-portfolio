@@ -9,8 +9,6 @@ function ModalProjects({ data, onClose, open, length }) {
 	// title, stack, summary, url, github, open, onClose, sliderImages, length
 	if (!open) return null;
 
-	console.log(data);
-
 	const id = data.id;
 	const results = data.attributes;
 

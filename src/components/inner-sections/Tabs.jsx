@@ -5,53 +5,48 @@ import useFetch from "../../customHook/useFetch";
 import Fade from "react-reveal/Fade";
 import Flip from "react-reveal/Flip";
 import Zoom from "react-reveal/Zoom";
+import TabsInner from "./TabsInner";
 
 function Tabs() {
 	const [toggleState, setToggleState] = useState("all");
 
 	const [filteredData, setFilteredData] = useState([]);
 
-	const url = baseUrl + "api/progresses?populate=*";
+	const url = baseUrl + "api/categories?populate=*";
 	const { data, loading, error } = useFetch(url);
 
-	function handleClick(index) {
+	function handleAllClick(index) {
+		setToggleState(index);
+		setFilteredData(data);
+	}
+
+	function handleFrontendClick(index) {
 		setToggleState(index);
 
 		const filterData = data.filter((result) => {
-			return result.attributes.categories.data[0].id === index;
+			return result.attributes.category === "frontend";
 		});
 
-		const createHtml = filterData.map((data) => {
-			const title = data.attributes.title;
-			const image = data.attributes.img.data.attributes.url;
-			const id = data.id;
-			return (
-				<Flip right cascade key={id}>
-					<div className="skills" data-tip={title}>
-						<img src={image} alt={title} className="tech-logos " />
-						<p>{title}</p>
-					</div>
-				</Flip>
-			);
-		});
-
-		setFilteredData(createHtml);
+		setFilteredData(filterData);
 	}
+	function handleDesignClick(index) {
+		setToggleState(index);
 
-	const allContent = data.map((stack) => {
-		const title = stack.attributes.title;
-		const image = stack.attributes.img.data.attributes.url;
-		const id = stack.id;
+		const filterData = data.filter((result) => {
+			return result.attributes.category === "design";
+		});
 
-		return (
-			<Zoom top key={id}>
-				<div className="skills" data-tip={title}>
-					<img src={image} alt={title} className="tech-logos " />
-					<p>{title}</p>
-				</div>
-			</Zoom>
-		);
-	});
+		setFilteredData(filterData);
+	}
+	function handleOtherClick(index) {
+		setToggleState(index);
+
+		const filterData = data.filter((result) => {
+			return result.attributes.category === "other";
+		});
+
+		setFilteredData(filterData);
+	}
 
 	if (error) {
 		return <div className="text-center bg-red-600 text-base-200 p-2 w-max mx-auto">{error}</div>;
@@ -61,16 +56,16 @@ function Tabs() {
 		<>
 			<div className="tabs-container ">
 				<Fade>
-					<div className={toggleState === "all" ? "tab-header active-tab" : "tab-header  "} onClick={() => handleClick("all")}>
+					<div className={toggleState === "all" ? "tab-header active-tab" : "tab-header  "} onClick={() => handleAllClick("all")}>
 						Alle
 					</div>
-					<div className={toggleState === 1 ? " tab-header active-tab" : "tab-header"} onClick={() => handleClick(1)}>
+					<div className={toggleState === 1 ? " tab-header active-tab" : "tab-header"} onClick={() => handleFrontendClick(1)}>
 						Front-end
 					</div>
-					<div className={toggleState === 2 ? " tab-header  active-tab" : "tab-header "} onClick={() => handleClick(2)}>
+					<div className={toggleState === 2 ? " tab-header  active-tab" : "tab-header "} onClick={() => handleDesignClick(2)}>
 						Design
 					</div>
-					<div className={toggleState === 3 ? " tab-header active-tab" : "tab-header "} onClick={() => handleClick(3)}>
+					<div className={toggleState === 3 ? " tab-header active-tab" : "tab-header "} onClick={() => handleOtherClick(3)}>
 						Andre
 					</div>
 				</Fade>
@@ -80,10 +75,18 @@ function Tabs() {
 				<Loader />
 			) : (
 				<div className="tabs-content">
-					<div className={toggleState === "all" ? " active-tab-content tab-content" : "tab-content"}>{allContent}</div>
-					<div className={toggleState === 1 ? " active-tab-content tab-content " : "tab-content"}>{filteredData}</div>
-					<div className={toggleState === 2 ? " active-tab-content tab-content " : "tab-content"}>{filteredData} </div>
-					<div className={toggleState === 3 ? " active-tab-content tab-content " : "tab-content"}>{filteredData}</div>
+					<div className={toggleState === "all" ? " active-tab-content tab-content" : "tab-content"}>
+						<TabsInner data={data} />
+					</div>
+					<div className={toggleState === 1 ? " active-tab-content tab-content " : "tab-content"}>
+						<TabsInner data={filteredData} />
+					</div>
+					<div className={toggleState === 2 ? " active-tab-content tab-content " : "tab-content"}>
+						<TabsInner data={filteredData} />{" "}
+					</div>
+					<div className={toggleState === 3 ? " active-tab-content tab-content " : "tab-content"}>
+						<TabsInner data={filteredData} />
+					</div>
 				</div>
 			)}
 		</>

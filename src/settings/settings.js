@@ -1,1 +1,1 @@
-export const baseUrl = "https://ankson-portfolio.herokuapp.com/";
+export const baseUrl = "https://ankson.up.railway.app/";
