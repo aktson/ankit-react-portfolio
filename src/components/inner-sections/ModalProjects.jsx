@@ -7,7 +7,6 @@ import ModalOverlay from "./ModalOverlay";
 function ModalProjects({ data, onClose, open, length }) {
 	if (!open) return null;
 
-	const id = data.id;
 	const results = data.attributes;
 
 	return ReactDom.createPortal(
