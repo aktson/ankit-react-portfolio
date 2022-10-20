@@ -5,20 +5,21 @@ import Zoom from "react-reveal/Zoom";
 
 function ProjectsCard({ data, length }) {
 	const [isOpen, setIsOpen] = useState(false);
+	const [overflow, setOverflow] = useState("auto");
+
+	let viewportWidth = window.innerWidth;
+	if (viewportWidth >= "769") {
+		document.body.style.overflow = overflow;
+	}
 
 	function openModal() {
 		setIsOpen(true);
-
-		let viewportWidth = window.innerWidth;
-
-		if (viewportWidth >= "769") {
-			document.body.style.overflow = "hidden";
-		}
+		setOverflow("hidden");
 	}
 
 	function closeModal() {
 		setIsOpen(false);
-		document.body.style.overflow = "auto";
+		setOverflow((prevState) => !prevState);
 	}
 
 	const id = data.id;

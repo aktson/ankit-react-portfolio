@@ -8,7 +8,7 @@ import ProjectsContext from "../../context/ProjectsContext";
 function Projects() {
 	const { data, loading, error } = useContext(ProjectsContext);
 
-	const mappedData = data.map((items) => {
+	const mappedData = data?.map((items) => {
 		const sliderImages = items.attributes.sliderImages.data;
 		const length = sliderImages.length;
 

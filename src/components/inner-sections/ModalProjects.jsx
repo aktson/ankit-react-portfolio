@@ -5,8 +5,6 @@ import Slider from "./Slider";
 import ModalOverlay from "./ModalOverlay";
 
 function ModalProjects({ data, onClose, open, length }) {
-	// const { data } = useContext(ProjectsContext);
-	// title, stack, summary, url, github, open, onClose, sliderImages, length
 	if (!open) return null;
 
 	const id = data.id;
@@ -17,8 +15,8 @@ function ModalProjects({ data, onClose, open, length }) {
 			<ModalOverlay onClose={onClose} />
 			<AnimatePresence>
 				<motion.div
-					className="max-w-2xl  bg-base-100 rounded-lg grid  grid-rows-auto md:grid-rows-2 mx-auto z-50"
-					style={{ maxHeight: "850px" }}
+					className="max-w-2xl  bg-base-100 rounded-lg grid  grid-rows-auto md:grid-rows-2 mx-auto "
+					style={{ maxHeight: "850px", zIndex: "100" }}
 					initial={{ y: -300 }}
 					animate={{ y: 0 }}
 					exit={{ y: 0 }}

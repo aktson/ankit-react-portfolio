@@ -1,5 +1,5 @@
 function ModalOverlay({ onClose }) {
-	return <div className="w-full h-full" id="overlay" onClick={onClose}></div>;
+	return <div className="w-full h-full z-50 hidden sm:block" id="overlay" style={{ zIndex: "50" }} onClick={onClose}></div>;
 }
 
 export default ModalOverlay;
