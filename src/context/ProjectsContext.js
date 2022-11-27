@@ -16,7 +16,11 @@ export function ProjectsProvider({ children }) {
     try {
 
       const results = await response.json();
-      setData(results.data);
+
+      if (response.ok) {
+        setData(results.data);
+      }
+
 
     } catch (error) {
       console.log(error)

@@ -6,17 +6,15 @@ function useFetch(url) {
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
 
-    const fetchData = useCallback(async () => {
+    const fetchData = async () => {
 
         try {
             const response = await fetch(url);
             const results = await response.json();
 
-            if (!response.ok) {
-                throw new error("Something went wrong")
+            if (response.ok) {
+                setData(results.data);
             }
-            setData(results.data);
-
 
         }
         catch (error) {
@@ -26,15 +24,13 @@ function useFetch(url) {
             setLoading(false)
         }
 
-    }, [])
+    }
 
     useEffect(() => {
         fetchData();
-        setTimeout(() => {
-            fetchData()
-        }, 1000);
+
         //eslint-disable-next-line react-hooks/exhaustive-deps
-    }, [fetchData])
+    }, [])
 
     return {
         data, loading, error

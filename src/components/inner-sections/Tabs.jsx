@@ -82,7 +82,7 @@ function Tabs() {
 						<TabsInner data={filteredData} />
 					</div>
 					<div className={toggleState === 2 ? " active-tab-content tab-content " : "tab-content"}>
-						<TabsInner data={filteredData} />{" "}
+						<TabsInner data={filteredData} />
 					</div>
 					<div className={toggleState === 3 ? " active-tab-content tab-content " : "tab-content"}>
 						<TabsInner data={filteredData} />
