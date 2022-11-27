@@ -3,8 +3,6 @@ import { baseUrl } from "../../settings/settings";
 import Loader from "./Loader";
 import useFetch from "../../customHook/useFetch";
 import Fade from "react-reveal/Fade";
-import Flip from "react-reveal/Flip";
-import Zoom from "react-reveal/Zoom";
 import TabsInner from "./TabsInner";
 
 function Tabs() {
