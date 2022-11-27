@@ -24,7 +24,7 @@ export function ProjectsProvider({ children }) {
 
     } catch (error) {
       console.log(error)
-      setError(error)
+      setError("Failed to fetch, Pleae try again")
 
     } finally {
       setLoading(false)

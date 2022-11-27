@@ -1,4 +1,4 @@
-import { useState, useEffect, useCallback } from "react";
+import { useState, useEffect } from "react";
 
 function useFetch(url) {
 
@@ -18,7 +18,8 @@ function useFetch(url) {
 
         }
         catch (error) {
-            setError(`Something Went wrong`);
+            console.log(error)
+            setError("Failed to fetch, Pleae try again")
 
         } finally {
             setLoading(false)
