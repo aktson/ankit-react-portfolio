@@ -5,10 +5,11 @@ const ProjectsContext = createContext();
 
 export function ProjectsProvider({ children }) {
   const [data, setData] = useState([]);
-  const [loading, setLoading] = useState(true);
+  const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null)
 
   async function fetchData() {
+    setLoading(true)
     const url = baseUrl + "api/projects?populate=*";
 
     const response = await fetch(url);
