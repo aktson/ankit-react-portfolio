@@ -33,6 +33,16 @@ function useFetch(url) {
         //eslint-disable-next-line react-hooks/exhaustive-deps
     }, [])
 
+
+    useEffect(() => {
+        setTimeout(() => {
+            fetchData();
+        }, 500)
+
+        //eslint-disable-next-line react-hooks/exhaustive-deps
+    }, [])
+
+
     return {
         data, loading, error
     }

@@ -37,6 +37,14 @@ export function ProjectsProvider({ children }) {
     fetchData();
   }, [])
 
+
+  useEffect(() => {
+    setTimeout(() => {
+      fetchData();
+    }, 500)
+
+  }, [])
+
   return <ProjectsContext.Provider value={{
     data, setData, error,
     loading,
