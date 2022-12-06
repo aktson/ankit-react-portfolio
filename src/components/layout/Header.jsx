@@ -1,16 +1,19 @@
+import { useState } from "react";
 import { Link, animateScroll as scroll } from "react-scroll";
 import { SideBar } from "./mobile-nav/SideBar";
 import logo from "../../assets/logos/logo.svg";
+import logoLight from "../../assets/logos/logo-light.svg";
 import Themes from "../uicomponents/Themes";
 
 function Header() {
+	const [isChecked, setIsChecked] = useState(true);
 	return (
 		<header className=" absolute top-0 left-0 right-0  ">
 			<div className="container flex justify-around mx-auto p-2 items-center">
 				<div className="logo flex gap-4 " onClick={() => scroll.scrollToTop()}>
-					<img src={logo} alt="ankit soni logo" />
+					<img src={isChecked ? logoLight : logo} alt="ankit soni logo" />
 				</div>
-				<Themes />
+				<Themes isChecked={isChecked} setIsChecked={setIsChecked} />
 				<nav className=" navbar  top-0 hidden md:block">
 					<ul>
 						<li>

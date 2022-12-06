@@ -1,10 +1,8 @@
 import { useState } from "react";
 
-function Themes() {
+function Themes({ isChecked, setIsChecked }) {
 	const [defaultTheme, setDefaultTheme] = useState("dark");
 	const [html] = document.getElementsByTagName("html");
-
-	const [isChecked, setIsChecked] = useState(true);
 
 	html.setAttribute("data-theme", defaultTheme);
 	const changeTheme = () => {
