@@ -1,5 +1,5 @@
 import ankit from "../../assets/ankitLightGray.jpg";
-import CardsAbout from "../inner-sections/CardsAbout";
+import CardsAbout from "../uicomponents/CardsAbout";
 import Zoom from "react-reveal/Zoom";
 import Flip from "react-reveal/Flip";
 
@@ -16,7 +16,7 @@ function About() {
 							<img src={ankit} alt="ankit soni" className="h-60 w-60 mb-8 mask mask-hexagon-2 "></img>
 						</figure>
 					</Zoom>
-					<p className="badge badge-secondary animate-bounce mb-4 p-6 md:p-4">Now: Building Social Media App in ReactJS...</p>
+					{/* <p className="badge badge-secondary animate-bounce mb-4 p-6 md:p-4">Now: Building Social Media App in ReactJS...</p> */}
 					<div className="max-w-xl">
 						<Flip left cascade>
 							<p>

@@ -46,9 +46,9 @@ function ModalProjects({ data, onClose, open, length }) {
 									Github
 								</a>
 							</div>
-							<div className="text-xl cursor-pointer " onClick={onClose}>
+							<button className="text-xl cursor-pointer " onClick={onClose}>
 								<FaTimes />
-							</div>
+							</button>
 						</div>
 					</div>
 				</motion.div>

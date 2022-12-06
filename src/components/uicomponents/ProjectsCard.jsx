@@ -1,7 +1,7 @@
 import ModalProjects from "./ModalProjects";
 import { useState } from "react";
 import { FaAngleRight } from "react-icons/fa";
-import Zoom from "react-reveal/Zoom";
+import Pulse from "react-reveal/Pulse";
 
 function ProjectsCard({ data, length }) {
 	const [isOpen, setIsOpen] = useState(false);
@@ -29,17 +29,21 @@ function ProjectsCard({ data, length }) {
 
 	const mappedStackImg = results.stacks.data.map((stackImage) => {
 		return (
-			<figure data-tip={stackImage.attributes.name} style={{ width: "1.25rem" }} className="tooltip" key={stackImage.id}>
+			<figure
+				data-tip={stackImage.attributes.name}
+				style={{ width: "1.25rem" }}
+				className="tooltip tooltip-neutral text-base-100"
+				key={stackImage.id}>
 				<img src={stackImage.attributes.url} alt={stackImage.attributes.name} />
 			</figure>
 		);
 	});
 
 	return (
-		<Zoom>
-			<div className="shadow-xl shadow-slate-400 ">
+		<Pulse>
+			<div className="shadow-lg bg-warning w-96 rounded-lg ">
 				<div
-					className=" max-w-lg sm:h-80 sm:w-full h-80 w-full"
+					className=" max-w-lg sm:h-80 sm:w-full h-80 w-full rounded-t-lg"
 					style={{
 						background: `url(${cardImage}) no-repeat center `,
 						backgroundSize: "cover",
@@ -48,13 +52,13 @@ function ProjectsCard({ data, length }) {
 				<div className=" w-full p-8 relative">
 					<h3>{results.title}</h3>
 					<div className="flex gap-4 mt-5">{mappedStackImg}</div>
-					<button className="btn btn-primary absolute rounded-full -top-6 right-2 shadow-xl" onClick={openModal} key={id}>
+					<button className="btn btn-primary absolute rounded-full -top-6 right-2 shadow-xl " onClick={openModal} key={id}>
 						<FaAngleRight />
 					</button>
 					{isOpen && <ModalProjects open={isOpen} data={data} length={length} onClose={closeModal} />}
 				</div>
 			</div>
-		</Zoom>
+		</Pulse>
 	);
 }
 

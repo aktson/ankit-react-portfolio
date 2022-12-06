@@ -3,9 +3,8 @@ import Projects from "../sections/Projects";
 import Contact from "../sections/Contact";
 import Social from "./Social";
 import Hero from "../sections/Hero";
-import ScrollIndicator from "../inner-sections/ScrollIndicator";
+import ScrollIndicator from "../uicomponents/ScrollIndicator";
 import Skills from "../sections/Skills";
-import Slider from "../inner-sections/Slider";
 
 function Main() {
 	return (

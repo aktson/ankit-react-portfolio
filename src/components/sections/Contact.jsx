@@ -122,9 +122,9 @@ function Contact() {
 			</Bounce>
 			<Bounce bottom cascade>
 				<div className="form-container">
-					<div className="form-aside">
-						<p className="text-xl mb-2 text-center">Legg igjen melding,</p>
-						<p className="text-4xl text-center">La oss bygge noe fantastisk sammen..... </p>
+					<div className="form-aside ">
+						<p className="text-xl mb-2 text-center text-base-100">Legg igjen melding,</p>
+						<p className="text-4xl text-center  text-base-100">La oss bygge noe fantastisk sammen..... </p>
 					</div>
 					<form ref={formRef} className="form " onSubmit={handleSubmit}>
 						{state.feedbackMsg && (

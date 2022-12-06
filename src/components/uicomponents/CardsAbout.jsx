@@ -6,7 +6,7 @@ function CardsAbout() {
 	return (
 		<div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4  text-center container justify-center gap-2 p-8  mx-auto" id="cards">
 			<LightSpeed left>
-				<div className="card card-compact bg-base-100 shadow-xl p-6">
+				<div className="card card-compact bg-warning shadow-xl p-6">
 					<FaDesktop size={60} className="about-icons" />
 
 					<h3>Responsive</h3>
@@ -14,7 +14,7 @@ function CardsAbout() {
 				</div>
 			</LightSpeed>
 			<LightSpeed left>
-				<div className="card card-compact bg-base-100 shadow-xl p-6">
+				<div className="card card-compact bg-warning shadow-xl p-6">
 					<FaWhmcs size={60} className="about-icons" />
 
 					<h3>Dynamisk</h3>
@@ -22,7 +22,7 @@ function CardsAbout() {
 				</div>
 			</LightSpeed>
 			<LightSpeed right>
-				<div className="card card-compact  bg-base-100 shadow-xl p-6">
+				<div className="card card-compact  bg-warning shadow-xl p-6">
 					<FaLightbulb size={60} className="about-icons" />
 
 					<h3>Intuitivt</h3>
@@ -30,7 +30,7 @@ function CardsAbout() {
 				</div>
 			</LightSpeed>
 			<LightSpeed right>
-				<div className="card card-compact  bg-base-100 shadow-xl p-6">
+				<div className="card card-compact  bg-warning shadow-xl p-6">
 					<FaMeteor size={60} className="about-icons" />
 
 					<h3>Raskt</h3>

@@ -1,5 +1,5 @@
-import Progress from "../inner-sections/Progress";
-import Tabs from "../inner-sections/Tabs";
+// import Progress from "../uicomponents/Progress";
+import SkillsTabs from "../uicomponents/tabs/SkillsTabs";
 import Flip from "react-reveal/Flip";
 
 function Skills() {
@@ -10,7 +10,7 @@ function Skills() {
 					<h2 className="text-center mx-auto">FERDIGHETER</h2>
 				</Flip>
 				{/* <Progress /> */}
-				<Tabs />
+				<SkillsTabs />
 			</div>
 		</section>
 	);

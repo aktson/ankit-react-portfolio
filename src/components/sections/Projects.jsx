@@ -1,20 +1,9 @@
-import ProjectsCard from "../inner-sections/ProjectsCard";
-import Loader from "../inner-sections/Loader";
+import ProjectsCard from "../uicomponents/ProjectsCard";
 import Flip from "react-reveal/Flip";
 import Slide from "react-reveal/Slide";
-import { useContext } from "react";
-import ProjectsContext from "../../context/ProjectsContext";
+import ProjectsTabs from "../uicomponents/tabs/ProjectsTabs";
 
 function Projects() {
-	const { data, loading, error } = useContext(ProjectsContext);
-
-	const mappedData = data?.map((items) => {
-		const sliderImages = items.attributes.sliderImages.data;
-		const length = sliderImages.length;
-
-		return <ProjectsCard data={items} length={length} key={items.id} />;
-	});
-
 	return (
 		<section className=" py-16 sm:py-32 px-1" id="projects">
 			<div className="container flex flex-col justify-center mx-auto items-center">
@@ -30,12 +19,7 @@ function Projects() {
 						, her er noen av dem utviklet med ulike verktøy og teknologi
 					</p>
 				</Slide>
-
-				{loading ? (
-					<Loader />
-				) : (
-					<div className="grid  md:grid-cols-3 grid-cols-1 mx-auto  gap-8  max-w-screen-5xl  my-8 p-2 ">{error ? error : mappedData}</div>
-				)}
+				<ProjectsTabs />
 			</div>
 		</section>
 	);

@@ -13,7 +13,7 @@ function Footer() {
 				<Instagram />
 			</div>
 			<div>
-				<p>Copyright &copy; {year}- Designed & Developed by AnkSon</p>
+				<p className="text-lg text-white">Copyright &copy; 2022 - Designed & Developed by AnkSon</p>
 			</div>
 			<ToTopButton />
 		</footer>

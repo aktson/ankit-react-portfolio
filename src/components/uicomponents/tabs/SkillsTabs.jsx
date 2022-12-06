@@ -1,9 +1,9 @@
 import { useState } from "react";
-import { baseUrl } from "../../settings/settings";
-import Loader from "./Loader";
-import useFetch from "../../customHook/useFetch";
+import { baseUrl } from "../../../settings/settings";
+import Loader from "../Loader";
+import useFetch from "../../../customHook/useFetch";
 import Fade from "react-reveal/Fade";
-import TabsInner from "./TabsInner";
+import SkillsTabContent from "./SkillsTabContent";
 
 function Tabs() {
 	const [toggleState, setToggleState] = useState("all");
@@ -22,7 +22,7 @@ function Tabs() {
 		setToggleState(index);
 
 		const filterData = data.filter((result) => {
-			return result.attributes.category === "frontend";
+			return result.attributes.category === "frammework";
 		});
 
 		setFilteredData(filterData);
@@ -40,7 +40,7 @@ function Tabs() {
 		setToggleState(index);
 
 		const filterData = data.filter((result) => {
-			return result.attributes.category === "other";
+			return result.attributes.category === "cms";
 		});
 
 		setFilteredData(filterData);
@@ -52,20 +52,20 @@ function Tabs() {
 
 	return (
 		<>
-			<div className="tabs-container ">
+			<div className="tabs-header-container">
 				<Fade>
-					<div className={toggleState === "all" ? "tab-header active-tab" : "tab-header  "} onClick={() => handleAllClick("all")}>
+					<button className={toggleState === "all" ? "tab-header active-tab" : "tab-header  "} onClick={() => handleAllClick("all")}>
 						Alle
-					</div>
-					<div className={toggleState === 1 ? " tab-header active-tab" : "tab-header"} onClick={() => handleFrontendClick(1)}>
-						Front-end
-					</div>
-					<div className={toggleState === 2 ? " tab-header  active-tab" : "tab-header "} onClick={() => handleDesignClick(2)}>
+					</button>
+					<button className={toggleState === 1 ? " tab-header active-tab" : "tab-header"} onClick={() => handleFrontendClick(1)}>
+						Rammeverk
+					</button>
+					<button className={toggleState === 2 ? " tab-header  active-tab" : "tab-header "} onClick={() => handleDesignClick(2)}>
 						Design
-					</div>
-					<div className={toggleState === 3 ? " tab-header active-tab" : "tab-header "} onClick={() => handleOtherClick(3)}>
-						Andre
-					</div>
+					</button>
+					<button className={toggleState === 3 ? " tab-header active-tab" : "tab-header "} onClick={() => handleOtherClick(3)}>
+						CMS/Andre
+					</button>
 				</Fade>
 			</div>
 
@@ -74,16 +74,16 @@ function Tabs() {
 			) : (
 				<div className="tabs-content">
 					<div className={toggleState === "all" ? " active-tab-content tab-content" : "tab-content"}>
-						<TabsInner data={data} />
+						<SkillsTabContent data={data} />
 					</div>
 					<div className={toggleState === 1 ? " active-tab-content tab-content " : "tab-content"}>
-						<TabsInner data={filteredData} />
+						<SkillsTabContent data={filteredData} />
 					</div>
 					<div className={toggleState === 2 ? " active-tab-content tab-content " : "tab-content"}>
-						<TabsInner data={filteredData} />
+						<SkillsTabContent data={filteredData} />
 					</div>
 					<div className={toggleState === 3 ? " active-tab-content tab-content " : "tab-content"}>
-						<TabsInner data={filteredData} />
+						<SkillsTabContent data={filteredData} />
 					</div>
 				</div>
 			)}

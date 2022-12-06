@@ -8,9 +8,8 @@
 	--primary: #570df8;
 	--secondary: #f000b8;
 	--accent: #37cdbe;
-	--light: #ffffff;
 	--info: #3abff8;
-	--neutral: #3d4451;
+	--neutral: #ffffff;
 	--success: #36d399;
 	--warning: #fbbd23;
 	--error: #f87272;
@@ -19,6 +18,20 @@
 	--body-fonts: "Martel Sans", sans-serif;
 	--cursive-fonts: "Metal", cursive;
 	--heading-fonts: "Philosopher", sans-serif;
+}
+
+[data-theme="dark"] {
+	--primary: #ffb86b;
+	--secondary: #bf95f9;
+	--accent: #ff7ac6;
+	--neutral: #ffffff;
+	--base-100: #272935;
+	--info: #66adf0;
+	--success: #37e1bf;
+	--warning: #414558;
+	--error: #e64b3d;
+	--gradient-primary: linear-gradient(267deg, #ffb86b 0%, #ff7ac6 100%);
+	--gradient-secondary: linear-gradient(162deg, #ffb86b 0%, #ff7ac6 100%);
 }
 
 * {
@@ -52,24 +65,15 @@ h4,
 h5 {
 	font-family: var(--heading-fonts);
 }
+h1 {
+	line-height: 1.4em;
+}
 .logo {
 	cursor: pointer;
 	width: 100px;
 	filter: drop-shadow(2px 2px 12px rgba(255, 255, 255, 0.2));
 }
-h1 {
-	line-height: 1.4em;
-}
 
-h2::after {
-	content: "";
-	position: absolute;
-	background-color: var(--neutral);
-	padding: 4px;
-	width: 50%;
-	left: 25%;
-	bottom: -15px;
-}
 .nav {
 	position: absolute;
 	top: 0;
@@ -133,32 +137,6 @@ h2::after {
 	background-color: var(--accent);
 	margin: 4px auto;
 }
-.active {
-	pointer-events: none;
-	border-bottom: 2px solid var(--accent);
-}
-#my-modal {
-	position: fixed;
-	top: 0;
-	right: 0;
-	bottom: 0;
-	left: 0;
-	z-index: 999;
-	--tw-bg-opacity: 0.8;
-	background-color: hsla(var(--nf) / var(--tw-bg-opacity, 1));
-	transition-property: background-color, border-color, color, fill, stroke, opacity, box-shadow, transform;
-	transition-duration: 0.2s;
-	transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-	visibility: visible;
-	overflow-y: scroll;
-}
-#overlay {
-	position: fixed;
-	top: 0;
-	right: 0;
-	bottom: 0;
-	left: 0;
-}
 
 #hero {
 	background: url("./assets/hero.svg") no-repeat center;
@@ -167,27 +145,40 @@ h2::after {
 
 @layer base {
 	h1 {
-		@apply text-4xl  mb-8 leading-loose lg:text-5xl;
+		@apply text-4xl  mb-8  lg:text-5xl text-neutral;
 	}
 	h2 {
-		@apply text-4xl  mb-14 relative;
+		@apply text-4xl  mb-14 relative text-neutral;
+	}
+	h2::after {
+		content: "";
+		@apply bg-neutral absolute w-1/2 left-1/4 p-1 -bottom-4;
 	}
 	h3 {
-		@apply text-2xl mb-3;
+		@apply text-2xl mb-3  text-neutral;
 	}
 	h4 {
-		@apply text-xl font-bold mb-2;
+		@apply text-xl font-semibold mb-2;
+	}
+	p,
+	li,
+	button,
+	select {
+		@apply text-neutral;
 	}
 }
 @layer components {
 	.nav-li {
-		@apply inline-block mx-4 p-2 text-base hover:border-b-2 hover:border-b-accent-focus transition-all ease-in-out hover:animate-pulse cursor-pointer;
+		@apply inline-block mx-4 p-2  hover:border-b-2 hover:border-b-primary transition-all ease-in-out hover:animate-pulse cursor-pointer;
+	}
+	.active {
+		@apply pointer-events-none border-b-2 border-b-primary;
 	}
 	.btn {
-		@apply text-neutral-content rounded-none shadow-2xl;
+		@apply text-base-100 rounded-none shadow-2xl;
 	}
 	.about-icons {
-		@apply mx-auto mb-4 text-slate-500;
+		@apply mx-auto mb-4 text-accent;
 	}
 	.para-progress {
 		@apply flex items-center shadow-2xl gap-3 p-5 bg-base-100;
@@ -200,9 +191,18 @@ h2::after {
 		@apply inline-block w-4 h-4 stroke-current md:text-neutral mx-auto hover:text-secondary hover:animate-bounce;
 	}
 
+	/* modal */
+	#my-modal {
+		@apply fixed p-2 md:flex justify-center items-center  backdrop-blur-sm  inset-0 transition-all duration-300 overflow-y-scroll;
+	}
+
+	#modal-overlay {
+		@apply w-full h-full hidden sm:block  bg-slate-800 opacity-50  fixed inset-0 z-50;
+	}
+
 	/* Form */
 	.form-container {
-		@apply grid grid-cols-1 md:grid-cols-2 max-w-screen-lg rounded-box bg-base-100 shadow-xl  gap-8;
+		@apply grid grid-cols-1 md:grid-cols-2 max-w-screen-lg rounded-box bg-warning shadow-xl  gap-8;
 	}
 	.form {
 		@apply form-control flex gap-5  p-6 w-full;
@@ -216,7 +216,7 @@ h2::after {
 		@apply flex flex-col justify-center text-left text-base-100 p-8;
 	}
 	.input-form {
-		@apply border-b p-4 border-slate-400 focus:border-b focus:outline-none w-full mb-1;
+		@apply border-b p-4 border-neutral  focus:border-b focus:outline-none w-full mb-1 placeholder:text-slate-700;
 	}
 	.text-area {
 		@apply h-24 input-form border-0 border-b;
@@ -228,7 +228,7 @@ h2::after {
 		@apply alert shadow-lg alert-success w-full;
 	}
 	/* tabs skills section */
-	.tabs-container {
+	.tabs-header-container {
 		@apply my-8 mx-auto text-center grid grid-cols-2 sm:flex justify-evenly;
 	}
 	.tab-header {
@@ -240,14 +240,15 @@ h2::after {
 	.tabs-content {
 		@apply flex justify-center items-center;
 	}
+
 	.tab-content {
-		@apply grid-cols-2 md:grid-cols-4 hidden justify-items-center p-4 gap-8 transition-opacity duration-1000;
+		@apply mx-auto  gap-8  max-w-7xl  p-2 hidden w-full flex-wrap justify-center transition-opacity duration-1000;
 	}
 	.active-tab-content {
-		@apply grid;
+		@apply flex w-full;
 	}
 	.skills {
-		@apply flex flex-col justify-center items-center gap-3 shadow-xl p-2 w-40 tooltip;
+		@apply flex flex-col justify-center items-center gap-3  p-2 w-40 tooltip  bg-warning rounded-lg shadow-xl;
 	}
 	.tech-logos {
 		@apply w-8;
@@ -255,10 +256,10 @@ h2::after {
 	/* footer */
 	.footer {
 		background: var(--gradient-secondary);
-		@apply p-10 relative flex flex-col justify-center items-center  text-center gap-4 text-base-100;
+		@apply p-10 relative flex flex-col justify-center items-center  text-center gap-4;
 	}
 	#to-top-btn {
-		@apply absolute bottom-36 sm:bottom-20 right-12 bg-primary rounded-full text-base-100  p-3 text-sm hover:bg-slate-300 hover:text-primary transition-all cursor-pointer;
+		@apply absolute bottom-36 sm:bottom-20 right-12 bg-primary rounded-full text-base-100  p-3 text-sm hover:bg-slate-300 hover:text-primary duration-200 transition-all cursor-pointer;
 	}
 	/* sections indiacators */
 	.active-indicator {
@@ -295,7 +296,7 @@ h2::after {
 }
 .styledScrollbar::-webkit-scrollbar-track {
 	/* Background */
-	background: var(--light);
+	background: var(--neutral);
 }
 .styledScrollbar {
 	cursor: pointer;

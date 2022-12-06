@@ -1,15 +1,16 @@
 import { Link, animateScroll as scroll } from "react-scroll";
 import { SideBar } from "./mobile-nav/SideBar";
 import logo from "../../assets/logos/logo.svg";
-import Themes from "../inner-sections/Themes";
+import Themes from "../uicomponents/Themes";
 
 function Header() {
 	return (
 		<header className=" absolute top-0 left-0 right-0  ">
 			<div className="container flex justify-around mx-auto p-2 items-center">
 				<div className="logo flex gap-4 " onClick={() => scroll.scrollToTop()}>
-					<img src={logo} alt="" />
+					<img src={logo} alt="ankit soni logo" />
 				</div>
+				<Themes />
 				<nav className=" navbar  top-0 hidden md:block">
 					<ul>
 						<li>
@@ -37,7 +38,6 @@ function Header() {
 								Kontakt
 							</Link>
 						</li>
-						{/* <Themes /> */}
 					</ul>
 				</nav>
 				<SideBar />
