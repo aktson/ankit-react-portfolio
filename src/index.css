@@ -147,11 +147,11 @@ h1 {
 		@apply text-4xl  mb-8  lg:text-5xl text-neutral;
 	}
 	h2 {
-		@apply text-4xl  mb-14 relative text-neutral;
+		@apply text-4xl  mb-14 relative  text-primary;
 	}
 	h2::after {
 		content: "";
-		@apply bg-neutral absolute w-1/2 left-1/4 p-1 -bottom-4;
+		@apply bg-primary absolute w-1/2 left-1/4 p-1 -bottom-4;
 	}
 	h3 {
 		@apply text-2xl mb-3  text-neutral;
