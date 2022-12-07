@@ -24,7 +24,7 @@ const sidebar = {
 	},
 };
 
-export const SideBar = () => {
+export const SideBar = ({ isChecked, setIsChecked }) => {
 	const [isOpen, toggleOpen] = useCycle(false, true);
 	const containerRef = useRef(null);
 	const { height } = useDimensions(containerRef);
@@ -32,7 +32,7 @@ export const SideBar = () => {
 	return (
 		<motion.nav initial={false} animate={isOpen ? "open" : "closed"} custom={height} ref={containerRef} className="nav lg:hidden ">
 			<motion.div className="nav-mobile-background " variants={sidebar} />
-			<Navigation toggle={() => toggleOpen()} />
+			<Navigation toggle={() => toggleOpen()} isChecked={isChecked} setIsChecked={setIsChecked} />
 			<Hamburger toggle={() => toggleOpen()} />
 		</motion.nav>
 	);

@@ -31,7 +31,7 @@
 	--warning: #414558;
 	--error: #e64b3d;
 	--gradient-primary: linear-gradient(267deg, #ffb86b 0%, #ff7ac6 100%);
-	--gradient-secondary: linear-gradient(162deg, #ffb86b 0%, #ff7ac6 100%);
+	--gradient-secondary: linear-gradient(10deg, #ffb86b 0%, #ff7ac6 100%);
 }
 
 * {
@@ -95,7 +95,7 @@ h1 {
 	bottom: 0;
 	width: 300px;
 	height: 100vh;
-	background: var(--gradient-primary);
+	background: var(--gradient-secondary);
 	z-index: 250;
 }
 
@@ -118,9 +118,9 @@ h1 {
 	margin-bottom: 20px;
 	display: flex;
 	align-items: center;
-	justify-content: center;
 	cursor: pointer;
-	color: var(--light);
+	color: var(--neutral);
+	justify-content: center;
 }
 
 .line-after-icons {
@@ -161,10 +161,10 @@ h1 {
 }
 @layer components {
 	.nav-li {
-		@apply p-2  hover:border-b-2 hover:border-b-primary transition-all ease-in-out hover:animate-pulse cursor-pointer;
+		@apply px-4 py-2 hover:bg-base-200 transition-all duration-300 ease-in-out hover:animate-pulse cursor-pointer rounded-full;
 	}
 	.active {
-		@apply pointer-events-none border-b-2 border-b-primary;
+		@apply pointer-events-none bg-base-200 rounded-full;
 	}
 	.btn {
 		@apply text-base-100 rounded-none shadow-2xl  hover:text-neutral;
