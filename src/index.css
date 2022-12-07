@@ -70,7 +70,7 @@ h1 {
 }
 .logo {
 	cursor: pointer;
-	width: 120px;
+	width: 110px;
 }
 
 .nav {
@@ -147,7 +147,7 @@ h1 {
 		@apply text-4xl  mb-8  lg:text-5xl text-neutral;
 	}
 	h2 {
-		@apply text-4xl  mb-14 relative  text-primary;
+		@apply text-4xl mb-14 relative text-primary;
 	}
 	h2::after {
 		content: "";
