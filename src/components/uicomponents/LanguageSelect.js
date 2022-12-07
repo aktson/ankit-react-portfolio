@@ -23,7 +23,7 @@ function LanguageSelect() {
                     <img src={norFlag} alt="norwegian flag" className='w-8' />}
             </figure>
             <select
-                className="select w-20 border-none  outline-0 focus:outline-transparent focus:border-transparent text-primary"
+                className="select w-20 border-none  outline-0 focus:outline-transparent focus:border-transparent text-primary bg-transparent "
                 onChange={handleChange} >
                 <option value="no" >NO</option>
                 <option value="en">EN</option>

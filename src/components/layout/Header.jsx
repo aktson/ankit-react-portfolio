@@ -12,13 +12,13 @@ function Header() {
 	const { isEng } = useContext(LangContext);
 	return (
 		<header className=" absolute top-0 left-0 right-0 flex items-center justify-center ">
-			<div className="container flex justify-between sm:justify-around gap-2 p-4 py-6 items-center">
-				<figure className="w-20 sm:w-24 " onClick={() => scroll.scrollToTop()}>
-					<img src={isChecked ? logoLight : logo} alt="ankit soni logo" />
+			<div className="container flex justify-between gap-2 p-4 py-6 items-center flex-col sm:flex-row ">
+				{/* logo */}
+				<figure className=" xl:w-96" onClick={() => scroll.scrollToTop()}>
+					<img src={isChecked ? logoLight : logo} alt="ankit soni logo" className="w-20 sm:w-24" />
 				</figure>
-				<Themes isChecked={isChecked} setIsChecked={setIsChecked} />
-				<LanguageSelect />
-				<nav className="hidden lg:flex items-center">
+				{/* navigation for large screens */}
+				<nav className="hidden lg:flex items-center w-full justify-center">
 					<ul className="flex items-center gap-2">
 						<li>
 							<Link activeClass="active" to="hero" spy={true} smooth={true} duration={500} className="nav-li">
@@ -47,6 +47,12 @@ function Header() {
 						</li>
 					</ul>
 				</nav>
+				{/* change language and theme */}
+				<div className="flex justify-between w-full items-center sm:w-auto gap-2 mt-4 sm:mt-0 bg-warning sm:bg-transparent rounded-xl xl:w-96">
+					<Themes isChecked={isChecked} setIsChecked={setIsChecked} />
+					<LanguageSelect />
+				</div>
+				{/* nvagiation for small to medium screen */}
 				<SideBar />
 			</div>
 		</header>
