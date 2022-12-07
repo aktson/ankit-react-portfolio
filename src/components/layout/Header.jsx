@@ -11,8 +11,8 @@ function Header() {
 	const [isChecked, setIsChecked] = useState(true);
 	const { isEng } = useContext(LangContext);
 	return (
-		<header className=" absolute top-0 left-0 right-0 flex items-center justify-center ">
-			<div className="container flex justify-between gap-2 p-4 py-6 items-center flex-col sm:flex-row ">
+		<header className=" fixed top-0 left-0 right-0 flex items-center justify-center z-40 py-4 text-neutra">
+			<div className="container flex justify-between gap-2 p-4 py-4 items-center flex-col sm:flex-row sm:bg-warning sm:shadow-xl rounded-full ">
 				{/* logo */}
 				<figure className=" xl:w-96" onClick={() => scroll.scrollToTop()}>
 					<img src={isChecked ? logoLight : logo} alt="ankit soni logo" className="w-20 sm:w-24" />
