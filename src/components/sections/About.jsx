@@ -12,7 +12,7 @@ function About() {
 		: "Bygge state-of-the-art, enkel å bruke, brukervennlige nettsider og applikasjoner er virkelig en lidenskap for meg, målet er å bli Full-stack.";
 
 	return (
-		<section className=" flex flex-col justify-center items-center py-16 sm:py-32 px-1 lg:h-screen " id="about">
+		<section className=" flex flex-col justify-center items-center py-16 sm:py-32 px-1 lg:h-screen" id="about">
 			<Flip right cascade>
 				<h2>{isEng ? "ABOUT ME" : "OM MEG"}</h2>
 			</Flip>

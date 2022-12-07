@@ -11,6 +11,7 @@ module.exports = {
           "secondary": "#BF95F9",
           "neutral": "#ffffff",
           "base-100": "#272935",
+          "base-200": "#2F3240",
           "info": "#66ADF0",
           "success": "#37E1BF",
           "warning": "#414558",
@@ -21,12 +22,14 @@ module.exports = {
           "secondary": "#f000b8",
           "accent": "#37cdbe",
           "neutral": "#0f172a",
-          "base-100": "#ffffff",
+          "base-100": "#f8fafc",
+          "base-200": "#f1f5f9",
           "info": "#3abff8",
           "success": "#36d399",
           "warning": "#ffffff",
           "error": "#f87272",
         },
+
       },
 
     ],
