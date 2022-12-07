@@ -130,11 +130,6 @@ h1 {
 	margin: 4px auto;
 }
 
-#hero {
-	background: url("./assets/hero.svg") no-repeat center;
-	background-size: cover;
-}
-
 @layer base {
 	h1 {
 		@apply text-4xl  mb-8  lg:text-5xl text-neutral;

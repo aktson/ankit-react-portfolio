@@ -1,11 +1,11 @@
-import { useContext, useState } from "react";
+import { useContext } from "react";
+import LangContext from "../../context/LangContext";
 import { Link, animateScroll as scroll } from "react-scroll";
 import { SideBar } from "./mobile-nav/SideBar";
-import logo from "../../assets/logos/logo.svg";
-import logoLight from "../../assets/logos/logo-light.svg";
 import Themes from "../uicomponents/Themes";
 import LanguageSelect from "../uicomponents/LanguageSelect";
-import LangContext from "../../context/LangContext";
+import lightLogo from "../../assets/logo-light.svg";
+import darkLogo from "../../assets/logo-dark.svg";
 
 function Header() {
 	const { isEng, isChecked } = useContext(LangContext);
@@ -13,8 +13,8 @@ function Header() {
 		<header className=" absolute lg:fixed top-0 left-0 right-0 flex items-center justify-center z-40 py-4  ">
 			<div className="container flex justify-around md:justify-between gap-2 p-4 py-4 items-center flex-col sm:flex-row sm:bg-warning sm:shadow-xl rounded-full ">
 				{/* logo */}
-				<figure className=" xl:w-96" onClick={() => scroll.scrollToTop()}>
-					<img src={isChecked ? logoLight : logo} alt="ankit soni logo" className="w-24 " />
+				<figure className=" xl:w-96 p-2 ml-3" onClick={() => scroll.scrollToTop()}>
+					<img src={isChecked ? darkLogo : lightLogo} alt="ankit soni logo" className=" h-14 " />
 				</figure>
 				{/* navigation for large screens */}
 				<nav className="hidden lg:flex items-center w-full justify-center">
