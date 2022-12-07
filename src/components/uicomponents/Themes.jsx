@@ -15,13 +15,11 @@ function Themes({ isChecked, setIsChecked }) {
 		}
 	};
 	return (
-		<div className="form-control">
-			<div className="form-control w-36">
-				<label className="cursor-pointer label">
-					<input type="checkbox" className="toggle toggle-primary bg-primary border-primary" onClick={changeTheme} checked={isChecked} />
-					<span className="label-text text-primary">{isChecked ? "Light Mode" : "Dark Mode"}</span>
-				</label>
-			</div>
+		<div className="form-control w-36" style={{ zIndex: "251" }}>
+			<label className="cursor-pointer label flex gap-1 sm:gap-0">
+				<input type="checkbox" className="toggle toggle-primary bg-primary border-primary" onClick={changeTheme} checked={isChecked} />
+				<span className="label-text text-primary">{isChecked ? "Light Mode" : "Dark Mode"}</span>
+			</label>
 		</div>
 	);
 }

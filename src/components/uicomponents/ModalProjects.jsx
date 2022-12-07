@@ -1,10 +1,13 @@
+import { useContext } from "react";
 import { FaTimes, FaExternalLinkAlt, FaGithub } from "react-icons/fa";
 import { motion, AnimatePresence } from "framer-motion";
 import ReactDom from "react-dom";
 import Slider from "./Slider";
 import ModalOverlay from "./ModalOverlay";
+import LangContext from "../../context/LangContext";
 
 function ModalProjects({ data, onClose, open, length }) {
+	const { isEng } = useContext(LangContext);
 	if (!open) return null;
 
 	const results = data.attributes;
@@ -26,7 +29,7 @@ function ModalProjects({ data, onClose, open, length }) {
 							<span className="flex justify-start text-2xl mb-2">{results.title}</span>
 							<div className=" badge badge-primary badge-outline p-5 ">{results.stack}</div>
 						</h3>
-						<p className=" mb-5 line-break overflow-y-auto styledScrollbar">{results.summary}</p>
+						<p className=" mb-5 line-break overflow-y-auto styledScrollbar">{isEng ? results.summaryEnglish : results.summary}</p>
 						<div className="flex justify-between items-center">
 							<div className="flex gap-2">
 								<a
@@ -35,12 +38,12 @@ function ModalProjects({ data, onClose, open, length }) {
 									className="cursor-pointer flex btn btn-sm btn-primary  rounded-2xl gap-2"
 									rel="noreferrer">
 									<FaExternalLinkAlt />
-									visit
+									{isEng ? "visit" : "besøk"}
 								</a>
 								<a
 									href={results.github}
 									target="_blank"
-									className="cursor-pointer flex btn btn-sm rounded-2xl btn-primary  gap-2"
+									className="cursor-pointer flex btn btn-sm   rounded-2xl btn-primary  gap-2"
 									rel="noreferrer">
 									<FaGithub />
 									Github

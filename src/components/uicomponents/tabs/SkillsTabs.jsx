@@ -1,11 +1,13 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
 import { baseUrl } from "../../../settings/settings";
 import Loader from "../Loader";
 import useFetch from "../../../customHook/useFetch";
 import Fade from "react-reveal/Fade";
 import SkillsTabContent from "./SkillsTabContent";
+import LangContext from "../../../context/LangContext";
 
 function Tabs() {
+	const { isEng } = useContext(LangContext);
 	const [toggleState, setToggleState] = useState("all");
 
 	const [filteredData, setFilteredData] = useState([]);
@@ -55,16 +57,16 @@ function Tabs() {
 			<div className="tabs-header-container">
 				<Fade>
 					<button className={toggleState === "all" ? "tab-header active-tab" : "tab-header  "} onClick={() => handleAllClick("all")}>
-						Alle
+						{isEng ? "All" : "All"}
 					</button>
 					<button className={toggleState === 1 ? " tab-header active-tab" : "tab-header"} onClick={() => handleFrontendClick(1)}>
-						Rammeverk
+						{isEng ? "Frammework" : "Rammeverk"}
 					</button>
 					<button className={toggleState === 2 ? " tab-header  active-tab" : "tab-header "} onClick={() => handleDesignClick(2)}>
 						Design
 					</button>
 					<button className={toggleState === 3 ? " tab-header active-tab" : "tab-header "} onClick={() => handleOtherClick(3)}>
-						CMS/Andre
+						CMS/{isEng ? "Other" : "Andre"}
 					</button>
 				</Fade>
 			</div>

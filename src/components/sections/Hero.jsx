@@ -1,35 +1,34 @@
 import { Link } from "react-scroll";
 import Header from "../layout/Header";
 import Zoom from "react-reveal/Zoom";
+import { useContext } from "react";
+import LangContext from "../../context/LangContext";
 
 function Hero() {
+	const { isEng } = useContext(LangContext);
 	return (
-		<>
-			<section className=" flex flex-col justify-center h-screen " id="hero">
-				<Header />
-				<div className="container  mx-auto px-1 relative " id="hero-bg">
-					<div className=" grid lg:grid-cols-1   lg:justify-items-center text-center ">
-						<div className="p-2">
-							<h1>
-								<Zoom top cascade>
-									HELLO I'M
-									<span className="text-primary"> ANKIT SONI,</span>
-								</Zoom>
-								<br />
-								<Zoom left cascade>
-									Front-end utvikler
-								</Zoom>
-							</h1>
-							<Zoom cascade>
-								<Link className="btn btn-primary btn-md sm:btn-wide " to="about" smooth={true} duration={500}>
-									Se mitt arbeid
-								</Link>
-							</Zoom>
-						</div>
-					</div>
+		<section className=" flex flex-col justify-center h-screen " id="hero">
+			<Header />
+			<div className="container  mx-auto px-1 relative flex items-center justify-center text-center" id="hero-bg">
+				<div className="p-2 max-w-md w-full">
+					<h1>
+						<Zoom top cascade>
+							{isEng ? "HELLO I'M" : "Hei! Jeg heter"}
+							<span className="text-primary"> ANKIT SONI,</span>
+						</Zoom>
+						<br />
+						<Zoom left cascade>
+							<span>Front-end {isEng ? "developer" : "utvikler"}</span>
+						</Zoom>
+					</h1>
+					<Zoom cascade>
+						<Link className="btn btn-primary btn-md sm:btn-wide " to="about" smooth={true} duration={500}>
+							{isEng ? "See my work" : "Se mitt arbeid"}
+						</Link>
+					</Zoom>
 				</div>
-			</section>
-		</>
+			</div>
+		</section>
 	);
 }
 

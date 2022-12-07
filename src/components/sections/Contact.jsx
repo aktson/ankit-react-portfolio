@@ -1,9 +1,10 @@
 import emailjs from "@emailjs/browser";
-import { useRef, useEffect, useReducer } from "react";
+import { useRef, useEffect, useReducer, useContext } from "react";
 import { FaCheck } from "react-icons/fa";
 import Bounce from "react-reveal/Bounce";
 import HeadShake from "react-reveal/HeadShake";
 import Tada from "react-reveal/Tada";
+import LangContext from "../../context/LangContext";
 
 const initialState = {
 	name: "",
@@ -37,6 +38,7 @@ function reducer(state, action) {
 }
 
 function Contact() {
+	const { isEng } = useContext(LangContext);
 	const [state, dispatch] = useReducer(reducer, initialState);
 
 	const formRef = useRef();
@@ -105,7 +107,7 @@ function Contact() {
 				}
 			);
 
-			dispatch({ type: "feedback_message", payload: "Takk for din melding, jeg tar kontakt!!" });
+			dispatch({ type: "feedback_message", payload: `${isEng ? "Thank you for your message!" : "Takk for din melding, jeg tar kontakt!"}` });
 			state.name = "";
 			state.email = "";
 			state.message = "";
@@ -118,13 +120,15 @@ function Contact() {
 	return (
 		<section className="flex flex-col items-center gap-4  py-16 sm:py-32 px-1 lg:h-screen  justify-center bg-base-200" id="contact">
 			<Bounce top cascade>
-				<h2>KONTAKT</h2>
+				<h2>{isEng ? "CONTACT" : "KONTAKT"}</h2>
 			</Bounce>
 			<Bounce bottom cascade>
 				<div className="form-container">
 					<div className="form-aside ">
-						<p className="text-xl mb-2 text-center text-base-100">Legg igjen melding,</p>
-						<p className="text-4xl text-center  text-base-100">La oss bygge noe fantastisk sammen..... </p>
+						<p className="text-2xl mb-2 text-center text-base-100">{isEng ? "Please leave a message," : "Legg igjen melding,"}</p>
+						<p className="text-4xl text-center  text-base-100">
+							{isEng ? "Let us build something amazing together..." : "La oss bygge noe fantastisk sammen....."}
+						</p>
 					</div>
 					<form ref={formRef} className="form " onSubmit={handleSubmit}>
 						{state.feedbackMsg && (
@@ -142,7 +146,14 @@ function Contact() {
 									)}
 								</span>
 							</label>
-							<input type="text" name="user_name" className="input-form" placeholder="navn" onChange={handleName} value={state.name} />
+							<input
+								type="text"
+								name="user_name"
+								className="input-form"
+								placeholder={isEng ? "name" : "navn"}
+								onChange={handleName}
+								value={state.name}
+							/>
 						</div>
 						<div className="form-control  w-full">
 							<label htmlFor="email" className="mb-2">
@@ -158,7 +169,7 @@ function Contact() {
 								type="text"
 								name="user_email"
 								className="input-form"
-								placeholder="epost"
+								placeholder={isEng ? "email" : "epost"}
 								onChange={handleEmail}
 								value={state.email}
 							/>
@@ -173,7 +184,13 @@ function Contact() {
 									)}
 								</span>
 							</label>
-							<textarea name="message" className="text-area " placeholder="melding" onChange={handleMessage} value={state.message} />
+							<textarea
+								name="message"
+								className="text-area "
+								placeholder={isEng ? "message" : "melding"}
+								onChange={handleMessage}
+								value={state.message}
+							/>
 						</div>
 						<button className="btn-primary btn-md btn w-full mt-5" type="submit">
 							Send

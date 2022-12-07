@@ -3,8 +3,10 @@ import Loader from "../Loader";
 import Fade from "react-reveal/Fade";
 import ProjectsContext from "../../../context/ProjectsContext";
 import ProjectsTabContent from "./ProjectsTabContent";
+import LangContext from "../../../context/LangContext";
 
 function ProjectsTabs() {
+	const { isEng } = useContext(LangContext);
 	const [toggleState, setToggleState] = useState("all");
 	const { data, loading, error } = useContext(ProjectsContext);
 
@@ -28,7 +30,6 @@ function ProjectsTabs() {
 		setToggleState(index);
 
 		const filterData = data.filter((result) => {
-			console.log(result);
 			return result.attributes.category === "react";
 		});
 
@@ -53,7 +54,7 @@ function ProjectsTabs() {
 			<div className="tabs-header-container">
 				<Fade>
 					<button className={toggleState === "all" ? "tab-header active-tab" : "tab-header  "} onClick={() => handleAllClick("all")}>
-						Alle
+						{isEng ? "All" : "All"}
 					</button>
 					<button className={toggleState === 1 ? " tab-header active-tab" : "tab-header"} onClick={() => handleJsClick(1)}>
 						Javascript

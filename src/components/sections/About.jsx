@@ -2,12 +2,19 @@ import ankit from "../../assets/ankitLightGray.jpg";
 import CardsAbout from "../uicomponents/CardsAbout";
 import Zoom from "react-reveal/Zoom";
 import Flip from "react-reveal/Flip";
+import { useContext } from "react";
+import LangContext from "../../context/LangContext";
 
 function About() {
+	const { isEng } = useContext(LangContext);
+	const paragraph = isEng
+		? "Build state-of-the-art, easy-to-use, user-friendly websites and applications is truly a passion of mine, the goal is to become Full-stack."
+		: "Bygge state-of-the-art, enkel å bruke, brukervennlige nettsider og applikasjoner er virkelig en lidenskap for meg, målet er å bli Full-stack.";
+
 	return (
 		<section className=" flex flex-col justify-center items-center py-16 sm:py-32 px-1 lg:h-screen " id="about">
 			<Flip right cascade>
-				<h2>OM MEG</h2>
+				<h2>{isEng ? "ABOUT ME" : "OM MEG"}</h2>
 			</Flip>
 			<div className="grid lg:grid-cols-1 md:grid-col-2 sm:grid-cols-1 gap-8 p-4">
 				<div className="p-2  flex flex-col items-center text-center" id="about-img">
@@ -16,13 +23,9 @@ function About() {
 							<img src={ankit} alt="ankit soni" className="h-60 w-60 mb-8 mask mask-hexagon-2 "></img>
 						</figure>
 					</Zoom>
-					{/* <p className="badge badge-secondary animate-bounce mb-4 p-6 md:p-4">Now: Building Social Media App in ReactJS...</p> */}
 					<div className="max-w-xl">
 						<Flip left cascade>
-							<p>
-								Bygge state-of-the-art, enkel å bruke, brukervennlige nettsider og applikasjoner er virkelig en lidenskap for meg,
-								målet er å bli Full-stack.
-							</p>
+							<p>{paragraph}</p>
 						</Flip>
 					</div>
 				</div>

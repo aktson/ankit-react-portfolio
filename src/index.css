@@ -68,10 +68,6 @@ h5 {
 h1 {
 	line-height: 1.4em;
 }
-.logo {
-	cursor: pointer;
-	width: 110px;
-}
 
 .nav {
 	position: absolute;
@@ -83,9 +79,6 @@ h1 {
 .hamburger {
 	outline: none;
 	border: none;
-	-webkit-user-select: none;
-	-moz-user-select: none;
-	-ms-user-select: none;
 	cursor: pointer;
 	position: fixed;
 	top: 16px;
@@ -168,13 +161,13 @@ h1 {
 }
 @layer components {
 	.nav-li {
-		@apply inline-block mx-4 p-2  hover:border-b-2 hover:border-b-primary transition-all ease-in-out hover:animate-pulse cursor-pointer;
+		@apply p-2  hover:border-b-2 hover:border-b-primary transition-all ease-in-out hover:animate-pulse cursor-pointer;
 	}
 	.active {
 		@apply pointer-events-none border-b-2 border-b-primary;
 	}
 	.btn {
-		@apply text-base-100 rounded-none shadow-2xl;
+		@apply text-base-100 rounded-none shadow-2xl  hover:text-neutral;
 	}
 	.about-icons {
 		@apply mx-auto mb-4 text-accent;

@@ -1,7 +1,10 @@
 import { motion } from "framer-motion";
+import { useContext } from "react";
 import { Link } from "react-scroll";
+import LangContext from "../../../context/LangContext";
 
 export function Navigation({ toggle }) {
+	const { isEng } = useContext(LangContext);
 	const variantsLi = {
 		open: {
 			y: 0,
@@ -35,27 +38,27 @@ export function Navigation({ toggle }) {
 			<motion.ul variants={variants} className="mob-ul ">
 				<motion.li whileTap={{ scale: 0.95 }} variants={variantsLi}>
 					<Link activeClass="active" to="hero" spy={true} smooth={true} duration={500} className="mob-li  nav-li" onClick={toggle}>
-						Heim
+						{isEng ? "Home" : "Heim"}
 					</Link>
 				</motion.li>
 				<motion.li whileTap={{ scale: 0.95 }} variants={variantsLi}>
 					<Link activeClass="active" to="about" spy={true} smooth={true} duration={500} className="mob-li nav-li " onClick={toggle}>
-						Om meg
+						{isEng ? "About Me" : "Om Meg"}
 					</Link>
 				</motion.li>
 				<motion.li whileTap={{ scale: 0.95 }} variants={variantsLi}>
 					<Link activeClass="active" to="skills" spy={true} smooth={true} duration={500} className="mob-li nav-li " onClick={toggle}>
-						Ferdigheter
+						{isEng ? "Skills" : "Ferdigheter"}
 					</Link>
 				</motion.li>
 				<motion.li whileTap={{ scale: 0.95 }} variants={variantsLi}>
 					<Link activeClass="active" to="projects" spy={true} smooth={true} duration={500} className="mob-li nav-li " onClick={toggle}>
-						Prosjekter
+						{isEng ? "Projects" : "Prosjekter"}
 					</Link>
 				</motion.li>
 				<motion.li whileTap={{ scale: 0.95 }} variants={variantsLi}>
 					<Link activeClass="active" to="contact" spy={true} smooth={true} duration={500} className="mob-li nav-li " onClick={toggle}>
-						Kontakt
+						{isEng ? "Contact" : "Kontakt"}
 					</Link>
 				</motion.li>
 			</motion.ul>
