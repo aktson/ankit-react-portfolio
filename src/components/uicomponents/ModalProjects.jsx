@@ -32,14 +32,16 @@ function ModalProjects({ data, onClose, open, length }) {
 						<p className=" mb-5 line-break overflow-y-auto styledScrollbar">{isEng ? results.summaryEnglish : results.summary}</p>
 						<div className="flex justify-between items-center">
 							<div className="flex gap-2">
-								<a
-									href={results.url}
-									target="_blank"
-									className="cursor-pointer flex btn btn-sm btn-primary  rounded-2xl gap-2"
-									rel="noreferrer">
-									<FaExternalLinkAlt />
-									{isEng ? "visit" : "besøk"}
-								</a>
+								{results.url && (
+									<a
+										href={results.url}
+										target="_blank"
+										className="cursor-pointer flex btn btn-sm btn-primary  rounded-2xl gap-2"
+										rel="noreferrer">
+										<FaExternalLinkAlt />
+										{isEng ? "visit" : "besøk"}
+									</a>
+								)}
 								<a
 									href={results.github}
 									target="_blank"
