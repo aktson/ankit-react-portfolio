@@ -20,7 +20,7 @@ function Social() {
 					<Email />
 				</li>
 			</ul>
-			<div className="line-after-icons"></div>
+			<div className="h-16 w-1 bg-accent my-1 mx-auto"></div>
 		</div>
 	);
 }
