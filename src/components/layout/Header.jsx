@@ -10,7 +10,7 @@ import darkLogo from "../../assets/logo-dark.svg";
 function Header() {
 	const { isEng, isChecked } = useContext(LangContext);
 	return (
-		<header className=" absolute lg:fixed top-0 left-0 right-0 flex items-center justify-center z-40 py-4  ">
+		<header className=" absolute lg:fixed top-0 left-0 right-0 flex items-center justify-center z-40 sm:py-4  shadow-xl sm:shadow-none">
 			<div className="container flex justify-around md:justify-between gap-2 p-4 py-4 items-center flex-col sm:flex-row sm:bg-warning sm:shadow-xl rounded-full ">
 				{/* logo */}
 				<figure className=" xl:w-96 p-2 ml-3" onClick={() => scroll.scrollToTop()}>
