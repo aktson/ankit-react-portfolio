@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { useContext, useState } from "react";
+import { useContext } from "react";
 import { Link } from "react-scroll";
 import LangContext from "../../../context/LangContext";
 import Themes from "../../uicomponents/Themes";

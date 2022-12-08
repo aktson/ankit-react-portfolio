@@ -7,9 +7,18 @@ import { useEffect, useRef } from "react";
 export const useDimensions = ref => {
     const dimensions = useRef({ width: 0, height: 0 });
 
-    useEffect(() => {
+    const handleResize = () => {
+
         dimensions.current.width = ref.current.offsetWidth;
         dimensions.current.height = ref.current.offsetHeight;
+    }
+
+    useEffect(() => {
+        window.addEventListener("resize", handleResize)
+
+        return () => {
+            window.removeEventListener("resize", handleResize);
+        }
     }, []);
 
     return dimensions.current;
