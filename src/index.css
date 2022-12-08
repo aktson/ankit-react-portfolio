@@ -219,10 +219,10 @@ h1 {
 	}
 	/* tabs skills section */
 	.tabs-header-container {
-		@apply my-12 mx-auto text-center grid grid-cols-2 p-2 sm:flex sm:justify-center bg-base-200 sm:items-center w-full max-w-xl rounded-xl shadow-lg shadow-primary;
+		@apply my-12 mx-auto text-center grid grid-cols-2 justify-items-center gap-2  p-2 sm:flex sm:justify-center bg-base-200 sm:items-center w-full max-w-xl rounded-xl shadow-lg shadow-primary;
 	}
 	.tab-header {
-		@apply text-lg  cursor-pointer transition-all duration-500 flex p-6 rounded-xl;
+		@apply text-lg  cursor-pointer transition-all duration-500 p-4 md:p-6 rounded-xl flex items-center;
 	}
 	.active-tab {
 		@apply bg-primary text-base-100 py-2 px-10 pointer-events-none;
