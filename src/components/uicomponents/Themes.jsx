@@ -18,7 +18,12 @@ function Themes() {
 	return (
 		<div className="form-control w-32 " style={{ zIndex: "251" }}>
 			<label className="cursor-pointer label flex gap-1 sm:gap-0 px-0 ">
-				<input type="checkbox" className="toggle toggle-primary bg-primary border-transparent" onClick={changeTheme} checked={isChecked} />
+				<input
+					type="checkbox"
+					className="toggle toggle-primary bg-primary border-transparent"
+					onClick={changeTheme}
+					defaultChecked={isChecked}
+				/>
 				<span className="label-text text-base-100 sm:text-primary text-center text-md sm:text-sm">
 					{isChecked ? "Light Mode" : "Dark Mode"}
 				</span>

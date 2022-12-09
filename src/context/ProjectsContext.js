@@ -19,7 +19,16 @@ export function ProjectsProvider({ children }) {
       const results = await response.json();
 
       if (response.ok) {
-        setData(results.data);
+
+        const sortedByUpdated = results.data.sort((a, b) => {
+          const aPublishedDate = new Date(a.attributes.createdAt)
+          const bPublishedDate = new Date(b.attributes.createdAt)
+
+          return bPublishedDate - aPublishedDate
+        });
+
+        setData(sortedByUpdated);
+
       }
 
 
