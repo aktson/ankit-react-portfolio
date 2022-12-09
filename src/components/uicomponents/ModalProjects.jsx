@@ -29,7 +29,7 @@ function ModalProjects({ data, onClose, open, length }) {
 							<span className="flex justify-start text-2xl mb-2">{results.title}</span>
 							<div className=" badge badge-primary badge-outline p-5 ">{results.stack}</div>
 						</h3>
-						<p className=" mb-5 line-break overflow-y-auto styledScrollbar">{isEng ? results.summaryEnglish : results.summary}</p>
+						<p className=" mb-5 line-break overflow-y-auto styledScrollbar h-full">{isEng ? results.summaryEnglish : results.summary}</p>
 						<div className="flex justify-between items-center">
 							<div className="flex gap-2">
 								{results.url && (

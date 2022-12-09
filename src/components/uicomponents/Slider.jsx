@@ -26,9 +26,10 @@ function Slider({ data, length }) {
 			<div className={index === current ? "slider active-slide" : "slider"} key={index}>
 				{index === current && (
 					<Fade>
-						<div
+						{/* <div
 							className="h-96 min-h-full"
-							style={{ background: `url(${sliderImage}) no-repeat center`, backgroundSize: "cover" }}></div>
+							style={{ background: `url(${sliderImage}) no-repeat center`, backgroundSize: "cover" }}></div> */}
+						<img src={sliderImage} alt="" className="w-full object-cover max-w-5xl " />
 					</Fade>
 				)}
 			</div>
