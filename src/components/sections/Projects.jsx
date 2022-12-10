@@ -1,4 +1,3 @@
-import ProjectsCard from "../uicomponents/ProjectsCard";
 import Flip from "react-reveal/Flip";
 import Slide from "react-reveal/Slide";
 import ProjectsTabs from "../uicomponents/tabs/ProjectsTabs";
