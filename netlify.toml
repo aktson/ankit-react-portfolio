@@ -1,0 +1,5 @@
+[[redirects]]
+from = "https://ankitsoni.netlify.app/"
+to = "https://ankitsoni.dev/"
+status = 301
+force = true
